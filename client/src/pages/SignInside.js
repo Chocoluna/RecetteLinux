@@ -2,19 +2,19 @@
 import React from 'react';
 import { Avatar, Button, CssBaseline, Grid, Paper } from '@material-ui/core';
 import { Column, Item, Row } from '@mui-treasury/components/flex';
-import { useStylesDark, useStylesLight, ValidationTextField } from './css/SignInsideStyle';
-import {GetPlayer, SetPlayer, setApp} from './index';
-import MenuAppBar from './Header';
-import { getTheme } from './theme';
-import avatar1 from './assets/1.jpg';
-import avatar2 from './assets/2.jpg';
-import avatar3 from './assets/3.jpg';
-import avatar4 from './assets/4.jpg';
-import avatar5 from './assets/5.jpg';
-import avatar6 from './assets/6.jpg';
-import avatar7 from './assets/7.jpg';
-import avatar8 from './assets/8.jpg';
-import logo from './assets/Mylogo.jpg';
+import { useStylesDark, useStylesLight, ValidationTextField } from '../css/SignInsideStyle';
+import {GetPlayer, SetPlayer, setApp} from '../index';
+import MenuAppBar from '../components/Header';
+import { getTheme } from '../theme';
+import avatar1 from '../assets/1.jpg';
+import avatar2 from '../assets/2.jpg';
+import avatar3 from '../assets/3.jpg';
+import avatar4 from '../assets/4.jpg';
+import avatar5 from '../assets/5.jpg';
+import avatar6 from '../assets/6.jpg';
+import avatar7 from '../assets/7.jpg';
+import avatar8 from '../assets/8.jpg';
+import logo from '../assets/Mylogo.jpg';
 
 
 var light;

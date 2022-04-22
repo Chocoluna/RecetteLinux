@@ -1,8 +1,8 @@
-import logo from './assets/chocolate-bar.png';
+import logo from '../assets/chocolate-bar.png';
 //CSS
-import {getTheme, setTheme} from './theme';
-import './App.css';
-import MenuAppBar from './Header';
+import {getTheme, setTheme} from '../theme';
+import '../css/App.css';
+import MenuAppBar from '../components/Header';
 import { Avatar, Button, CssBaseline, Grid, Paper } from '@material-ui/core';
 import { Column, Item, Row } from '@mui-treasury/components/flex';
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './pages/App';
 import avatar4 from './assets/4.jpg';
-import './index.css';
+import './css/index.css';
 import reportWebVitals from './reportWebVitals';
-import SignInside from './SignInside';
+import SignInside from './pages/SignInside';
 
 var etatjeu;
 
@@ -21,7 +21,6 @@ root.render(
     <SignInside/>
   </React.StrictMode>
 );*/
-
 
 
 ////////////////////////////////////////////////////////////

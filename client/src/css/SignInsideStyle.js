@@ -90,8 +90,8 @@ export const useStylesLight = makeStyles((theme) => ({
       },
     },
     medium: {
-      width: '50%',
-      height: '50%',
+      width: '30vh',
+      height: '30vh',
     },
     large: {
       width: '23%',
@@ -177,8 +177,8 @@ export const useStylesDark = makeStyles((theme) => ({
       },
     },
     medium: {
-      width: '25vh',
-      height: '25vh',
+      width: '30vh',
+      height: '30vh',
     },
     large: {
       width: '23%',

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './pages/App';
 import { Getetat, SetSignInSide } from './index';
-import { ChangeThemeSign } from './SignInside';
+import { ChangeThemeSign } from './pages/SignInside';
 
 var theme = "dark";
 

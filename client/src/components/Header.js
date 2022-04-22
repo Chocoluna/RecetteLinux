@@ -3,9 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import { FiSun, FiMoon } from "react-icons/fi";
 import {AppBar, Button, ButtonGroup, IconButton, FormControlLabel, FormGroup, Grid, Menu, MenuItem, Switch, Toolbar, Typography} from '@material-ui/core';
-import chefhat from './assets/chef-hat.png';
-import { SetSignInSide} from './index';
-import {getTheme, setTheme} from './theme';
+import chefhat from '../assets/chef-hat.png';
+import { SetSignInSide} from '../index';
+import {getTheme, setTheme} from '../theme';
 
 const useStyles = makeStyles((theme) => ({
   root: {
