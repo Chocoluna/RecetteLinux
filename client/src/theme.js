@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './pages/App';
+import { ChangeThemeApp} from './pages/App';
 import { Getetat, SetSignInSide } from './index';
 import { ChangeThemeSign } from './pages/SignInside';
 
@@ -19,8 +20,8 @@ export function setTheme(){
       SetSignInSide();
     }
 
-    if(etatjeu === "Jeu"){
-     // ChangeThemeApp();
+    if(etatjeu === "App"){
+      ChangeThemeApp();
       ReactDOM.render(
       <React.StrictMode>
       <App/>
@@ -40,7 +41,7 @@ export function setTheme(){
       SetSignInSide();
     }
 
-    if(etatjeu === "Jeu"){
+    if(etatjeu === "App"){
     //  ChangeThemeApp();
       ReactDOM.render(
       <React.StrictMode>

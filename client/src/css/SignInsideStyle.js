@@ -26,11 +26,9 @@ root: {
 })(TextField);
 
 export const useStylesLight = makeStyles((theme) => ({
-  root: {
-    height: '100vh',
-  },
 
   image: {
+    height: '93.1vh',
     backgroundImage: 'url(https://source.unsplash.com/collection/24051068/)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
@@ -113,11 +111,9 @@ export const useStylesLight = makeStyles((theme) => ({
 ██████  ██   ██ ██   ██ ██   ██        ██    ██   ██ ███████ ██      ██ ███████ */
 
 export const useStylesDark = makeStyles((theme) => ({
-  root: {
-    height: '100vh',
-  },
 
   image: {
+    height: '93.1vh',
     backgroundImage: 'url(https://source.unsplash.com/collection/31854366/)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:

@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './pages/App';
-import avatar4 from './assets/4.jpg';
 import './css/index.css';
-import reportWebVitals from './reportWebVitals';
+import App from './pages/App';
 import SignInside from './pages/SignInside';
+import reportWebVitals from './reportWebVitals';
 
 var etatjeu;
 
 var player = {
   pseudos: "",
-  avatar: avatar4,
+  avatar: null,
   score: 0,
 };
 

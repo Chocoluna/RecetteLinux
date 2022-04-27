@@ -1,11 +1,13 @@
-import React from 'react';
+import { AppBar, Avatar, Button, ButtonGroup, FormControlLabel, FormGroup, Grid, IconButton, Switch, Toolbar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
-import { FiSun, FiMoon } from "react-icons/fi";
-import {AppBar, Button, ButtonGroup, IconButton, FormControlLabel, FormGroup, Grid, Menu, MenuItem, Switch, Toolbar, Typography} from '@material-ui/core';
+import { Item, Row } from '@mui-treasury/components/flex';
+import React from 'react';
+import { FiMoon, FiSun } from "react-icons/fi";
 import chefhat from '../assets/chef-hat.png';
-import { SetSignInSide} from '../index';
-import {getTheme, setTheme} from '../theme';
+import coin from '../assets/coin.png';
+import { GetPlayer, SetSignInSide } from '../index';
+import { setTheme } from '../theme';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     '& > *': {
-      margin: theme.spacing(1),
+      margin: '10%',
     },
   },
   title: {
@@ -31,16 +33,40 @@ const useStyles = makeStyles((theme) => ({
     width: '40%',
     height: '15%',
     padding: '0 30px',
-    margin : theme.spacing ('auto', 'auto'),
+    display : 'flex',
+    
   },
 
 }));
+
+export const PersonItem = ({ src, name, score}) => {
+  return (
+    <Row gap={1} p={1}>
+      <Item>
+        <Avatar src={src} />
+      </Item>
+      <Row wrap grow gap={0.5} minWidth={0}>
+        <Item grow minWidth={0}>
+          <div>{name}</div>
+        </Item>
+        <Item>
+          <div>{score}</div>
+        </Item>
+      </Row>
+    </Row>
+  );
+};
 
 function MenuAppBar() {
   const classes = useStyles();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+
+  let player = GetPlayer();
+  let name = player.pseudos;
+  let src = player.avatar;
+  let score = player.score;
 
   const handleChange = (event) => {
     setAuth(event.target.checked);
@@ -54,7 +80,7 @@ function MenuAppBar() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
+  
   return (
     <div className={classes.root}>
       <AppBar position="relative" style={{backgroundColor: '#000051'}}>
@@ -66,12 +92,28 @@ function MenuAppBar() {
           }
           <Button ><img src={chefhat} onClick={SetSignInSide} alt="Logo appli" height="45vh" /></Button>
           <ButtonGroup variant="text"  aria-label="text primary button group" aria-controls="menu-appbar"
-          aria-haspopup="true"
-          onClick={handleMenu}
-          color="inherit"
-          className={classes.Button}>
-          <Button> About Us </Button>
-          <Button> Help </Button>
+            aria-haspopup="true"
+            onClick={handleMenu}
+            color="inherit"
+            className={classes.Button}>
+              <Button>
+                <Row nowrap gap={1} p={1}>
+                  <Item>
+                    <Avatar src={src} />
+                  </Item>
+                  <Row nowrap grow gap={2} minWidth={0} >
+                    <Item grow minWidth={0}>
+                      <div>{name}</div>
+                    </Item>
+                    <Item>
+                      <div>{score}</div>
+                    </Item>
+                  </Row>
+                </Row>
+              </Button>
+            <Button><img src={coin} alt="Coins" height="40vh" /></Button>
+            <Button> About Us </Button>
+            <Button> Help </Button>
           </ButtonGroup>
           <Grid container justifyContent="flex-end">
            <FormGroup>

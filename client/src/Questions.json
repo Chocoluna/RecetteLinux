@@ -1,0 +1,40 @@
+{
+    "leJeuDulyon": [
+        {
+            "name": "avocado",
+            "text": "les avocat d'ou ?",
+            "rep": "mexique",
+            "prop1": "japon",
+            "prop2": "japon"
+        },
+        {
+            "name": "carotte",
+            "text": "les carotte d'ou ?",
+            "rep": "mexique",
+            "prop1": "japon",
+            "prop2": "japon"
+        },
+        {
+            "name": "pepene",
+            "text": "les pepene d'ou ?",
+            "rep": "mexique",
+            "prop1": "roumanie",
+            "prop2": "france"
+        }
+    ]
+}
+/*
+//let question = json.array.find(x => x.name === avocado)
+// let text = question.text
+// let rep = question.rep
+// let prop1 = question.prop1
+// let prop2 = question.prop2
+
+
+<Modal>
+    <div> {text} </div>
+    <div> {prop2} </div>
+    <div> {rep} </div>
+    <div> {prop1} </div>
+</Modal>
+*/
