@@ -1,0 +1,43 @@
+{
+    "Recette": [
+        {
+            "NomRecette": "Avocado Toast",
+            "IlluRecette": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/recipes.png",
+            "Done": "false",
+            "Ingredients": [
+                {
+                    "Ingredient": "Avocat",
+                    "nb": "2"
+                },
+                {
+                    "Ingredient": "Toast",
+                    "nb": "5"
+                },
+                {
+                    "Ingredient": "Citron",
+                    "nb": "1" 
+                }
+            ]
+        },
+        {
+            "NomRecette": "Fraise sucrées",
+            "IlluRecette": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/recipes%20(1).png",
+            "Done":"false",
+            "Ingredients":[
+                {
+                    "Ingredient":"Fraise",
+                    "nb": "5"
+                },
+                {
+                    "Ingredient":"Citron",
+                    "nb":"1"
+                },
+                {
+                    "Ingredient":"Sucre",
+                    "nb": "1"
+                }
+
+            ]
+        }
+    ]
+}

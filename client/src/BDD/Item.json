@@ -1,0 +1,35 @@
+{
+    "Level1":[
+        {
+            "Nom":"Avocado",
+            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/avocado.png",
+            "PosX":"0.26",
+            "PosY":"0.54",
+            "Height":"0.05"
+        },
+        {
+            "Nom":"Lemon",
+            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/citron.png",
+            "PosX":"0.87",
+            "PosY":"0.34",
+            "Height":"0.04"
+        },
+        {
+            "Nom":"Toast",
+            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/toaster.png",
+            "PosX":"0.034",
+            "PosY":"0.23",
+            "Height":"0.10"
+        }
+
+    ], 
+    "Level2":[
+        {
+            "Nom":"Avocado",
+            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/avocado.png",
+            "PosX":"0.66",
+            "PosY":"0.74",
+            "Height":"0.05"
+        }
+    ]
+}

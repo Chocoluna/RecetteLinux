@@ -4,6 +4,8 @@ import './css/index.css';
 import App from './pages/App';
 import SignInside from './pages/SignInside';
 import reportWebVitals from './reportWebVitals';
+import Profil from './pages/Profil';
+import {Recette} from './BDD/Recette.json';
 
 var etatjeu;
 
@@ -12,6 +14,8 @@ var player = {
   avatar: null,
   score: 0,
 };
+
+console.log(Recette);
 
 /*
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -30,7 +34,7 @@ root.render(
 export function SetSignInSide(){
   ReactDOM.render(
     <React.StrictMode>
-    <SignInside/>
+      <SignInside/>
     </React.StrictMode>,
     document.getElementById('root')
   );
@@ -41,11 +45,21 @@ SetSignInSide();
 export function setApp(){
   ReactDOM.render(
   <React.StrictMode>
-  <App/>
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
   );
   etatjeu="App";
+}
+
+export function setProfil(){
+  ReactDOM.render(
+    <React.StrictMode>
+      <Profil/>
+    </React.StrictMode>,
+    document.getElementById('root')
+    );
+    etatjeu="Profil";
 }
 
 ////////////////////////////////////////////////////////////

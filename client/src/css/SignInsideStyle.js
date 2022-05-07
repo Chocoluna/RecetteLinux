@@ -75,10 +75,13 @@ export const useStylesLight = makeStyles((theme) => ({
   card: {
     width: '92%',
     height : '92%',
-    margin : theme.spacing (5, 5),
     borderRadius: 16,
     boxShadow: '0 8px 16px 0 #BDC9D7',
     overflow: 'hidden',
+    position: 'relative',
+    top:"50%",
+    left:"50%",
+    transform: 'translate(-50%, -50%)'
   },
 
   avatarchoice: {
@@ -160,10 +163,13 @@ export const useStylesDark = makeStyles((theme) => ({
   card: {
     width: '92%',
     height : '92%',
-    margin : theme.spacing (5, 5),
     borderRadius: 16,
     boxShadow: '0 8px 16px 0 #BDC9D7',
     overflow: 'hidden',
+    position: 'relative',
+    top:"50%",
+    left:"50%",
+    transform: 'translate(-50%, -50%)'
   },
 
   avatarchoice: {
@@ -173,12 +179,12 @@ export const useStylesDark = makeStyles((theme) => ({
       },
     },
     medium: {
-      width: '30vh',
-      height: '30vh',
+      width: '25vw',
+      height: '25vw',
     },
     large: {
-      width: '23%',
-      height: '80%',
+      width: '13vw',
+      height: '13vw',
     },
 
     copyright: {

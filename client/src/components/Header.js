@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Item, Row } from '@mui-treasury/components/flex';
 import React from 'react';
+import { setProfil } from '../index';
 import { FiMoon, FiSun } from "react-icons/fi";
 import chefhat from '../assets/chef-hat.png';
 import coin from '../assets/coin.png';
@@ -62,6 +63,9 @@ function MenuAppBar() {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  const displayProfil = () => {
+    setProfil();
+  }
 
   let player = GetPlayer();
   let name = player.pseudos;
@@ -96,7 +100,7 @@ function MenuAppBar() {
             onClick={handleMenu}
             color="inherit"
             className={classes.Button}>
-              <Button>
+              <Button onClick={displayProfil}>
                 <Row nowrap gap={1} p={1}>
                   <Item>
                     <Avatar src={src} />

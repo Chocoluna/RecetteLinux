@@ -44,28 +44,6 @@ export const useStylesLight = makeStyles((theme) => ({
     alignItems: 'center',
   },
 
-  canvas: {
-    backgroundColor: 'rgb(255, 255, 255)',
-    background: 'white',
-    borderRadius: 15,
-    display: 'flex',
-
-  },
-
-  drawbox:{
-    width: "100%",
-  },
-
-  couleurs: {
-    margin: theme.spacing(8, 0),
-    borderRadius: 15,
-    width: '5.5vh',
-    height:'65vh',
-    border: '3px solid black',
-    background:'#222',
-    borderRadius: 5,
-    padding:'1vh',
-  },
 
   avatar: {
     margin: theme.spacing(1),
@@ -82,49 +60,6 @@ export const useStylesLight = makeStyles((theme) => ({
   header: {
     fontFamily: 'Barlow, san-serif',
     backgroundColor: '#fff',
-  },
-
-  cardjoueur: {
-    width: '100%',
-    height: '75%',
-    borderRadius: 16,
-    boxShadow: '0 8px 16px 0 #BDC9D7',
-    overflow: 'hidden',
-    fontSize: '1.5rem',
-    fontWeight: 600,
-    flexWrap: 'wrap',
-    margin : theme.spacing (8, 2),
-    background:'rgba(240, 160, 240, 0.30)',
-  },
-
-  cardchat: {
-    margin: theme.spacing(8, 2),
-    width: '90%',
-    height: '80%',
-    borderRadius: 16,
-    display: 'flex',
-    flexDirection: 'column',
-    boxShadow: '0 8px 16px 0 #BDC9D7',
-    overflow: 'hidden',
-    background:'rgba(240, 160, 240, 0.30)',
-    overflow: 'auto',
-    fontSize: '1.25rem',
-    fontWeight: 450,
-  },
-
-  chatbox: {
-    margin: theme.spacing(1),
-    width: '97%',
-    height: '70vh',
-    display: 'flex',
-    flexDirection: 'column',
-    fontSize: '1.25rem',
-    fontWeight: 400,
-    position: 'relative',
-    overflow: 'auto',
-    '&:hover': {
-      overflowY: 'auto',
-    },
   },
 
   styleB: {
@@ -175,23 +110,16 @@ export const useStylesLight = makeStyles((theme) => ({
     flexGrow: 1,
     minWidth: 250,
     display: 'flex',
-    padding: '10vh',
-    alignItems: 'center',
-    justifyContent: 'center',
-    boxShadow: '0 8px 16px 0 #BDC9D7',
-    background:'rgba(240, 240, 240, 0.98)',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
     borderRadius: 16,
     position: 'absolute',
-    transform: 'translate(48%, 15%)'
-  },
-
-  type_msg : {
-      borderRadius: 16,
-      background:'#222',
-      color: "white",
-      width : "90%",
-      height: "4vh",
-  },
+    top:"50%",
+    left:"50%",
+    transform: 'translate(-50%, -50%)',
+    boxShadow: '0 8px 16px 0 #BDC9D7',
+    background:'rgba(240, 240, 240, 0.98)',
+  },  
 
   send_btn : {
       borderRadius: 16,
@@ -213,12 +141,6 @@ export const useStylesLight = makeStyles((theme) => ({
     boxShadow: '0 3px 5px 2px rgba(155, 235, 135, 0.3)',
   },
 
-  motChoisi : {
-    fontSize: '120%',
-    fontWeight: 600,
-    margin: theme.spacing('auto', 1),
-  }
-
 }));
 /*
 ██████   █████  ██████  ██   ██     ████████ ██   ██ ███████ ███    ███ ███████ 
@@ -230,7 +152,6 @@ export const useStylesLight = makeStyles((theme) => ({
 export const useStylesDark = makeStyles((theme) => ({
   root: {
     height: '100vh',
-    overflow : 'hidden',
     backgroundImage: 'url(https://source.unsplash.com/collection/31854366/)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
@@ -264,28 +185,6 @@ export const useStylesDark = makeStyles((theme) => ({
     alignItems: 'center',
   },
 
-  canvas: {
-    backgroundColor: 'rgb(255, 255, 255)',
-    background: 'white',
-    borderRadius: 15,
-    display: 'flex',
-  },
-
-  drawbox:{
-    width: "100%",
-  },
-
-  couleurs: {
-    margin: theme.spacing(8, 0),
-    borderRadius: 15,
-    width: '5.5vh',
-    height:'65vh',
-    border: '3px solid black',
-    background:'#222',
-    borderRadius: 5,
-    padding:'1vh',
-  },
-
   avatar: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main,
@@ -301,52 +200,6 @@ export const useStylesDark = makeStyles((theme) => ({
   header: {
     fontFamily: 'Barlow, san-serif',
     backgroundColor: '#fff',
-  },
-
-  cardjoueur: {
-    width: '100%',
-    height: '75%',
-    borderRadius: 16,
-    boxShadow: '0 8px 16px 0 #BDC9D7',
-    overflow: 'hidden',
-    fontSize: '1.5rem',
-    fontWeight: 600,
-    flexWrap: 'wrap',
-    margin : theme.spacing (8, 2),
-    background:'rgba(74, 20, 140, 0.50)',
-    color: '#FFFFFF',
-
-  },
-
-  cardchat: {
-    margin: theme.spacing(8, 2),
-    width: '90%',
-    height: '80%',
-    borderRadius: 16,
-    display: 'flex',
-    flexDirection: 'column',
-    boxShadow: '0 8px 16px 0 #BDC9D7',
-    overflow: 'hidden',
-    background:'rgba(74, 20, 140, 0.50)',
-    overflow: 'auto',
-    fontSize: '1.25rem',
-    fontWeight: 400,
-    color: '#FFFFFF',
-  },
-
-  chatbox: {
-    margin: theme.spacing(1),
-    width: '97%',
-    height: '70vh',
-    display: 'flex',
-    flexDirection: 'column',
-    fontSize: '1.25rem',
-    fontWeight: 400,
-    position: 'relative',
-    overflow: 'auto',
-    '&:hover': {
-      overflowY: 'auto',
-    },
   },
 
   styleB: {
@@ -390,22 +243,31 @@ export const useStylesDark = makeStyles((theme) => ({
     },
 
   modal: {
-    width: '50%',
+    width: '55%',
     height: '80%',
-    flexGrow: 1,
     minWidth: 250,
     display: 'flex',
-    padding: '10vh',
-    alignItems: 'center',
-    justifyContent: 'center',
-    boxShadow: '0 8px 16px 0 #BDC9D7',
-    background:'rgba(40, 40, 160, 0.99)',
-    color: 'white',
+    justifyContent: 'flex-start',
     borderRadius: 16,
     position: 'absolute',
-    transform: 'translate(48%, 15%)',
+    top:"50%",
+    left:"50%",
+    transform: 'translate(-50%, -50%)', 
+    boxShadow: '0 8px 16px 0 #BDC9D7',
+    background:'rgba(40, 40, 160, 0.99)',
+    color: 'white'
   },
 
+  infoProfil : {
+    fontFamily : '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    fontWeight : '500',
+    lineheight : '1.6',
+  },
+  
+  InfoProfilTitre : {
+    fontSize : '1rem !important', 
+    color : 'rgba(150, 155, 155, 0.87)',
+  }, 
 
   type_msg : {
       borderRadius: 16,
