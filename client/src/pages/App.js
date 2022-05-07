@@ -75,6 +75,17 @@ function App() {
               />;
   };
   
+  const ClassBook = () => {
+    const [image] = useImage('https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/book2.png');
+    return <Image image={image} width={window.innerHeight*0.10} 
+              height={window.innerHeight*0.10} 
+              x={window.innerHeight*0.14} 
+              y={window.innerHeight*0.81}
+              onClick={handleOpenRecipes}
+              style="cursor: pointer;"
+              />;
+  };
+
   const Test = () => {
     currentLevelData = Level2;
   }
@@ -118,6 +129,7 @@ function App() {
           </Layer>
           <Layer>
             <RecipeBook />
+            <ClassBook />
             { currentLevelData.map(items => <LoadItem elem={items}/>)}              
           </Layer>
         </Stage>
