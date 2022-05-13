@@ -89,7 +89,7 @@ function SignInside() {
       </Grid>
       <Grid item xs={12} sm={4} component={Paper} elevation={6} square>
         <div className={classes.paper}>
-          <h1> Dessine Moi Un Mouton</h1>
+          <h1> La recette Linux</h1>
           <Avatar id="logo" className={classes.medium} src={logo} sx={{height:15, width:15}} alt="My logo" />
           <ValidationTextField
            className = {classes.form}

@@ -3,8 +3,9 @@ import { Button, CssBaseline } from '@material-ui/core';
 import MenuAppBar from '../components/Header';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Activity from '../components/ModalActivity';
+import Activity, {loadQuestionData} from '../components/ModalActivity';
 import DisplayRecipe from '../components/ModalRecipe';
+import DisplayClass from '../components/ModalClass';
 import Typography from '@mui/material/Typography';
 import { Image, Layer, Stage } from 'react-konva';
 import useImage from 'use-image';
@@ -41,12 +42,16 @@ function App() {
   ChangeThemeApp();
 
   const [openModalActivity, setOpenActivity] = useState(false);
-  const handleOpenActivity = () => { setOpenActivity(true); };
+  const handleOpenActivity = (elem) => { loadQuestionData(elem) ; setOpenActivity(true); };
   const handleCloseActivity = () => { setOpenActivity(false); };
   
   const [openModalRecipes, setOpenRecipes] = useState(false);
   const handleOpenRecipes = () => { setOpenRecipes(true); };
   const handleCloseRecipes = () => { setOpenRecipes(false); };
+
+  const [openModalClass, setOpenClass] = useState(false);
+  const handleOpenClass = () => { setOpenClass(true); };
+  const handleCloseClass = () => { setOpenClass(false); };
 
   const BackgroundImage = () => {
     const [image] = useImage('https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/Kitchen.png');
@@ -59,7 +64,7 @@ function App() {
               height={window.innerHeight*elem.Height} 
               x={window.innerHeight*elem.PosX} 
               y={window.innerHeight*elem.PosY}
-              onClick={handleOpenActivity}
+              onClick={() => handleOpenActivity(elem.Nom)}
               style="cursor: pointer;"
               />;
   };
@@ -81,7 +86,7 @@ function App() {
               height={window.innerHeight*0.10} 
               x={window.innerHeight*0.14} 
               y={window.innerHeight*0.81}
-              onClick={handleOpenRecipes}
+              onClick={handleOpenClass}
               style="cursor: pointer;"
               />;
   };
@@ -100,7 +105,7 @@ function App() {
           onClose={handleCloseActivity}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
-          className={classes.modal}
+          className={classes.modalQuizz}
         >
           <Box  className={classes.modal2}>
             <Activity/>
@@ -108,33 +113,47 @@ function App() {
           </Box>
         </Modal>
       </div>
-      <div justifyContent="center" >
-      <Modal
-          open={openModalRecipes}
-          onClose={handleCloseRecipes}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-          className={classes.modal}
-        >
-          <Box  className={classes.modal2}>
-            <DisplayRecipe/>
-            <Button onClick={handleCloseRecipes} className={classes.BtnMots}> Fermer le livre de recettes </Button>
-          </Box>
-        </Modal>
+      <div justifyContent="flex-start">
+        <Modal
+            open={openModalRecipes}
+            onClose={handleCloseRecipes}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+            className={classes.modalBook}
+          >
+            <Box  className={classes.modal2}>
+              <DisplayRecipe/>
+              <Button onClick={handleCloseRecipes} className={classes.BtnMots}> Fermer le livre de recettes </Button>
+            </Box>
+          </Modal>
       </div>
-      <div className={classes.center}>
-        <Stage width={window.innerHeight} height={window.innerHeight * 0.95} styles="border-color: black">
-          <Layer>
-            <BackgroundImage/>
-          </Layer>
-          <Layer>
-            <RecipeBook />
-            <ClassBook />
-            { currentLevelData.map(items => <LoadItem elem={items}/>)}              
-          </Layer>
-        </Stage>
+      <div justifyContent="flex-start">
+        <Modal
+            open={openModalClass}
+            onClose={handleCloseClass}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+            className={classes.modalBook}
+          >
+            <Box  className={classes.modal2}>
+              <DisplayClass/>
+              <Button onClick={handleCloseClass} className={classes.BtnMots}> Fermer le livre de cours </Button>
+            </Box>
+          </Modal>
+        </div>
+        <div className={classes.center}>
+          <Stage width={window.innerHeight} height={window.innerHeight * 0.95} styles="border-color: black">
+            <Layer>
+              <BackgroundImage/>
+            </Layer>
+            <Layer>
+              <RecipeBook />
+              <ClassBook />
+              { currentLevelData.map(items => <LoadItem elem={items}/>)}              
+            </Layer>
+          </Stage>
 
-      </div>
+        </div>
     </div>
   );
 }

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Card from '@mui/material/Card';
 import { Button, CssBaseline } from '@material-ui/core';
 import MenuAppBar from '../components/Header';
 import { GetPlayer } from '../index';
+import Modal from '@mui/material/Modal';
+import {setApp} from '../index';
 import { Row, Column, Item } from '@mui-treasury/components/flex';
 import {
   Info,
@@ -17,6 +19,7 @@ import {Recette} from '../BDD/Recette.json';
 //CSS
 import { useStylesDark, useStylesLight } from '../css/ProfilStyle';
 import { getTheme } from '../theme';
+import cross from '../assets/cross.png';
 
 export const PersonItem = ({ src, name, score}) => {
   return (
@@ -61,16 +64,26 @@ function Profil() {
   dark = useStylesDark();
   ChangeThemeProfil();
 
-  
   let player = GetPlayer();
   let name = player.pseudos;
   let src = player.avatar;
   let score = player.score;
 
+  const [openModalProfil, setOpenProfil] = useState(true);
+  const handleOpenProfil = (elem) => { setOpenProfil(true); };
+  const handleCloseProfil = () => { setOpenProfil(false); setApp(); };
+
   return (
     <div className={classes.root}>
       <CssBaseline />
       <MenuAppBar />
+      <Modal
+        open={openModalProfil}
+        onClose={handleCloseProfil}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        className={classes.modalQuizz}
+      >
       <Column p={0} gap={2} className={classes.modal}>
           <Row >
             <Item>
@@ -84,24 +97,10 @@ function Profil() {
               <InfoTitle >{name}</InfoTitle>
               <InfoSubtitle>{score}</InfoSubtitle>
             </Info>
+            <Button onClick={handleCloseProfil}><img src={cross} alt="Close" height="40vh" /></Button>
           </Row>
-          { Recette.map(elem =>
-          <Row mt={2}>
-            <Item>
-              <Avatar
-                variant={'rounded'}
-                classes={avatarStyles}
-                src={elem.IlluRecette}
-              />
-            </Item>
-            <Info useStyles={useD01InfoStyles}>
-              <InfoTitle>{elem.NomRecette}</InfoTitle>
-             {elem.Ingredients.map(ingr => 
-              <InfoSubtitle>{ingr.nb} {ingr.Ingredient}</InfoSubtitle>
-              )}
-            </Info>
-          </Row>)}
         </Column>
+        </Modal>
     </div>
     );
   }

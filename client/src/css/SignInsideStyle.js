@@ -91,12 +91,12 @@ export const useStylesLight = makeStyles((theme) => ({
       },
     },
     medium: {
-      width: '30vh',
-      height: '30vh',
+      width: '25vw',
+      height: '25vw',
     },
     large: {
-      width: '23%',
-      height: '80%',
+      width: '13vw',
+      height: '13vw',
     },
 
     copyright: {

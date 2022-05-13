@@ -56,17 +56,6 @@ export const useStylesLight = makeStyles((theme) => ({
     width: "100%",
   },
 
-  couleurs: {
-    margin: theme.spacing(8, 0),
-    borderRadius: 15,
-    width: '5.5vh',
-    height:'65vh',
-    border: '3px solid black',
-    background:'#222',
-    borderRadius: 5,
-    padding:'1vh',
-  },
-
   avatar: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main,
@@ -169,21 +158,39 @@ export const useStylesLight = makeStyles((theme) => ({
       height: '80%',
     },
 
-  modal: {
-    width: '55%',
-    height: '80%',
-    flexGrow: 1,
-    minWidth: 250,
-    display: 'flex',
-    padding: '10vh',
-    alignItems: 'center',
-    justifyContent: 'center',
-    boxShadow: '0 8px 16px 0 #BDC9D7',
-    background:'rgba(240, 240, 240, 0.98)',
-    borderRadius: 16,
-    position: 'absolute',
-    transform: 'translate(48%, 15%)'
-  },
+    modalQuizz: {
+      width: '50%',
+      height: '80%',
+      flexGrow: 1,
+      minWidth: 250,
+      display: 'flex',
+      padding: '10vh',
+      alignItems: 'center',
+      justifyContent: 'center',
+      boxShadow: '0 8px 16px 0 #BDC9D7',
+      background:'rgba(240, 240, 240, 0.98)',
+      borderRadius: 16,
+      position: 'absolute',
+      transform: 'translate(48%, 15%)',
+    },
+  
+    modalBook: {
+      width: '23%',
+      height: '80%',
+      flexGrow: 1,
+      minWidth: 250,
+      display: 'flex',
+      padding: '3vh',
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      boxShadow: '0 8px 16px 0 #BDC9D7',
+      background:'rgba(240, 240, 240, 0.98)',
+      color: 'white',
+      borderRadius: 16,
+      position: 'absolute',
+      transform: 'translate(5%, 15%)',
+    },
+  
 
   type_msg : {
       borderRadius: 16,
@@ -273,17 +280,6 @@ export const useStylesDark = makeStyles((theme) => ({
 
   drawbox:{
     width: "100%",
-  },
-
-  couleurs: {
-    margin: theme.spacing(8, 0),
-    borderRadius: 15,
-    width: '5.5vh',
-    height:'65vh',
-    border: '3px solid black',
-    background:'#222',
-    borderRadius: 5,
-    padding:'1vh',
   },
 
   avatar: {
@@ -389,7 +385,7 @@ export const useStylesDark = makeStyles((theme) => ({
       height: '80%',
     },
 
-  modal: {
+  modalQuizz: {
     width: '50%',
     height: '80%',
     flexGrow: 1,
@@ -406,6 +402,22 @@ export const useStylesDark = makeStyles((theme) => ({
     transform: 'translate(48%, 15%)',
   },
 
+  modalBook: {
+    width: '23%',
+    height: '80%',
+    flexGrow: 1,
+    minWidth: 250,
+    display: 'flex',
+    padding: '3vh',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    boxShadow: '0 8px 16px 0 #BDC9D7',
+    background:'rgba(40, 40, 160, 0.99)',
+    color: 'white',
+    borderRadius: 16,
+    position: 'absolute',
+    transform: 'translate(5%, 15%)',
+  },
 
   type_msg : {
       borderRadius: 16,
@@ -429,7 +441,7 @@ export const useStylesDark = makeStyles((theme) => ({
     justifyContent: 'center',
     borderRadius: 6,
     border: 0,
-    width: '25vw',
+    width: '50%',
     height: '5vh',
     margin : '5vh',
     boxShadow: '0 3px 5px 2px rgba(155, 235, 135, 0.3)',

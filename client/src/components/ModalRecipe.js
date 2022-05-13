@@ -1,22 +1,12 @@
-import React, { useState } from 'react';
-import { Button, CssBaseline } from '@material-ui/core';
-import { Row, Column, Item } from '@mui-treasury/components/flex';
 import Avatar from '@material-ui/core/Avatar';
-import MenuAppBar from '../components/Header';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import Typography from '@mui/material/Typography';
-import { Image, Layer, Stage } from 'react-konva';
-import useImage from 'use-image';
+import { Column, Item, Row } from '@mui-treasury/components/flex';
 import {
-    Info,
-    InfoTitle,
-    InfoSubtitle,
-    InfoCaption,
-  } from '@mui-treasury/components/info';
-  import { useDynamicAvatarStyles } from '@mui-treasury/styles/avatar/dynamic';
-  import { useD01InfoStyles } from '@mui-treasury/styles/info/d01';
-  import {Recette} from '../BDD/Recette.json';
+  Info, InfoSubtitle, InfoTitle
+} from '@mui-treasury/components/info';
+import { useDynamicAvatarStyles } from '@mui-treasury/styles/avatar/dynamic';
+import { useD01InfoStyles } from '@mui-treasury/styles/info/d01';
+import React from 'react';
+import { Recette } from '../BDD/Recette.json';
 //CSS
 import '../css/App.css';
 import { useStylesDark, useStylesLight } from '../css/ProfilStyle';

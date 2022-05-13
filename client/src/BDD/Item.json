@@ -25,11 +25,25 @@
     ], 
     "Level2":[
         {
-            "Nom":"Avocado",
-            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/avocado.png",
+            "Nom":"Strawberry",
+            "Image": "https://github.com/Chocoluna/RecetteLinux/blob/main/client/src/assets/fraise.png",
             "PosX":"0.66",
             "PosY":"0.74",
             "Height":"0.05"
+        },
+        {
+            "Nom":"Sugar",
+            "Image": "https://github.com/Chocoluna/RecetteLinux/blob/main/client/src/assets/sugar.png",
+            "PosX":"0.66",
+            "PosY":"0.74",
+            "Height":"0.05"
+        },
+        {
+            "Nom":"Lemon",
+            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/citron.png",
+            "PosX":"0.26",
+            "PosY":"0.54",
+            "Height":"0.04"
         }
     ]
 }
