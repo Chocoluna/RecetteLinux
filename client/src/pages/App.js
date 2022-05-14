@@ -14,6 +14,7 @@ import {Level1, Level2} from '../BDD/Item.json';
 import '../css/App.css';
 import { useStylesDark, useStylesLight } from '../css/AppStyle';
 import { getTheme } from '../theme';
+import cross from '../assets/cross.png';
 
 
 export function ChangeThemeApp(){
@@ -99,7 +100,7 @@ function App() {
     <div className={classes.root}>
       <CssBaseline />
       <MenuAppBar />
-      <div justifyContent= "center">
+      <div>
         <Modal
           open={openModalActivity}
           onClose={handleCloseActivity}
@@ -107,13 +108,13 @@ function App() {
           aria-describedby="modal-modal-description"
           className={classes.modalQuizz}
         >
-          <Box  className={classes.modal2}>
+          <Box >
+            <Button onClick={handleCloseActivity} className={classes.buttonClose}><img src={cross} alt="Close" height="40vh" /></Button>
             <Activity/>
-            <Button onClick={handleCloseActivity} className={classes.BtnMots}> Valider mes réponses </Button>
           </Box>
         </Modal>
       </div>
-      <div justifyContent="flex-start">
+      <div>
         <Modal
             open={openModalRecipes}
             onClose={handleCloseRecipes}
@@ -121,9 +122,9 @@ function App() {
             aria-describedby="modal-modal-description"
             className={classes.modalBook}
           >
-            <Box  className={classes.modal2}>
+            <Box >
+              <Button onClick={handleCloseRecipes} className={classes.buttonClose}><img src={cross} alt="Close" height="40vh" /></Button>
               <DisplayRecipe/>
-              <Button onClick={handleCloseRecipes} className={classes.BtnMots}> Fermer le livre de recettes </Button>
             </Box>
           </Modal>
       </div>
@@ -135,9 +136,9 @@ function App() {
             aria-describedby="modal-modal-description"
             className={classes.modalBook}
           >
-            <Box  className={classes.modal2}>
+            <Box>
+              <Button onClick={handleCloseClass} className={classes.buttonClose}><img src={cross} alt="Close" height="40vh" /></Button>
               <DisplayClass/>
-              <Button onClick={handleCloseClass} className={classes.BtnMots}> Fermer le livre de cours </Button>
             </Box>
           </Modal>
         </div>

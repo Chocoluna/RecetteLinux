@@ -8,7 +8,6 @@ import RadioGroup from '@mui/material/RadioGroup';
 import * as React from 'react';
 import {Quizzfacile} from '../BDD/Questions.json';
 //CSS
-import '../css/App.css';
 import { useStylesDark, useStylesLight } from '../css/AppStyle';
 import { getTheme } from '../theme';
 
@@ -78,22 +77,22 @@ export function Activity(){
     };
 
     return(
-      <form onSubmit={handleSubmit}>
-        <FormControl sx={{ m: 3 }} error={error} variant="standard">
-          <FormLabel id="demo-error-radios">{text}</FormLabel>
+      <form onSubmit={handleSubmit} >
+        <FormControl sx={{m: 3}} error={error} variant="standard">
+          <FormLabel id="demo-error-radios" className={classes.inModal}>{text}</FormLabel>
           <RadioGroup
             aria-labelledby="demo-error-radios"
             name="quiz"
             value={value}
             onChange={handleRadioChange}
           >
-            <FormControlLabel value="best" control={<Radio />} label={rep} />
-            <FormControlLabel value="worst" control={<Radio />} label={prop1} />
-            <FormControlLabel value="bad" control={<Radio />} label={prop2} />
+            <FormControlLabel value="best" control={<Radio className={classes.inModal} />} label={rep} />
+            <FormControlLabel value="worst" control={<Radio className={classes.inModal} />} label={prop1} />
+            <FormControlLabel value="bad" control={<Radio className={classes.inModal} />} label={prop2} />
           </RadioGroup>
           <FormHelperText>{helperText}</FormHelperText>
-          <Button sx={{ mt: 1, mr: 1 }} type="submit" variant="outlined">
-            Check Answer
+          <Button className={classes.BtnMots} type="submit" variant="outlined">
+            Valider mes réponses
           </Button>
         </FormControl>
       </form>

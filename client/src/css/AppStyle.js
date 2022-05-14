@@ -44,17 +44,6 @@ export const useStylesLight = makeStyles((theme) => ({
     alignItems: 'center',
   },
 
-  canvas: {
-    backgroundColor: 'rgb(255, 255, 255)',
-    background: 'white',
-    borderRadius: 15,
-    display: 'flex',
-
-  },
-
-  drawbox:{
-    width: "100%",
-  },
 
   avatar: {
     margin: theme.spacing(1),
@@ -71,63 +60,6 @@ export const useStylesLight = makeStyles((theme) => ({
   header: {
     fontFamily: 'Barlow, san-serif',
     backgroundColor: '#fff',
-  },
-
-  cardjoueur: {
-    width: '100%',
-    height: '75%',
-    borderRadius: 16,
-    boxShadow: '0 8px 16px 0 #BDC9D7',
-    overflow: 'hidden',
-    fontSize: '1.5rem',
-    fontWeight: 600,
-    flexWrap: 'wrap',
-    margin : theme.spacing (8, 2),
-    background:'rgba(240, 160, 240, 0.30)',
-  },
-
-  cardchat: {
-    margin: theme.spacing(8, 2),
-    width: '90%',
-    height: '80%',
-    borderRadius: 16,
-    display: 'flex',
-    flexDirection: 'column',
-    boxShadow: '0 8px 16px 0 #BDC9D7',
-    overflow: 'hidden',
-    background:'rgba(240, 160, 240, 0.30)',
-    overflow: 'auto',
-    fontSize: '1.25rem',
-    fontWeight: 450,
-  },
-
-  chatbox: {
-    margin: theme.spacing(1),
-    width: '97%',
-    height: '70vh',
-    display: 'flex',
-    flexDirection: 'column',
-    fontSize: '1.25rem',
-    fontWeight: 400,
-    position: 'relative',
-    overflow: 'auto',
-    '&:hover': {
-      overflowY: 'auto',
-    },
-  },
-
-  styleB: {
-      color: 'white',
-      fontSize: '150%',
-      borderRadius: 15,
-      textAlign: 'center',
-      width: '5.5vh',
-      height:'5.5vh',
-      border: '3px solid black',
-      background:'#222',
-      borderRadius: 5,
-      marginTop: '0.5vh',
-      marginLeft: '1vh',
   },
 
   tresgrand: {
@@ -164,7 +96,6 @@ export const useStylesLight = makeStyles((theme) => ({
       flexGrow: 1,
       minWidth: 250,
       display: 'flex',
-      padding: '10vh',
       alignItems: 'center',
       justifyContent: 'center',
       boxShadow: '0 8px 16px 0 #BDC9D7',
@@ -173,6 +104,11 @@ export const useStylesLight = makeStyles((theme) => ({
       position: 'absolute',
       transform: 'translate(48%, 15%)',
     },
+
+    inModal:{
+      margin: 3,
+      color:'black'
+    },
   
     modalBook: {
       width: '23%',
@@ -180,7 +116,6 @@ export const useStylesLight = makeStyles((theme) => ({
       flexGrow: 1,
       minWidth: 250,
       display: 'flex',
-      padding: '3vh',
       alignItems: 'center',
       justifyContent: 'flex-start',
       boxShadow: '0 8px 16px 0 #BDC9D7',
@@ -191,20 +126,10 @@ export const useStylesLight = makeStyles((theme) => ({
       transform: 'translate(5%, 15%)',
     },
   
-
-  type_msg : {
-      borderRadius: 16,
-      background:'#222',
-      color: "white",
-      width : "90%",
-      height: "4vh",
-  },
-
-  send_btn : {
-      borderRadius: 16,
-      background:'#222',
-      color: "white",
-      width : "4vh",
+  buttonClose : {
+    position:'absolute',
+    top: 0,
+    right:0
   },
 
   BtnMots : {
@@ -214,17 +139,10 @@ export const useStylesLight = makeStyles((theme) => ({
     justifyContent: 'center',
     borderRadius: 6,
     border: 0,
-    width: '25vw',
-    height: '5vh',
-    margin : '5vh',
+    width: '100%',
+    height: '50px',
     boxShadow: '0 3px 5px 2px rgba(155, 235, 135, 0.3)',
   },
-
-  motChoisi : {
-    fontSize: '120%',
-    fontWeight: 600,
-    margin: theme.spacing('auto', 1),
-  }
 
 }));
 /*
@@ -271,16 +189,6 @@ export const useStylesDark = makeStyles((theme) => ({
     alignItems: 'center',
   },
 
-  canvas: {
-    backgroundColor: 'rgb(255, 255, 255)',
-    background: 'white',
-    borderRadius: 15,
-    display: 'flex',
-  },
-
-  drawbox:{
-    width: "100%",
-  },
 
   avatar: {
     margin: theme.spacing(1),
@@ -299,63 +207,6 @@ export const useStylesDark = makeStyles((theme) => ({
     backgroundColor: '#fff',
   },
 
-  cardjoueur: {
-    width: '100%',
-    height: '75%',
-    borderRadius: 16,
-    boxShadow: '0 8px 16px 0 #BDC9D7',
-    overflow: 'hidden',
-    fontSize: '1.5rem',
-    fontWeight: 600,
-    flexWrap: 'wrap',
-    margin : theme.spacing (8, 2),
-    background:'rgba(74, 20, 140, 0.50)',
-    color: '#FFFFFF',
-
-  },
-
-  cardchat: {
-    margin: theme.spacing(8, 2),
-    width: '90%',
-    height: '80%',
-    borderRadius: 16,
-    display: 'flex',
-    flexDirection: 'column',
-    boxShadow: '0 8px 16px 0 #BDC9D7',
-    overflow: 'hidden',
-    background:'rgba(74, 20, 140, 0.50)',
-    overflow: 'auto',
-    fontSize: '1.25rem',
-    fontWeight: 400,
-    color: '#FFFFFF',
-  },
-
-  chatbox: {
-    margin: theme.spacing(1),
-    width: '97%',
-    height: '70vh',
-    display: 'flex',
-    flexDirection: 'column',
-    fontSize: '1.25rem',
-    fontWeight: 400,
-    position: 'relative',
-    overflow: 'auto',
-    '&:hover': {
-      overflowY: 'auto',
-    },
-  },
-
-  styleB: {
-      color: 'white',
-      fontSize: '150%',
-      borderRadius: 15,
-      textAlign: 'bottom',
-      width: '5.5vh',
-      height:'5.5vh',
-      border: '3px solid green',
-      background:'#222',
-      borderRadius: 5,
-  },
 
   tresgrand: {
     fontSize: '150%',
@@ -391,7 +242,6 @@ export const useStylesDark = makeStyles((theme) => ({
     flexGrow: 1,
     minWidth: 250,
     display: 'flex',
-    padding: '10vh',
     alignItems: 'center',
     justifyContent: 'center',
     boxShadow: '0 8px 16px 0 #BDC9D7',
@@ -400,6 +250,12 @@ export const useStylesDark = makeStyles((theme) => ({
     borderRadius: 16,
     position: 'absolute',
     transform: 'translate(48%, 15%)',
+  },
+
+  inModal:{
+    color: 'white !important',
+    fontColor:'white',
+    margin: 3,
   },
 
   modalBook: {
@@ -419,19 +275,10 @@ export const useStylesDark = makeStyles((theme) => ({
     transform: 'translate(5%, 15%)',
   },
 
-  type_msg : {
-      borderRadius: 16,
-      background:'#222',
-      color: "white",
-      width : "90%",
-      height: "4vh",
-  },
-
-  send_btn : {
-      borderRadius: 16,
-      background:'#222',
-      color: "white",
-      width : "4vh",
+  buttonClose : {
+    position:'absolute',
+    top: '0',
+    right:'0'
   },
 
   BtnMots : {
@@ -441,17 +288,9 @@ export const useStylesDark = makeStyles((theme) => ({
     justifyContent: 'center',
     borderRadius: 6,
     border: 0,
-    width: '50%',
-    height: '5vh',
-    margin : '5vh',
+    width: '100%',
+    height: '50px',
     boxShadow: '0 3px 5px 2px rgba(155, 235, 135, 0.3)',
-  },
-
-  motChoisi : {
-    fontSize: '120%',
-    fontWeight: 600,
-    color: '#FFFFFF',
-    margin: theme.spacing('auto', 1),
   },
 
 }));
