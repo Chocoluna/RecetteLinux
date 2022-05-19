@@ -1,14 +1,14 @@
 {
     "Level1":[
         {
-            "Nom":"Avocado",
+            "Nom":"Avocat",
             "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/avocado.png",
             "PosX":"0.26",
             "PosY":"0.54",
             "Height":"0.05"
         },
         {
-            "Nom":"Lemon",
+            "Nom":"Citron",
             "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/citron.png",
             "PosX":"0.87",
             "PosY":"0.34",
@@ -25,21 +25,21 @@
     ], 
     "Level2":[
         {
-            "Nom":"Strawberry",
+            "Nom":"Fraise",
             "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/fraise.png",
             "PosX":"0.53",
             "PosY":"0.18",
             "Height":"0.03"
         },
         {
-            "Nom":"Sugar",
+            "Nom":"Sucre",
             "Image": "https://github.com/Chocoluna/RecetteLinux/blob/main/client/src/assets/sugar.png",
             "PosX":"0.59",
             "PosY":"0.12",
             "Height":"0.07"
         },
         {
-            "Nom":"Lemon",
+            "Nom":"Citron",
             "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/citron.png",
             "PosX":"0.34",
             "PosY":"0.23",
@@ -48,42 +48,42 @@
     ],
     "Level3":[
         {
-            "Nom":"Eggs",
+            "Nom":"Oeufs",
             "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/des-oeufs.png",
             "PosX":"0.27",
             "PosY":"0.07",
             "Height":"0.1"
         },
         {
-            "Nom":"Sugar",
+            "Nom":"Sucre",
             "Image": "https://github.com/Chocoluna/RecetteLinux/blob/main/client/src/assets/sugar.png",
             "PosX":"0.59",
             "PosY":"0.12",
             "Height":"0.07"
         },
         {
-            "Nom":"Flour",
+            "Nom":"Farine",
             "Image":"https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/flour.png",
             "PosX":"0.65",
             "PosY":"0.12",
             "Height":"0.07"
         },
         {
-            "Nom":"Chocolate",
+            "Nom":"Chocolat",
             "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/chocolate-bar.png",
             "PosX":"0.03",
             "PosY":"0.522",
             "Height":"0.07"
         },
         {
-            "Nom":"Butter",
+            "Nom":"Beurre",
             "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/beurre.png",
             "PosX":"0.62",
             "PosY":"0.72",
             "Height":"0.08"
         },
         {
-            "Nom":"Milk",
+            "Nom":"Lait",
             "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/milk-carton.png",
             "PosX":"0.28",
             "PosY":"0.50",

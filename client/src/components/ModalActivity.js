@@ -7,7 +7,7 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import * as React from 'react';
 import {Quizzfacile} from '../BDD/Questions.json';
-import {Recette} from '../BDD/Recette.json';
+import { GetRecette, SetRecette } from '../index';
 //CSS
 import { useStylesDark, useStylesLight } from '../css/AppStyle';
 import { getTheme } from '../theme';
@@ -34,6 +34,7 @@ export function ChangeThemeModalActivity(){
   let rep;
   let prop1;
   let prop2;
+  let nomIngredient = "";
   
 export function loadQuestionData(nomIngr){
   console.log(nomIngr)
@@ -44,8 +45,23 @@ export function loadQuestionData(nomIngr){
     rep = question.rep
     prop1 = question.prop1
     prop2 = question.prop2
+    nomIngredient = nomIngr
 }
 
+export function addIngredient(nomIngr){
+  console.log(nomIngr);
+  let recettes = GetRecette();
+  recettes.forEach(recette => {
+    let tmp = recette.Ingredients.find(x => x.Ingredient === nomIngr);
+    if(tmp){
+      console.log(tmp);
+      tmp.nb++;
+      console.log(recettes);
+    }
+  });
+  SetRecette(recettes);  
+}
+//Recette[0].Ingredients[1].nb
 
 export function Activity(){
     light = useStylesLight();
@@ -68,7 +84,8 @@ export function Activity(){
       if (value === 'best') {
         setHelperText('You got it!');
         setError(false);
-//     Recette.Ingredient.find(x => x.name === nomIngr).nb;
+        addIngredient(nomIngredient);
+
       } else if ((value === 'worst')||(value === 'bad')) {
         setHelperText('Sorry, wrong answer!');
         setError(true);

@@ -1,14 +1,14 @@
 {
     "Quizzfacile": [
         {
-            "name": "Avocado",
+            "name": "Avocat",
             "text": "les avocat d'ou ?",
             "rep": "mexique",
             "prop1": "japon",
             "prop2": "france"
         },
         {
-            "name": "Lemon",
+            "name": "Citron",
             "text": "les carotte d'ou ?",
             "rep": "mexique",
             "prop1": "japon",
@@ -24,7 +24,7 @@
     ],
     "Quizzmoyen": [
         {
-            "name": "Sugar",
+            "name": "Sucre",
             "text": "Dans quel dossier partager un document avec les élèves pour qu'ils travaillent dessus?",
             "rep": "Professeurs",
             "prop1": "Scan",

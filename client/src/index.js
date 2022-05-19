@@ -8,14 +8,13 @@ import Profil from './pages/Profil';
 import {Recette} from './BDD/Recette.json';
 
 var etatjeu;
+let recette = Recette;
 
 var player = {
   pseudos: "",
   avatar: null,
   score: 0,
 };
-
-console.log(Recette);
 
 /*
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -79,6 +78,16 @@ export function GetPlayer(){
 //Retourne l'état du jeu
 export function Getetat(){
   return etatjeu;
+}
+
+//Modifie le tableau de recettes
+export function SetRecette(recetteInfo){
+  recette = recetteInfo;
+}
+
+//Retourne le tableau de recette
+export function GetRecette(){
+  return recette;
 }
 
 ////////////////////////////////////////////////////////////

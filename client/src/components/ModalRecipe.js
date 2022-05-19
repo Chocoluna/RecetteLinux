@@ -6,7 +6,7 @@ import {
 import { useDynamicAvatarStyles } from '@mui-treasury/styles/avatar/dynamic';
 import { useD01InfoStyles } from '@mui-treasury/styles/info/d01';
 import React from 'react';
-import { Recette } from '../BDD/Recette.json';
+import { GetRecette } from '../index';
 //CSS
 import '../css/App.css';
 import { useStylesDark, useStylesLight } from '../css/ProfilStyle';
@@ -36,9 +36,11 @@ function DisplayRecipe(){
     dark = useStylesDark();
     ChangeThemeModalRecipe();
 
+    let recette = GetRecette();
+
     return (
         <Column p={0} gap={2} >
-            { Recette.map(elem =>
+            { recette.map(elem =>
             <Row mt={2}>
             <Item>
                 <Avatar
@@ -50,7 +52,7 @@ function DisplayRecipe(){
             <Info useStyles={useD01InfoStyles}>
                 <InfoTitle>{elem.NomRecette}</InfoTitle>
                 {elem.Ingredients.map(ingr => 
-                <InfoSubtitle>{ingr.nb} {ingr.Ingredient}</InfoSubtitle>
+                <InfoSubtitle>{ingr.nb} / {ingr.nbTotal} {ingr.Ingredient}</InfoSubtitle>
                 )}
             </Info>
             </Row>)}
