@@ -1,43 +1,19 @@
-import React, {useState} from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Card from '@mui/material/Card';
 import { Button, CssBaseline } from '@material-ui/core';
-import MenuAppBar from '../components/Header';
-import { GetPlayer } from '../index';
-import Modal from '@mui/material/Modal';
-import {setApp} from '../index';
-import { Row, Column, Item } from '@mui-treasury/components/flex';
+import Avatar from '@material-ui/core/Avatar';
+import { Column, Item, Row } from '@mui-treasury/components/flex';
 import {
-  Info,
-  InfoTitle,
-  InfoSubtitle,
-  InfoCaption,
+  Info, InfoSubtitle, InfoTitle
 } from '@mui-treasury/components/info';
 import { useDynamicAvatarStyles } from '@mui-treasury/styles/avatar/dynamic';
 import { useD01InfoStyles } from '@mui-treasury/styles/info/d01';
-import {Recette} from '../BDD/Recette.json';
+import Modal from '@mui/material/Modal';
+import React, { useState } from 'react';
+import cross from '../assets/cross.png';
+import MenuAppBar from '../components/Header';
 //CSS
 import { useStylesDark, useStylesLight } from '../css/ProfilStyle';
+import { GetPlayer, setApp } from '../index';
 import { getTheme } from '../theme';
-import cross from '../assets/cross.png';
-
-export const PersonItem = ({ src, name, score}) => {
-  return (
-    <Row gap={1} p={1}>
-      <Item>
-        <Avatar src={src} />
-      </Item>
-      <Row wrap grow gap={0.5} minWidth={0}>
-        <Item grow minWidth={0}>
-          <div>{name}</div>
-        </Item>
-        <Item>
-          <div>{score}</div>
-        </Item>
-      </Row>
-    </Row>
-  );
-};
 
 export function ChangeThemeProfil(){
   var theme = getTheme();

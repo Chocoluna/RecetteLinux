@@ -1,11 +1,13 @@
+import { Avatar } from '@material-ui/core';
+import { Item, Row } from '@mui-treasury/components/flex';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Recette } from './BDD/Recette.json';
 import './css/index.css';
 import App from './pages/App';
+import Profil from './pages/Profil';
 import SignInside from './pages/SignInside';
 import reportWebVitals from './reportWebVitals';
-import Profil from './pages/Profil';
-import {Recette} from './BDD/Recette.json';
 
 var etatjeu;
 let recette = Recette;
@@ -16,13 +18,23 @@ var player = {
   score: 0,
 };
 
-/*
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <SignInside/>
-  </React.StrictMode>
-);*/
+export const PersonItem = ({ src, name, score}) => {
+  return (
+    <Row gap={1} p={1}>
+      <Item>
+        <Avatar src={src} />
+      </Item>
+      <Row wrap grow gap={0.5} minWidth={0}>
+        <Item grow minWidth={0}>
+          <div>{name}</div>
+        </Item>
+        <Item>
+          <div>{score}</div>
+        </Item>
+      </Row>
+    </Row>
+  );
+};
 
 
 ////////////////////////////////////////////////////////////

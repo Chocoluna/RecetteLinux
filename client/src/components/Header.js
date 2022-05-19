@@ -8,6 +8,7 @@ import { FiMoon, FiSun } from "react-icons/fi";
 import chefhat from '../assets/chef-hat.png';
 import coin from '../assets/coin.png';
 import { GetPlayer, SetSignInSide } from '../index';
+import { PersonItem } from '../index';
 import { setTheme } from '../theme';
 
 const useStyles = makeStyles((theme) => ({
@@ -39,24 +40,6 @@ const useStyles = makeStyles((theme) => ({
   },
 
 }));
-
-export const PersonItem = ({ src, name, score}) => {
-  return (
-    <Row gap={1} p={1}>
-      <Item>
-        <Avatar src={src} />
-      </Item>
-      <Row wrap grow gap={0.5} minWidth={0}>
-        <Item grow minWidth={0}>
-          <div>{name}</div>
-        </Item>
-        <Item>
-          <div>{score}</div>
-        </Item>
-      </Row>
-    </Row>
-  );
-};
 
 function MenuAppBar() {
   const classes = useStyles();

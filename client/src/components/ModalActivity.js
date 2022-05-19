@@ -7,7 +7,8 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import * as React from 'react';
 import {Quizzfacile} from '../BDD/Questions.json';
-import { GetRecette, SetRecette } from '../index';
+import { GetRecette, SetRecette, GetPlayer, SetPlayer } from '../index';
+import { PersonItem } from '../index';
 //CSS
 import { useStylesDark, useStylesLight } from '../css/AppStyle';
 import { getTheme } from '../theme';
@@ -35,6 +36,7 @@ export function ChangeThemeModalActivity(){
   let prop1;
   let prop2;
   let nomIngredient = "";
+  let newScore = "";
   
 export function loadQuestionData(nomIngr){
   console.log(nomIngr)
@@ -48,20 +50,28 @@ export function loadQuestionData(nomIngr){
     nomIngredient = nomIngr
 }
 
+//incrémente le nombre d'ingrédients gagnés
 export function addIngredient(nomIngr){
   console.log(nomIngr);
   let recettes = GetRecette();
   recettes.forEach(recette => {
     let tmp = recette.Ingredients.find(x => x.Ingredient === nomIngr);
     if(tmp){
-      console.log(tmp);
       tmp.nb++;
-      console.log(recettes);
     }
   });
   SetRecette(recettes);  
 }
-//Recette[0].Ingredients[1].nb
+
+//incrémente le score (=pièces d'or)
+export function addScore(newScore){
+  let player = GetPlayer();
+  let score = player.score;
+  console.log(player.score);
+  player.score = score + 5;
+  console.log(player.score);
+  SetPlayer(player);
+}
 
 export function Activity(){
     light = useStylesLight();
@@ -85,6 +95,7 @@ export function Activity(){
         setHelperText('You got it!');
         setError(false);
         addIngredient(nomIngredient);
+        addScore(newScore);
 
       } else if ((value === 'worst')||(value === 'bad')) {
         setHelperText('Sorry, wrong answer!');
