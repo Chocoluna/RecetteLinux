@@ -3,14 +3,14 @@ Logiciel éducatif pour apprendre à utiliser Mint_Linux
 
 ---------------
 Logique du jeu 
-- [ ] Le joueur récupère les ingrédients (compteur d'ingredients) + pièces d'or
+- [X] Le joueur récupère les ingrédients (compteur d'ingredients) + pièces d'or
 - [ ] Quand le joueur a assez d'ingredients : recette validée
-- [ ] Boite de dialogue apparait et propose de passer au niveau suivant
+- [ ] Boite de dialogue apparait et propose(?) de passer au niveau suivant
 
 --------------
 A faire
 - [X] Formulaire quizz
-- [ ] ingredient++ et PO++ quand réponse juste
+- [X] ingredient++ et PO++ quand réponse juste
 - [ ] affichage cours
 - [ ] Boite de dialogue storytelling début du jeu
 - [ ] ingredients pièges font apparaitre des lutins
