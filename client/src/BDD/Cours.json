@@ -1,14 +1,13 @@
 {
-    "Chapitre1":[
+    "Cours": [
         {
-            "nom":"Les icônes",
-            "contenu":"nbljnqlsjb"
-        }
-    ],
-
-    "Chapitre2":[
+            "titre":"Chapitre 1",
+            "sousTitre":"Les icônes",
+            "contenu":"nbljnqlsjb"            
+        },
         {
-            "nom":"les dossiers",
+            "titre":"Chapitre 2",
+            "sousTitre":"les dossiers",
             "contenu":"sdfsfgfh"
         }
     ]

@@ -116,6 +116,7 @@ export const useStylesLight = makeStyles((theme) => ({
       flexGrow: 1,
       minWidth: 250,
       display: 'flex',
+      padding: '3vh',
       alignItems: 'center',
       justifyContent: 'flex-start',
       boxShadow: '0 8px 16px 0 #BDC9D7',

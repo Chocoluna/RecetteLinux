@@ -21,5 +21,14 @@
             "prop1": "roumanie",
             "prop2": "france"
         }
+    ],
+    "Quizzmoyen": [
+        {
+            "name": "Sugar",
+            "text": "Dans quel dossier partager un document avec les élèves pour qu'ils travaillent dessus?",
+            "rep": "Professeurs",
+            "prop1": "Scan",
+            "prop2": "Elèves"
+        }
     ]
 }

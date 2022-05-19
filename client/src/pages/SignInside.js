@@ -16,7 +16,6 @@ import avatar7 from '../assets/7.jpg';
 import avatar8 from '../assets/8.jpg';
 import logo from '../assets/Mylogo.jpg';
 
-
 var light;
 var dark;
 var classes;
@@ -56,6 +55,8 @@ function SignInside() {
     if((document.getElementById('pseudos').value !== "")){
       player.pseudos = document.getElementById("pseudos").value;
       SetPlayer(player);
+      
+
       setApp();
     }
   }

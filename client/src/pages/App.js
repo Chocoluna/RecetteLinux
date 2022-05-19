@@ -124,6 +124,7 @@ function App() {
           >
             <Box >
               <Button onClick={handleCloseRecipes} className={classes.buttonClose}><img src={cross} alt="Close" height="40vh" /></Button>
+              <Typography>Recettes</Typography>
               <DisplayRecipe/>
             </Box>
           </Modal>
@@ -138,6 +139,7 @@ function App() {
           >
             <Box>
               <Button onClick={handleCloseClass} className={classes.buttonClose}><img src={cross} alt="Close" height="40vh" /></Button>
+              <Typography>Recettes</Typography>
               <DisplayClass/>
             </Box>
           </Modal>

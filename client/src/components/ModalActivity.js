@@ -7,6 +7,7 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import * as React from 'react';
 import {Quizzfacile} from '../BDD/Questions.json';
+import {Recette} from '../BDD/Recette.json';
 //CSS
 import { useStylesDark, useStylesLight } from '../css/AppStyle';
 import { getTheme } from '../theme';
@@ -67,6 +68,7 @@ export function Activity(){
       if (value === 'best') {
         setHelperText('You got it!');
         setError(false);
+//     Recette.Ingredient.find(x => x.name === nomIngr).nb;
       } else if ((value === 'worst')||(value === 'bad')) {
         setHelperText('Sorry, wrong answer!');
         setError(true);

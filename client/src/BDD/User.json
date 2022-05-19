@@ -1,0 +1,76 @@
+{
+    "Users":[
+        {
+            "Pseudo": "Claire",
+            "Avatar": "url",
+            "Score": 0,
+            "TotalIngredients": 0,
+            "Levels" : [
+                {
+                    "Done" : false,
+                    "Ingredients": [
+                        {
+                            "Ingredient": "Avocat",
+                            "nb": 0
+                        },
+                        {
+                            "Ingredient": "Toast",
+                            "nb": 0
+                        },
+                        {
+                            "Ingredient": "Citron",
+                            "nb": 0
+                        }
+                    ]
+                },
+                {
+                    "Done" : false,
+                    "Ingredients": [
+                        {
+                            "Ingredient":"Fraise",
+                            "nb": 0
+                        },
+                        {
+                            "Ingredient":"Citron",
+                            "nb": 0
+                        },
+                        {
+                            "Ingredient":"Sucre",
+                            "nb": 0
+                        }
+                    ]
+                },
+                {
+                    "Done" : false,
+                    "Ingredients":[
+                        {
+                            "Ingredient":"Chocolat",
+                            "nb": 0
+                        },
+                        {
+                            "Ingredient":"Oeufs",
+                            "nb": 0
+                        },
+                        {
+                            "Ingredient":"Beurre",
+                            "nb": 0
+                        },
+                        {
+                            "Ingredient":"Lait",
+                            "nb": 0
+                        },
+                        {
+                            "Ingredient":"Sucre",
+                            "nb": 0
+                        },
+                        {
+                            "Ingredient":"Farine",
+                            "nb": 0
+                        }
+                    ]
+                }
+
+            ]
+        }
+    ]
+}
