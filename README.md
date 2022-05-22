@@ -11,7 +11,7 @@ Logique du jeu
 A faire
 - [X] Formulaire quizz
 - [X] ingredient++ et PO++ quand réponse juste
-- [ ] affichage cours
+- [X] affichage cours
 - [ ] Boite de dialogue storytelling début du jeu
 - [ ] ingredients pièges font apparaitre des lutins
 - [ ] ingrédients "pièges" donnent des bonus

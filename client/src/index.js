@@ -3,6 +3,7 @@ import { Item, Row } from '@mui-treasury/components/flex';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Recette } from './BDD/Recette.json';
+import { Cours } from './BDD/Cours.json';
 import './css/index.css';
 import App from './pages/App';
 import Profil from './pages/Profil';
@@ -11,6 +12,7 @@ import reportWebVitals from './reportWebVitals';
 
 var etatjeu;
 let recette = Recette;
+let cours = Cours;
 
 var player = {
   pseudos: "",
@@ -102,16 +104,27 @@ export function GetRecette(){
   return recette;
 }
 
+//Modifie le tableau de cours
+export function SetCours(coursInfo){
+  cours = coursInfo;
+}
+
+//Retourne le tableau de cours
+export function GetCours(){
+  console.log(cours);
+  return cours;
+}
+
 ////////////////////////////////////////////////////////////
 //             Ecoute sur la touche entrée
 ////////////////////////////////////////////////////////////
-
-/*document.addEventListener('keydown', function(event) {
+/*
+document.addEventListener('keydown', function(event) {
   if ((etatjeu == "sign") && (event.key === 'Enter') && (document.getElementById("pseudos").value != "")){
     player.pseudos = document.getElementById("pseudos").value;
     SetPlayer(player);
-    AddInTab(player);
-    SetWaiting(); 
+    setApp(); 
+ }
 });*/
 
 // If you want to start measuring performance in your app, pass a function

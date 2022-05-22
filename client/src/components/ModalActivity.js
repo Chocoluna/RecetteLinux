@@ -37,6 +37,7 @@ export function ChangeThemeModalActivity(){
   let prop2;
   let nomIngredient = "";
   let newScore = "";
+  let tabQuest = [];
   
 export function loadQuestionData(nomIngr){
   console.log(nomIngr)
@@ -45,9 +46,28 @@ export function loadQuestionData(nomIngr){
   console.log(question)
     text = question.text
     rep = question.rep
-    prop1 = question.prop1
-    prop2 = question.prop2
     nomIngredient = nomIngr
+    tabQuest = []
+    tabQuest.push(question.prop1, question.prop2, question.rep) 
+    tabQuest = shuffle(tabQuest);
+}
+
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
 }
 
 //incrémente le nombre d'ingrédients gagnés
@@ -91,19 +111,16 @@ export function Activity(){
     const handleSubmit = (event) => {
       event.preventDefault();
   
-      if (value === 'best') {
+      if (value === rep) {
         setHelperText('You got it!');
         setError(false);
         addIngredient(nomIngredient);
         addScore(newScore);
 
-      } else if ((value === 'worst')||(value === 'bad')) {
+      } else {
         setHelperText('Sorry, wrong answer!');
         setError(true);
-      } else {
-        setHelperText('Please select an option.');
-        setError(true);
-      }
+      } 
     };
 
     return(
@@ -116,9 +133,9 @@ export function Activity(){
             value={value}
             onChange={handleRadioChange}
           >
-            <FormControlLabel value="best" control={<Radio className={classes.inModal} />} label={rep} />
-            <FormControlLabel value="worst" control={<Radio className={classes.inModal} />} label={prop1} />
-            <FormControlLabel value="bad" control={<Radio className={classes.inModal} />} label={prop2} />
+            { tabQuest.map(elem => 
+              <FormControlLabel value={elem} control={<Radio className={classes.inModal} />} label={elem} />
+              )}
           </RadioGroup>
           <FormHelperText>{helperText}</FormHelperText>
           <Button className={classes.BtnMots} type="submit" variant="outlined">
