@@ -3,13 +3,22 @@ import { Button, CssBaseline } from '@material-ui/core';
 import MenuAppBar from '../components/Header';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Activity, {loadQuestionData} from '../components/ModalActivity';
+import Activity from '../components/ModalActivity';
 import DisplayRecipe from '../components/ModalRecipe';
 import DisplayClass from '../components/ModalClass';
 import Typography from '@mui/material/Typography';
 import { Image, Layer, Stage } from 'react-konva';
 import useImage from 'use-image';
 import {Level1, Level2} from '../BDD/Item.json';
+import { GetRecette, SetRecette, GetPlayer, SetPlayer } from '../index';
+import {Quizzfacile} from '../BDD/Questions.json';
+
+import FormControl from '@mui/material/FormControl';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormLabel from '@mui/material/FormLabel';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
 //CSS
 import '../css/App.css';
 import { useStylesDark, useStylesLight } from '../css/AppStyle';
@@ -36,6 +45,8 @@ let classes;
 let styles;
 let currentLevel = 1;
 let currentLevelData = Level1;
+
+
 
 function App() {
   light = useStylesLight();
@@ -96,6 +107,34 @@ function App() {
     currentLevelData = Level2;
   }
 
+  const [value, setValue] = React.useState('');
+  const [error, setError] = React.useState(false);
+  const [helperText, setHelperText] = React.useState('Choose wisely');
+ 
+  const handleRadioChange = (event) => {
+    setValue((event.target).value);
+    setHelperText(' ');
+    setError(false);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (value === rep) {
+      setError(false);
+      addIngredient(nomIngredient);
+      addScore(newScore);
+      alert("bravo");
+      status = true;
+      console.log(status);
+
+    } else {
+      setError(true);
+      alert("c'est raté");
+    } 
+    handleCloseActivity();
+  };
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -110,7 +149,25 @@ function App() {
         >
           <Box >
             <Button onClick={handleCloseActivity} className={classes.buttonClose}><img src={cross} alt="Close" height="40vh" /></Button>
-            <Activity/>
+            <form onSubmit={handleSubmit} >
+              <FormControl sx={{m: 3}} error={error} variant="standard">
+                <FormLabel id="demo-error-radios" className={classes.inModal}>{text}</FormLabel>
+                <RadioGroup
+                  aria-labelledby="demo-error-radios"
+                  name="quiz"
+                  value={value}
+                  onChange={handleRadioChange}
+                >
+                  { tabQuest.map(elem => 
+                    <FormControlLabel value={elem} control={<Radio className={classes.inModal} />} label={elem} />
+                    )}
+                </RadioGroup>
+                <FormHelperText>{helperText}</FormHelperText>
+                <Button className={classes.BtnMots} type="submit" variant="outlined">
+                  Valider mes réponses
+                </Button>
+              </FormControl>
+            </form>
           </Box>
         </Modal>
       </div>
@@ -161,4 +218,71 @@ function App() {
   );
 }
 
+////////////////////////////////////////////
+//////////////Fonctions Activity///////////
+///////////////////////////////////////////
+let text;
+let rep;
+let status;
+let nomIngredient = "";
+let newScore = "";
+let tabQuest = [];
+
+export function loadQuestionData(nomIngr){
+console.log(nomIngr)
+
+let question = Quizzfacile.find(x => x.name === nomIngr);
+console.log(question)
+  text = question.text
+  rep = question.rep
+  status = question.status
+  nomIngredient = nomIngr
+  tabQuest = []
+  tabQuest.push(question.prop1, question.prop2, question.rep) 
+  tabQuest = shuffle(tabQuest);
+}
+
+function shuffle(array) {
+let currentIndex = array.length,  randomIndex;
+
+// While there remain elements to shuffle.
+while (currentIndex != 0) {
+
+  // Pick a remaining element.
+  randomIndex = Math.floor(Math.random() * currentIndex);
+  currentIndex--;
+
+  // And swap it with the current element.
+  [array[currentIndex], array[randomIndex]] = [
+    array[randomIndex], array[currentIndex]];
+}
+
+return array;
+}
+
+//incrémente le nombre d'ingrédients gagnés
+export function addIngredient(nomIngr){
+console.log(nomIngr);
+let recettes = GetRecette();
+recettes.forEach(recette => {
+  let tmp = recette.Ingredients.find(x => x.Ingredient === nomIngr);
+  if(tmp){
+    tmp.nb++;
+  }
+});
+SetRecette(recettes);  
+}
+
+//incrémente le score (=pièces d'or)
+export function addScore(newScore){
+let player = GetPlayer();
+let score = player.score;
+console.log(player.score);
+player.score = score + 5;
+console.log(player.score);
+SetPlayer(player);
+}
+
+
 export default App;
+

@@ -6,8 +6,6 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormLabel from '@mui/material/FormLabel';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
-import Alert from '@mui/material/Alert';
-import Stack from '@mui/material/Stack';
 import {Quizzfacile} from '../BDD/Questions.json';
 import { GetRecette, SetRecette, GetPlayer, SetPlayer } from '../index';
 import { PersonItem } from '../index';
@@ -95,15 +93,6 @@ export function addScore(newScore){
   SetPlayer(player);
 }
 
-export function RightAlert() {
-  return (
-    <Stack sx={{ width: '100%' }} spacing={2}>
-      <Alert variant="outlined" severity="success">
-        This is a success alert — check it out!
-      </Alert>
-    </Stack>
-  );
-}
 
 export function Activity(){
     light = useStylesLight();
@@ -128,14 +117,16 @@ export function Activity(){
         setError(false);
         addIngredient(nomIngredient);
         addScore(newScore);
-        RightAlert()
+        alert("bravo");
         status = true;
         console.log(status);
 
       } else {
         setHelperText('Sorry, wrong answer!');
         setError(true);
+        alert("c'est raté");
       } 
+
     };
 
     return(
