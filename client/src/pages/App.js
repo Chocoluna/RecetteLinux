@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import swal from 'sweetalert';
 import { Button, CssBaseline } from '@material-ui/core';
 import MenuAppBar from '../components/Header';
 import Box from '@mui/material/Box';
@@ -12,7 +13,7 @@ import useImage from 'use-image';
 import {Level1, Level2} from '../BDD/Item.json';
 import { GetRecette, SetRecette, GetPlayer, SetPlayer } from '../index';
 import {Quizzfacile} from '../BDD/Questions.json';
-
+//formulaire
 import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormHelperText from '@mui/material/FormHelperText';
@@ -124,13 +125,23 @@ function App() {
       setError(false);
       addIngredient(nomIngredient);
       addScore(newScore);
-      alert("bravo");
+      swal({
+        title: "Bonne réponse",
+        text: "Tu as gagné un ingrédient et 5 pièces d'or!",
+        icon: "success",
+        button: "ok",
+      });
       status = true;
       console.log(status);
 
     } else {
       setError(true);
-      alert("c'est raté");
+      swal({
+        title: "Mauvais réponse",
+        text: "You clicked the button!",
+        icon: "error",
+        button: "ok",
+      });
     } 
     handleCloseActivity();
   };

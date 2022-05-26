@@ -1,32 +1,35 @@
 {
-    "Compétences": [
+    "Competences": [
         {
-            "Débutant" : [
+            "titre": "Debutant",
+            "tab" : [
                 {
-                    "compétence": ""
+                    "competence": "sauvegarde"
                 },
                 {
-                    "compétence": ""
+                    "competence": "environnement"
                 }
             ]            
         },
         {
-            "Intermédiaire" : [
+            "titre": "Intermediaire",
+            "tab" : [
                 {
-                    "compétence": ""
+                    "competence": "environnement"
                 },
                 {
-                    "compétence": ""
+                    "competence": "environnement"
                 }
             ]
         },
         {
-            "Expert" : [
+            "titre": "Expert",
+            "tab": [
                 {
-                    "compétence": ""
+                    "competence": "environnement"
                 },
                 {
-                    "compétence": ""
+                    "competence": "environnement"
                 }
             ]
         }

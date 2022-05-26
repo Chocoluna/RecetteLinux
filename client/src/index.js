@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Recette } from './BDD/Recette.json';
 import { Cours } from './BDD/Cours.json';
+import { Competences } from './BDD/Competences.json';
 import './css/index.css';
 import App from './pages/App';
 import Profil from './pages/Profil';
@@ -13,6 +14,7 @@ import reportWebVitals from './reportWebVitals';
 var etatjeu;
 let recette = Recette;
 let cours = Cours;
+let comp = Competences;
 
 var player = {
   pseudos: "",
@@ -113,6 +115,17 @@ export function SetCours(coursInfo){
 export function GetCours(){
   console.log(cours);
   return cours;
+}
+
+//Modifie le tableau de cours
+export function SetComp(compInfo){
+  comp = compInfo;
+}
+
+//Retourne le tableau de cours
+export function GetComp(){
+  console.log(comp);
+  return comp;
 }
 
 ////////////////////////////////////////////////////////////

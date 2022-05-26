@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import React from 'react';
 //CSS
 import { useStylesDark, useStylesLight } from '../css/ProfilStyle';
-import { GetCours } from '../index';
+import { GetComp } from '../index';
 import { getTheme } from '../theme';
 
 export function ChangeThemeCompetence(){
@@ -32,7 +32,7 @@ var classes;
 var styles;
 
 function Row(props) {
-  const { cours } = props;
+  const { comp } = props;
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -48,19 +48,18 @@ function Row(props) {
           </IconButton>
         </TableCell>
         <TableCell component="th" scope="row">
-          {cours.titre}
+          {comp.titre}
         </TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 1 }}>
+                {comp.tab.map(co => 
               <Typography variant="h6" gutterBottom component="div">
-                {cours.sousTitre}
-              </Typography>
-              <Typography>
-                {cours.contenu}
-              </Typography>
+                {co.competence}
+              </Typography>)}
+              
             </Box>
           </Collapse>
         </TableCell>
@@ -76,7 +75,7 @@ function DisplayCompetence(){
     dark = useStylesDark();
     ChangeThemeCompetence();
 
-    let cours = GetCours();
+    let comp = GetComp();
     
     return (
       <TableContainer component={Paper}>
@@ -84,12 +83,12 @@ function DisplayCompetence(){
         <TableHead>
           <TableRow>
             <TableCell />
-            <TableCell>Cours</TableCell>
+            <TableCell>Compétences</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {cours.map((cours) => (
-            <Row key={cours.titre} cours={cours} />
+          {comp.map((comp) => (
+            <Row key={comp.titre} comp={comp} />
           ))}
         </TableBody>
       </Table>
