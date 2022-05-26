@@ -2,33 +2,49 @@
     "Quizzfacile": [
         {
             "name": "Avocat",
-            "text": "les avocat d'ou ?",
-            "rep": "mexique",
-            "prop1": "japon",
-            "prop2": "france"
+            "text": "J’ai créé un document et je veux l’enregistrer :",
+            "rep": "Je l’enregistre sur le serveur.",
+            "prop1": "Je l’enregistre sur le bureau.",
+            "prop2": "Je l’enregistre dans mes documents.",
+            "status": false
         },
         {
             "name": "Citron",
-            "text": "les carotte d'ou ?",
-            "rep": "mexique",
-            "prop1": "europe",
-            "prop2": "japon"
+            "text": "Je veux enregistrer un fichier pour y avoir accès de mon domicile :",
+            "rep": "Je l’enregistre sur le serveur.",
+            "prop1": "Je l’enregistre sur Nextcloud.",
+            "prop2": "Je l’enregistre sur Google drive."
         },
         {
             "name": "Toast",
-            "text": "les pepene d'ou ?",
-            "rep": "mexique",
-            "prop1": "roumanie",
-            "prop2": "france"
+            "text": "Un élève veut enregistrer un document :",
+            "rep": "Il l’enregistre sur le bureau.",
+            "prop1": "Il l’enregistre sur le serveur.",
+            "prop2": "Il l’enregistre sur le bureau et le serveur."
         }
     ],
-    "Quizzmoyen": [
+
+    "Quizzintermédiaire": [
+        {
+            "name": "Fraise",
+            "text": "Les dossiers stockés dans l’arborescence du serveur sont :",
+            "rep": "« Confidentiel » – « Scan » – « Dossier classe » avec « Profs » et « Elèves »",
+            "prop1": "« Confidentiel » – « Dossier école » – « Dossier classe » avec « Profs » et « Elèves »",
+            "prop2": "« Confidentiel » – « Scan » – « Dossier classe » avec un « Dossier profs » et un « Dossier élèves »"
+        },
+        {
+            "name": "Citron",
+            "text": "Dans l’arborescence, le dossier « Confidentiel » permet d’enregistrer :",
+            "rep": "Des documents partagés par toute l’équipe pédagogique.",
+            "prop1": "Des documents partagés par la Direction.",
+            "prop2": "Des documents partagés par les élèves."
+        },
         {
             "name": "Sucre",
-            "text": "Dans quel dossier partager un document avec les élèves pour qu'ils travaillent dessus?",
-            "rep": "Professeurs",
-            "prop1": "Scan",
-            "prop2": "Elèves"
+            "text": "Dans l’arborescence, le dossier Scan permet d’enregistrer :",
+            "rep": "Des documents scannés",
+            "prop1": "De scanner des documents",
+            "prop2": "Des documents commençant par Scan."
         }
     ]
 }

@@ -4,12 +4,22 @@ import { Column, Item, Row } from '@mui-treasury/components/flex';
 import {
   Info, InfoSubtitle, InfoTitle
 } from '@mui-treasury/components/info';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Collapse from '@mui/material/Collapse';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
 import { useDynamicAvatarStyles } from '@mui-treasury/styles/avatar/dynamic';
 import { useD01InfoStyles } from '@mui-treasury/styles/info/d01';
 import Modal from '@mui/material/Modal';
 import React, { useState } from 'react';
 import cross from '../assets/cross.png';
 import MenuAppBar from '../components/Header';
+import { GetCours } from '../index';
+import DisplayCompetence from '../components/Compétences';
 //CSS
 import { useStylesDark, useStylesLight } from '../css/ProfilStyle';
 import { GetPlayer, setApp } from '../index';
@@ -75,8 +85,11 @@ function Profil() {
             </Info>
             <Button onClick={handleCloseProfil}><img src={cross} alt="Close" height="40vh" /></Button>
           </Row>
+          <Row>
+            <DisplayCompetence/>
+          </Row>
         </Column>
-        </Modal>
+      </Modal>
     </div>
     );
   }

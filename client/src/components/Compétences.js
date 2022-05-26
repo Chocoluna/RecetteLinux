@@ -9,29 +9,27 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 //CSS
-import '../css/App.css';
 import { useStylesDark, useStylesLight } from '../css/ProfilStyle';
 import { GetCours } from '../index';
 import { getTheme } from '../theme';
 
-export function ChangeThemeModalClass(){
-    let theme = getTheme();
-  
-    if(theme === "light") {
-      classes = light;
-      styles = light;
-    }
-    else {
-      classes = dark;
-      styles = dark;
-    }
+export function ChangeThemeCompetence(){
+  var theme = getTheme();
+
+  if(theme === "light") {
+    classes = light;
+    styles = light;
   }
+  else {
+    classes = dark;
+    styles = dark;
+  }
+}
 
 var light;
 var dark;
 var classes;
 var styles;
-
 
 function Row(props) {
   const { cours } = props;
@@ -71,13 +69,12 @@ function Row(props) {
   );
 }
 
-
-function DisplayClass(){
+function DisplayCompetence(){
     const avatarStyles = useDynamicAvatarStyles({ size: 90 });
     
     light = useStylesLight();
     dark = useStylesDark();
-    ChangeThemeModalClass();
+    ChangeThemeCompetence();
 
     let cours = GetCours();
     
@@ -100,4 +97,4 @@ function DisplayClass(){
     );
 }
 
-export default DisplayClass;
+export default DisplayCompetence;

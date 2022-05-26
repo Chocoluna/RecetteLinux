@@ -1,0 +1,34 @@
+{
+    "Compétences": [
+        {
+            "Débutant" : [
+                {
+                    "compétence": ""
+                },
+                {
+                    "compétence": ""
+                }
+            ]            
+        },
+        {
+            "Intermédiaire" : [
+                {
+                    "compétence": ""
+                },
+                {
+                    "compétence": ""
+                }
+            ]
+        },
+        {
+            "Expert" : [
+                {
+                    "compétence": ""
+                },
+                {
+                    "compétence": ""
+                }
+            ]
+        }
+    ]
+}

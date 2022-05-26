@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { Button } from '@material-ui/core';
 import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -5,7 +6,8 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormLabel from '@mui/material/FormLabel';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
-import * as React from 'react';
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
 import {Quizzfacile} from '../BDD/Questions.json';
 import { GetRecette, SetRecette, GetPlayer, SetPlayer } from '../index';
 import { PersonItem } from '../index';
@@ -33,8 +35,7 @@ export function ChangeThemeModalActivity(){
 
   let text;
   let rep;
-  let prop1;
-  let prop2;
+  let status;
   let nomIngredient = "";
   let newScore = "";
   let tabQuest = [];
@@ -46,6 +47,7 @@ export function loadQuestionData(nomIngr){
   console.log(question)
     text = question.text
     rep = question.rep
+    status = question.status
     nomIngredient = nomIngr
     tabQuest = []
     tabQuest.push(question.prop1, question.prop2, question.rep) 
@@ -93,6 +95,16 @@ export function addScore(newScore){
   SetPlayer(player);
 }
 
+export function RightAlert() {
+  return (
+    <Stack sx={{ width: '100%' }} spacing={2}>
+      <Alert variant="outlined" severity="success">
+        This is a success alert — check it out!
+      </Alert>
+    </Stack>
+  );
+}
+
 export function Activity(){
     light = useStylesLight();
     dark = useStylesDark();
@@ -116,6 +128,9 @@ export function Activity(){
         setError(false);
         addIngredient(nomIngredient);
         addScore(newScore);
+        RightAlert()
+        status = true;
+        console.log(status);
 
       } else {
         setHelperText('Sorry, wrong answer!');
