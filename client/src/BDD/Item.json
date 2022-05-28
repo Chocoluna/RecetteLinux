@@ -27,13 +27,13 @@
         {
             "Nom":"Fraise",
             "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/fraise.png",
-            "PosX":"0.53",
-            "PosY":"0.18",
+            "PosX":"0.18",
+            "PosY":"0.53",
             "Height":"0.03"
         },
         {
             "Nom":"Sucre",
-            "Image": "https://github.com/Chocoluna/RecetteLinux/blob/main/client/src/assets/sugar.png",
+            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/sugar.png",
             "PosX":"0.59",
             "PosY":"0.12",
             "Height":"0.07"
@@ -41,9 +41,9 @@
         {
             "Nom":"Citron",
             "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/citron.png",
-            "PosX":"0.34",
-            "PosY":"0.23",
-            "Height":"0.10"
+            "PosX":"0.12",
+            "PosY":"0.28",
+            "Height":"0.04"
         }
     ],
     "Level3":[
@@ -56,7 +56,7 @@
         },
         {
             "Nom":"Sucre",
-            "Image": "https://github.com/Chocoluna/RecetteLinux/blob/main/client/src/assets/sugar.png",
+            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/sugar.png",
             "PosX":"0.59",
             "PosY":"0.12",
             "Height":"0.07"

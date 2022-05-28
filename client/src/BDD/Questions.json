@@ -9,42 +9,64 @@
             "status": false
         },
         {
+            "name": "Avocat",
+            "text": "Je suis un professeur et je veux stocker un document sans que les élèves y ai accès. Je le stock :",
+            "rep": "Dans le dossier Confidentiel",
+            "prop1": "Dans le dossier Elèves",
+            "prop2": "Dans le dossier Professeurs",
+            "status": false
+        },
+        {
             "name": "Citron",
             "text": "Je veux enregistrer un fichier pour y avoir accès de mon domicile :",
-            "rep": "Je l’enregistre sur le serveur.",
-            "prop1": "Je l’enregistre sur Nextcloud.",
-            "prop2": "Je l’enregistre sur Google drive."
+            "rep": "Je l’enregistre sur Nextcloud.",
+            "prop1": "Je l’enregistre sur le serveur.",
+            "prop2": "Je l’enregistre sur Google drive.",
+            "status": false
         },
         {
             "name": "Toast",
             "text": "Un élève veut enregistrer un document :",
-            "rep": "Il l’enregistre sur le bureau.",
-            "prop1": "Il l’enregistre sur le serveur.",
-            "prop2": "Il l’enregistre sur le bureau et le serveur."
+            "rep": "Il l’enregistre dans le dossier Elèves.",
+            "prop1": "Il l’enregistre dans le dossier Professeurs.",
+            "prop2": "Il l’enregistre sur le bureau.",
+            "status": false
+        },
+        {
+            "name": "Toast",
+            "text": "Je suis un professeur et je veux stocker un document pour que les élèves travaillent dessus. Je le stock :",
+            "rep": "Dans le dossier Professeurs",
+            "prop1": "Dans le dossier Elèves",
+            "prop2": "Dans le dossier Confidentiel",
+            "status": false
         }
+
     ],
 
-    "Quizzintermédiaire": [
+    "QuizzIntermédiaire": [
         {
             "name": "Fraise",
             "text": "Les dossiers stockés dans l’arborescence du serveur sont :",
             "rep": "« Confidentiel » – « Scan » – « Dossier classe » avec « Profs » et « Elèves »",
             "prop1": "« Confidentiel » – « Dossier école » – « Dossier classe » avec « Profs » et « Elèves »",
-            "prop2": "« Confidentiel » – « Scan » – « Dossier classe » avec un « Dossier profs » et un « Dossier élèves »"
+            "prop2": "« Confidentiel » – « Scan » – « Dossier classe » avec un « Dossier profs » et un « Dossier élèves »",
+            "status": false
         },
         {
             "name": "Citron",
             "text": "Dans l’arborescence, le dossier « Confidentiel » permet d’enregistrer :",
             "rep": "Des documents partagés par toute l’équipe pédagogique.",
             "prop1": "Des documents partagés par la Direction.",
-            "prop2": "Des documents partagés par les élèves."
+            "prop2": "Des documents partagés par les élèves.",
+            "status": false
         },
         {
             "name": "Sucre",
             "text": "Dans l’arborescence, le dossier Scan permet d’enregistrer :",
             "rep": "Des documents scannés",
             "prop1": "De scanner des documents",
-            "prop2": "Des documents commençant par Scan."
+            "prop2": "Des documents commençant par Scan.",
+            "status": false
         }
     ]
 }

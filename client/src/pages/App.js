@@ -10,9 +10,9 @@ import DisplayClass from '../components/ModalClass';
 import Typography from '@mui/material/Typography';
 import { Image, Layer, Stage } from 'react-konva';
 import useImage from 'use-image';
-import {Level1, Level2} from '../BDD/Item.json';
+import {Level1, Level2, Level3} from '../BDD/Item.json';
 import { GetRecette, SetRecette, GetPlayer, SetPlayer } from '../index';
-import {Quizzfacile} from '../BDD/Questions.json';
+import {Quizzfacile, QuizzIntermédiaire} from '../BDD/Questions.json';
 //formulaire
 import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -44,9 +44,10 @@ let light;
 let dark;
 let classes;
 let styles;
-let currentLevel = 1;
-let currentLevelData = Level1;
-
+let levels = [Level1, Level2, Level3];
+let currentLevel = 0;
+let currentLevelData = levels[currentLevel];
+let question;
 
 
 function App() {
@@ -55,7 +56,7 @@ function App() {
   ChangeThemeApp();
 
   const [openModalActivity, setOpenActivity] = useState(false);
-  const handleOpenActivity = (elem) => { loadQuestionData(elem) ; setOpenActivity(true); };
+  const handleOpenActivity = (elem) => { loadQuestionData(elem) ; if(question) setOpenActivity(true); };
   const handleCloseActivity = () => { setOpenActivity(false); };
   
   const [openModalRecipes, setOpenRecipes] = useState(false);
@@ -69,6 +70,26 @@ function App() {
   const BackgroundImage = () => {
     const [image] = useImage('https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/Kitchen.png');
     return <Image image={image} width={window.innerHeight} height={window.innerHeight} />;
+  };
+
+  const loadQuestionData = (nomIngr) => {
+    question = questions[currentLevel].find(x => x.name === nomIngr && x.status == false);
+    if(question){
+      text = question.text
+      rep = question.rep
+      nomIngredient = nomIngr
+      tabQuest = []
+      tabQuest.push(question.prop1, question.prop2, question.rep) 
+      tabQuest = shuffle(tabQuest);
+    }else{
+      handleCloseActivity();
+      swal({
+        title: "Tu as cet ingrédient en quantité suffisante!",
+        text: "Pars à la recherche de nouveaux ingrédients pour finir ta recette",
+        icon: "info",
+        button: "ok",
+      });
+    }
   };
 
   const LoadItem = ({elem}) => {
@@ -104,8 +125,22 @@ function App() {
               />;
   };
 
-  const Test = () => {
-    currentLevelData = Level2;
+  const newLevel = () => {
+    if(checkLevel() == true){
+      currentLevel++;
+      currentLevelData = levels[currentLevel];
+    }
+  }
+
+  const checkLevel = () => {
+    let recettes = GetRecette();
+    let valretour = true;
+    recettes[currentLevel].Ingredients.forEach(elem =>{
+      if(elem.nb < elem.nbTotal){
+        valretour = false;
+      }
+    });
+    return valretour;
   }
 
   const [value, setValue] = React.useState('');
@@ -131,8 +166,7 @@ function App() {
         icon: "success",
         button: "ok",
       });
-      status = true;
-      console.log(status);
+      checkStatus(nomIngredient);
 
     } else {
       setError(true);
@@ -144,6 +178,7 @@ function App() {
       });
     } 
     handleCloseActivity();
+    newLevel();
   };
 
   return (
@@ -234,46 +269,37 @@ function App() {
 ///////////////////////////////////////////
 let text;
 let rep;
-let status;
 let nomIngredient = "";
 let newScore = "";
 let tabQuest = [];
+let questions = [Quizzfacile, QuizzIntermédiaire];
 
-export function loadQuestionData(nomIngr){
-console.log(nomIngr)
-
-let question = Quizzfacile.find(x => x.name === nomIngr);
-console.log(question)
-  text = question.text
-  rep = question.rep
-  status = question.status
-  nomIngredient = nomIngr
-  tabQuest = []
-  tabQuest.push(question.prop1, question.prop2, question.rep) 
-  tabQuest = shuffle(tabQuest);
+function checkStatus(nomIngr){
+  let question = questions[currentLevel].find(x => x.name === nomIngr && x.status == false);
+  console.log(question);
+  question.status = true;
+  console.log(question);
 }
 
 function shuffle(array) {
-let currentIndex = array.length,  randomIndex;
+  let currentIndex = array.length,  randomIndex;
 
-// While there remain elements to shuffle.
-while (currentIndex != 0) {
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
 
-  // Pick a remaining element.
-  randomIndex = Math.floor(Math.random() * currentIndex);
-  currentIndex--;
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
 
-  // And swap it with the current element.
-  [array[currentIndex], array[randomIndex]] = [
-    array[randomIndex], array[currentIndex]];
-}
-
-return array;
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+  return array;
 }
 
 //incrémente le nombre d'ingrédients gagnés
 export function addIngredient(nomIngr){
-console.log(nomIngr);
 let recettes = GetRecette();
 recettes.forEach(recette => {
   let tmp = recette.Ingredients.find(x => x.Ingredient === nomIngr);
@@ -288,9 +314,7 @@ SetRecette(recettes);
 export function addScore(newScore){
 let player = GetPlayer();
 let score = player.score;
-console.log(player.score);
 player.score = score + 5;
-console.log(player.score);
 SetPlayer(player);
 }
 
