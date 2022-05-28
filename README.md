@@ -4,8 +4,7 @@ Logiciel éducatif pour apprendre à utiliser Mint_Linux
 ---------------
 Logique du jeu 
 - [X] Le joueur récupère les ingrédients (compteur d'ingredients) + pièces d'or
-- [ ] Quand le joueur a assez d'ingredients : recette validée
-- [ ] Boite de dialogue apparait et propose(?) de passer au niveau suivant
+- [X] Quand le joueur a assez d'ingredients : recette validée
 
 --------------
 A faire
@@ -19,4 +18,5 @@ A faire
 - [X] Livre "cours" + "recettes" côte à côte en bas à gauche
 - [X] display livres en modal : sur le côté, ne bloque pas le jeu (ni visuellement, ni physiquement)
 - [ ] Profil => pas les recettes, seulement les stats (quelles compétences acquises, progression, etc)
-- [ ] Changement de niveaux
+- [X] Changement de niveaux
+- [ ] Changement d'illustration quand recette validée
