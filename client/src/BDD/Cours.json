@@ -1,14 +1,46 @@
 {
     "Cours": [
         {
-            "titre":"Chapitre 1",
-            "sousTitre":"Les icônes",
-            "contenu":"nbljnqlsjb"            
+            "titre": "Chapitre 1",
+            "sousTitre": "Pour sauvegarder des documents:",
+            "contenu": "Il est important de ne pas enregistrer ses documents directement sur le lecteur C: de l’ordinateur sur lequel on travaille (par exemple dans le bureau). En cas de problème technique sur l’ordinateur ou de changement de poste, les données stockées seront perdues. Leur sauvegarde doit se faire sur le serveur de l’école voire même sur la plateforme internet Nextcloud qui a une version spéciale pour les professeurs (Cf. Chapitre 2).", 
+            "points":[],
+            "lien":"",
+            "conclusion": "Google drive qui est un autre espace de stockage, n’a pas cette alternative."            
         },
         {
-            "titre":"Chapitre 2",
-            "sousTitre":"les dossiers",
-            "contenu":"sdfsfgfh"
+            "titre": "Chapitre 2",
+            "sousTitre": " Sauvegarder sur Nextcloud ",
+            "contenu": "Nexcloud est un service cloud (un hébergement de fichiers en ligne) proposé par le Ministère de l’Education Nationale. Son déploiement a pour objectif de proposer une alternative aux solutions de drive opérés par des acteurs privés transnationaux et pour lesquelles toutes les garanties ne sont pas présentes pour protéger les données des élèves. Il met à disposition une espace de stockage en ligne sécurisé pour diffuser et partager des documents et des ressources téléchargeables à partir d’un poste de travail ou d’un appareil mobile. Accessible après la création d’un compte personnel grâce à votre mail académique, ce service facilite le travail collaboratif entre les personnels de l’Education Nationale. Il répond aux conditions préconisées dans le cadre du règlement général de la protection des données (RGPD).",
+            "points": [
+                {
+                    "point":"En tant qu’enseignant, vous disposez d’un espace de stockage de 1Go avec des dossiers à organiser. Vous pouvez partager un dossier ou des fichiers facilement et envoyer le lien à vos élèves."
+                },
+                {
+                    "point": "L’élève peut rendre des travaux en utilisant un lien, unique, lié à un dossier de l’espace de l’enseignant."
+                }
+            ],             
+            "lien" : "https://apps.education.fr/plateforme/lyon/",
+            "conclusion":"Vous devez préalablement créer un compte sur le portail apps.education.fr si vous n’en possédez pas encore un.(Source :https://dane.ins.acguyane.fr/nextcloudun-service-academique-d.html)."
+        },
+        {
+            "titre": "Chapitre 3",
+            "sousTitre": "Sauvegarder, modifier ou supprimer des documents sur le serveur : ",
+            "contenu": "L’arborescence du serveur fait apparaître plusieurs dossiers :",
+            "points":[
+                {
+                    "point": "« Confidentiel » : ce dossier est partagé par tous les professeurs et la direction. Toutes les personnes qui y ont accès peuvent modifier ou supprimer les documents qui s'y trouvent. Les élèves n'y ont pas accès."
+                },
+                {
+                    "point": "« Scan » : les documents numérisés sont envoyés automatiquement dans ce dossier."
+                },
+                {
+                    "point": "« Dossiers classes » (ex : dossier CP, dossier CE1) contiennent chacun un dossier « « Profs » et un dossier « Elèves ». - « Profs » : Les élèves peuvent voir et travailler directement sur les documents stockés dans « Profs », mais ils ne peuvent pas en modifier la source ou les supprimer. Rappel : Pour sauvegarder, les élèves cliquent sur « enregistrer sous », puis sur dossier Elèves afin que leur document soit enregistré dans le dossier Elèves. - « Elèves » : dans ce dossier, les élèves peuvent tout faire, y compris supprimer ou modifier le travail de leurs camarades !"
+                }
+            ],
+            "lien":"",
+            "conclusion":"Par conséquent, il est important de les amener à être vigilants sur ce dernier point. Également, à titre préventif, il est conseillé de prendre les documents stockés dans « Elèves » lorsqu’ils sont terminés et de les archiver dans « Profs » afin de les protéger d’une éventuelle suppression ou modification de la part d’un élève."
         }
+
     ]
 }

@@ -36,6 +36,7 @@ var styles;
 function Row(props) {
   const { cours } = props;
   const [open, setOpen] = React.useState(false);
+  console.log(cours)
 
   return (
     <React.Fragment>
@@ -49,20 +50,37 @@ function Row(props) {
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
-        <TableCell component="th" scope="row">
+        <TableCell component="th" scope="row" width={window.innerWidth*0.5}>
           {cours.titre}
         </TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
-            <Box sx={{ margin: 1 }}>
+          <Box
+                mb={2}
+                display="flex"
+                flexDirection="column"
+                // justifyContent="flex-end" # DO NOT USE THIS WITH 'scroll'
+                height= {window.innerHeight*0.4}
+                style={{
+                overflow: "hidden",
+                overflowY: "scroll" // added scroll
+              }}
+            >
               <Typography variant="h6" gutterBottom component="div">
                 {cours.sousTitre}
               </Typography>
               <Typography>
                 {cours.contenu}
               </Typography>
+              <Typography>
+                { cours.points.map((elem) => (
+                  
+                    <Typography><br/>- {elem.point}</Typography>
+                  ))}
+              </Typography>
+
             </Box>
           </Collapse>
         </TableCell>
@@ -82,15 +100,15 @@ function DisplayClass(){
     let cours = GetCours();
     
     return (
-      <TableContainer component={Paper}>
-      <Table aria-label="collapsible table">
+      <TableContainer component={Paper} >
+      <Table aria-label="collapsible table" sx={{minwidth: 500}}>
         <TableHead>
           <TableRow>
             <TableCell />
             <TableCell>Cours</TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
+        <TableBody >
           {cours.map((cours) => (
             <Row key={cours.titre} cours={cours} />
           ))}

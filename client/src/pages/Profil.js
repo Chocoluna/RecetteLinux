@@ -1,6 +1,7 @@
 import { Button, CssBaseline } from '@material-ui/core';
 import Avatar from '@material-ui/core/Avatar';
 import { Column, Item, Row } from '@mui-treasury/components/flex';
+import { Grid } from '@material-ui/core';
 import {
   Info, InfoSubtitle, InfoTitle
 } from '@mui-treasury/components/info';
@@ -68,27 +69,36 @@ function Profil() {
         onClose={handleCloseProfil}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        className={classes.modalQuizz}
+        className={classes.modal}
       >
-      <Column p={0} gap={2} className={classes.modal}>
-          <Row >
-            <Item>
-              <Avatar
-                variant={'rounded'}
-                classes={avatarStyles}
-                src={src}
-              />
-            </Item>
-            <Info useStyles={useD01InfoStyles}>
-              <InfoTitle >{name}</InfoTitle>
-              <InfoSubtitle>{score}</InfoSubtitle>
-            </Info>
-            <Button onClick={handleCloseProfil}><img src={cross} alt="Close" height="40vh" /></Button>
-          </Row>
+        <Grid
+          container
+          direction="column"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+        <Column p={0} gap={2}>
+            <Row columns={{ xs: 4, sm: 8, md: 12 }}>
+              <Item>
+                <Avatar
+                  variant={'rounded'}
+                  classes={avatarStyles}
+                  src={src}
+                />
+              </Item>
+              <Info useStyles={useD01InfoStyles}>
+                <InfoTitle >{name}</InfoTitle>
+                <InfoSubtitle>{score}</InfoSubtitle>
+              </Info>
+              <Grid container justifyContent="flex-end">
+                <Button onClick={handleCloseProfil}><img src={cross} alt="Close" height="40vh" /></Button>
+              </Grid>
+            </Row>
+          </Column>
           <Row>
             <DisplayCompetence/>
           </Row>
-        </Column>
+        </Grid>
       </Modal>
     </div>
     );

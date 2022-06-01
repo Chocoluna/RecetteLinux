@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import React from 'react';
+import CircularProgress from '@mui/material/CircularProgress';
 //CSS
 import { useStylesDark, useStylesLight } from '../css/ProfilStyle';
 import { GetComp } from '../index';
@@ -47,7 +48,7 @@ function Row(props) {
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
-        <TableCell component="th" scope="row">
+        <TableCell component="th" scope="row" width={window.innerWidth*0.4}>
           {comp.titre}
         </TableCell>
       </TableRow>
@@ -79,11 +80,14 @@ function DisplayCompetence(){
     
     return (
       <TableContainer component={Paper}>
-      <Table aria-label="collapsible table">
-        <TableHead>
+      <Table aria-label="collapsible table" margin>
+        <TableHead >
           <TableRow>
             <TableCell />
             <TableCell>Compétences</TableCell>
+            <TableCell>          
+              <CircularProgress className="minuteur" variant="determinate" value={35} />
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

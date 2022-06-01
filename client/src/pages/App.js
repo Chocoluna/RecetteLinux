@@ -25,6 +25,7 @@ import '../css/App.css';
 import { useStylesDark, useStylesLight } from '../css/AppStyle';
 import { getTheme } from '../theme';
 import cross from '../assets/cross.png';
+import goldpot from '../assets/gold-pot.png';
 
 
 export function ChangeThemeApp(){
@@ -129,6 +130,12 @@ function App() {
     if(checkLevel() == true){
       currentLevel++;
       currentLevelData = levels[currentLevel];
+      swal({
+        title: "Bravo, tu as gagné un niveau!",
+        text: "+10 pièces d'or",
+        icon: goldpot,
+        button: "ok",
+      });
     }
   }
 
@@ -170,9 +177,10 @@ function App() {
 
     } else {
       setError(true);
+      minusScore(newScore);
       swal({
         title: "Mauvais réponse",
-        text: "You clicked the button!",
+        text: "Tu perds 2 pièces d'or !",
         icon: "error",
         button: "ok",
       });
@@ -318,6 +326,15 @@ player.score = score + 5;
 SetPlayer(player);
 }
 
+//décrémente le score (=pièces d'or)
+export function minusScore(newScore){
+  let player = GetPlayer();
+  let score = player.score;
+    if(player.score >=2){
+      player.score = score - 2;
+    }
+  SetPlayer(player);
+  }
 
 export default App;
 

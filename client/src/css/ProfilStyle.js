@@ -110,23 +110,15 @@ export const useStylesLight = makeStyles((theme) => ({
     flexGrow: 1,
     minWidth: 250,
     display: 'flex',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'flex-start',
     borderRadius: 16,
     position: 'absolute',
-    top:"50%",
-    left:"50%",
-    transform: 'translate(-50%, -50%)',
+    transform: 'translate(48%, 15%)',
     boxShadow: '0 8px 16px 0 #BDC9D7',
     background:'rgba(240, 240, 240, 0.98)',
   },  
 
-  send_btn : {
-      borderRadius: 16,
-      background:'#222',
-      color: "white",
-      width : "4vh",
-  },
 
   BtnMots : {
     fontSize: '90%',
@@ -176,13 +168,6 @@ export const useStylesDark = makeStyles((theme) => ({
   minuteur:{
     color: "#64b5f6",
     margin: theme.spacing(0, 5),
-  },
-
-  paper: {
-    margin: theme.spacing(7.5, 2),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
   },
 
   avatar: {
@@ -245,16 +230,21 @@ export const useStylesDark = makeStyles((theme) => ({
   modal: {
     width: '55%',
     height: '80%',
+    flexGrow: 1,
     minWidth: 250,
     display: 'flex',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
     borderRadius: 16,
     position: 'absolute',
-    top:"50%",
-    left:"50%",
-    transform: 'translate(-50%, -50%)', 
+    transform: 'translate(48%, 15%)',
     boxShadow: '0 8px 16px 0 #BDC9D7',
     background:'rgba(40, 40, 160, 0.99)',
+    color: 'white'
+  },
+
+  compmodal: {
+    width: '100%',
     color: 'white'
   },
 
@@ -269,20 +259,8 @@ export const useStylesDark = makeStyles((theme) => ({
     color : 'rgba(150, 155, 155, 0.87)',
   }, 
 
-  type_msg : {
-      borderRadius: 16,
-      background:'#222',
-      color: "white",
-      width : "90%",
-      height: "4vh",
-  },
 
-  send_btn : {
-      borderRadius: 16,
-      background:'#222',
-      color: "white",
-      width : "4vh",
-  },
+
 
   BtnMots : {
     fontSize: '90%',
