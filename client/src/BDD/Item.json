@@ -81,13 +81,6 @@
             "PosX":"0.62",
             "PosY":"0.72",
             "Height":"0.08"
-        },
-        {
-            "Nom":"Lait",
-            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/milk-carton.png",
-            "PosX":"0.28",
-            "PosY":"0.50",
-            "Height":"0.09"
         }
     ]
 }

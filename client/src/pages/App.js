@@ -118,12 +118,12 @@ function App() {
               />;
   };
 
-  const Mixer = () => {
-    const [image] = useImage('https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/book.png');
-    return <Image image={image} width={window.innerHeight*0.10} 
-              height={window.innerHeight*0.10} 
-              x={window.innerHeight*0.034} 
-              y={window.innerHeight*0.81}
+  const Fromage = () => {
+    const [image] = useImage('https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/concombre.png');
+    return <Image image={image} width={window.innerHeight*0.065} 
+              height={window.innerHeight*0.065} 
+              x={window.innerHeight*0.27} 
+              y={window.innerHeight*0.64}
               onClick={handleOpenRecipes}
               style="cursor: pointer;"
               />;
@@ -289,7 +289,7 @@ function App() {
             <Layer>
               <RecipeBook />
               <ClassBook />
-              <Mixer />
+              <Fromage />
               { currentLevelData.map(items => <LoadItem elem={items}/>)}              
             </Layer>
           </Stage>
