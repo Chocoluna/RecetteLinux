@@ -19,4 +19,5 @@ A faire
 - [X] display livres en modal : sur le côté, ne bloque pas le jeu (ni visuellement, ni physiquement)
 - [ ] Profil => pas les recettes, seulement les stats (quelles compétences acquises, progression, etc)
 - [X] Changement de niveaux
+- [X] Transition changement de niveau
 - [ ] Changement d'illustration quand recette validée
