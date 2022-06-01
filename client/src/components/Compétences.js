@@ -9,6 +9,7 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
+import { getQuestTrue } from '../index';
 //CSS
 import { useStylesDark, useStylesLight } from '../css/ProfilStyle';
 import { GetComp } from '../index';
@@ -77,6 +78,8 @@ function DisplayCompetence(){
     ChangeThemeCompetence();
 
     let comp = GetComp();
+    let nbTrue = getQuestTrue();
+
     
     return (
       <TableContainer component={Paper}>
@@ -86,7 +89,27 @@ function DisplayCompetence(){
             <TableCell />
             <TableCell>Compétences</TableCell>
             <TableCell>          
-              <CircularProgress className="minuteur" variant="determinate" value={35} />
+              <Box sx={{ position: 'relative', display: 'inline-flex' }}>
+                <CircularProgress className="minuteur" variant="determinate" value={nbTrue} />
+                <Box
+                  sx={{
+                    top: 0,
+                    left: 0,
+                    bottom: 0,
+                    right: 0,
+                    position: 'absolute',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <Typography
+                    variant="caption"
+                    component="div"
+                    color="text.secondary"
+                  >{`${Math.round(nbTrue)}%`}</Typography>
+                </Box>
+              </Box>
             </TableCell>
           </TableRow>
         </TableHead>

@@ -15,6 +15,8 @@ var etatjeu;
 let recette = Recette;
 let cours = Cours;
 let comp = Competences;
+let nbMaxQuest = 15;
+let nbQuestTrue = 0;
 
 var player = {
   pseudos: "",
@@ -39,6 +41,14 @@ export const PersonItem = ({ src, name, score}) => {
     </Row>
   );
 };
+
+export function incrementQuestTrue(){
+  nbQuestTrue++;
+}
+
+export function getQuestTrue(){
+  return (nbQuestTrue / nbMaxQuest)*100;
+}
 
 
 ////////////////////////////////////////////////////////////
@@ -131,14 +141,14 @@ export function GetComp(){
 ////////////////////////////////////////////////////////////
 //             Ecoute sur la touche entrée
 ////////////////////////////////////////////////////////////
-/*
+
 document.addEventListener('keydown', function(event) {
   if ((etatjeu == "sign") && (event.key === 'Enter') && (document.getElementById("pseudos").value != "")){
     player.pseudos = document.getElementById("pseudos").value;
     SetPlayer(player);
     setApp(); 
  }
-});*/
+});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

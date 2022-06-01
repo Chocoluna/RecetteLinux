@@ -47,26 +47,77 @@
         {
             "name": "Fraise",
             "text": "Les dossiers stockés dans l’arborescence du serveur sont :",
-            "rep": "« Confidentiel » – « Scan » – « Dossier classe » avec « Profs » et « Elèves »",
-            "prop1": "« Confidentiel » – « Dossier école » – « Dossier classe » avec « Profs » et « Elèves »",
-            "prop2": "« Confidentiel » – « Scan » – « Dossier classe » avec un « Dossier profs » et un « Dossier élèves »",
+            "rep": "« Confidentiel » – « Scan » – « CP » - « CE1/CE2 » - « CM1/CM2 »",
+            "prop1": "« Confidentiel » – « Scan » – « Professeurs » - « Elèves »",
+            "prop2": "« Mes Documents » – « Scan » – « CP » - « CE1/CE2 » - « CM1/CM2 »",
             "status": false
         },
         {
             "name": "Citron",
             "text": "Dans l’arborescence, le dossier « Confidentiel » permet d’enregistrer :",
-            "rep": "Des documents partagés par toute l’équipe pédagogique.",
-            "prop1": "Des documents partagés par la Direction.",
-            "prop2": "Des documents partagés par les élèves.",
+            "rep": "Des documents partagés par toute l’équipe pédagogique, y compris la direction.",
+            "prop1": "Des documents partagés uniquement par la Direction.",
+            "prop2": "Des documents partagés par et pour les élèves.",
             "status": false
         },
         {
             "name": "Sucre",
-            "text": "Dans l’arborescence, le dossier Scan permet d’enregistrer :",
-            "rep": "Des documents scannés",
-            "prop1": "De scanner des documents",
+            "text": "Dans l’arborescence, le dossier Scan contient :",
+            "rep": "Des documents qui ont été scannés",
+            "prop1": "Des documents que l'on veut scanner",
             "prop2": "Des documents commençant par Scan.",
             "status": false
         }
+    ],
+    "Quizzexpert": [
+        {
+            "name": "Oeufs",
+            "text": "En tant que professeur, je peux modifier ou supprimer des documents dans :",
+            "rep": "Tous les dossiers sans exception.",
+            "prop1": "Tous les dossiers excepté « Confidentiel».",
+            "prop2": "Tous les dossiers excepté « Scan ».",
+            "status": false
+        },
+        {
+            "name": "Sucre",
+            "text": "Les élèves n’ont pas accès à :",
+            "rep": "« Confidentiel »-« Profs »-« Scan »",
+            "prop1": "« Confidentiel »-« Profs »-« Elèves »",
+            "prop2": "« Confidentiel »-« Scan »-« Elèves »",
+            "status": false
+        },
+        {
+            "name": "Farine",
+            "text": "Les élèves peuvent modifier ou supprimer des documents dans :",
+            "rep": "le dossier « Elèves »",
+            "prop1": "les dossiers « Elèves » et « Profs »",
+            "prop2": "les dossiers « Elèves » et « Confidentiel »",
+            "status": false
+        },
+        {
+            "name": "Chocolat",
+            "text": "Les élèves peuvent modifier ou supprimer les documents de leurs camarades dans « Elèves »",
+            "rep": "Vrai",
+            "prop1": "Faux",
+            "prop2": "Sous certaines conditions.",
+            "status": false
+        },
+        {
+            "name": "Beurre",
+            "text": "Cochez la phrase VRAIE :",
+            "rep": "Les élèves peuvent modifier ou supprimer les documents de leurs camarades dans le dossier « Elèves »",
+            "prop1": "Les élèves peuvent modifier ou supprimer les documents de leurs camarades dans le dossier « Professeurs »",
+            "prop2": "Les élèves peuvent enregistrer leurs documents sur Nextcloud",
+            "status": false
+        },
+        {
+            "name": "Oeufs",
+            "text": "Je peux partager un document enregistré sur Nextcloud avec mes élèves :",
+            "rep": "Vrai",
+            "prop1": "Faux",
+            "prop2": "Je ne sais pas.",
+            "status": false      
+        }
     ]
+
 }

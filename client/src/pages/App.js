@@ -4,15 +4,14 @@ import { Button, CssBaseline } from '@material-ui/core';
 import MenuAppBar from '../components/Header';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Activity from '../components/ModalActivity';
 import DisplayRecipe from '../components/ModalRecipe';
 import DisplayClass from '../components/ModalClass';
 import Typography from '@mui/material/Typography';
 import { Image, Layer, Stage } from 'react-konva';
 import useImage from 'use-image';
 import {Level1, Level2, Level3} from '../BDD/Item.json';
-import { GetRecette, SetRecette, GetPlayer, SetPlayer } from '../index';
-import {Quizzfacile, QuizzIntermédiaire} from '../BDD/Questions.json';
+import { GetRecette, SetRecette, GetPlayer, SetPlayer, incrementQuestTrue } from '../index';
+import {Quizzfacile, QuizzIntermédiaire, Quizzexpert} from '../BDD/Questions.json';
 //formulaire
 import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -49,6 +48,10 @@ let levels = [Level1, Level2, Level3];
 let currentLevel = 0;
 let currentLevelData = levels[currentLevel];
 let question;
+
+export function getCurrentLevel(){
+  return currentLevel;
+}
 
 
 function App() {
@@ -167,6 +170,7 @@ function App() {
       setError(false);
       addIngredient(nomIngredient);
       addScore(newScore);
+      incrementQuestTrue();
       swal({
         title: "Bonne réponse",
         text: "Tu as gagné un ingrédient et 5 pièces d'or!",
@@ -280,7 +284,7 @@ let rep;
 let nomIngredient = "";
 let newScore = "";
 let tabQuest = [];
-let questions = [Quizzfacile, QuizzIntermédiaire];
+let questions = [Quizzfacile, QuizzIntermédiaire, Quizzexpert];
 
 function checkStatus(nomIngr){
   let question = questions[currentLevel].find(x => x.name === nomIngr && x.status == false);

@@ -2,7 +2,8 @@
     "Recette": [
         {
             "NomRecette": "Avocado Toast",
-            "IlluRecette": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/recipes.png",
+            "IlluRecette": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/recipes%20(1).png",
+            "IlluRecetteTrue": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/recipes.png",
             "Done": false,
             "Ingredients": [
                 {
@@ -25,6 +26,7 @@
         {
             "NomRecette": "Fraise sucrées",
             "IlluRecette": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/recipes%20(1).png",
+            "IlluRecetteTrue": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/recipes.png",
             "Done": false,
             "Ingredients":[
                 {
@@ -48,6 +50,7 @@
         {
             "NomRecette": "Gâteau au Chocolat",
             "IlluRecette": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/recipes%20(1).png",
+            "IlluRecetteTrue": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/recipes.png",
             "Done": false,
             "Ingredients":[
                 {
@@ -57,7 +60,7 @@
                 },
                 {
                     "Ingredient":"Oeufs",
-                    "nbTotal": 4,
+                    "nbTotal": 2,
                     "nb": 0
                 },
                 {
