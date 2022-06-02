@@ -143,7 +143,7 @@ export function GetComp(){
 ////////////////////////////////////////////////////////////
 
 document.addEventListener('keydown', function(event) {
-  if ((etatjeu == "sign") && (event.key === 'Enter') && (document.getElementById("pseudos").value != "")){
+  if ((etatjeu === "sign") && (event.key === 'Enter') && (document.getElementById("pseudos").value !== "")){
     player.pseudos = document.getElementById("pseudos").value;
     SetPlayer(player);
     setApp(); 

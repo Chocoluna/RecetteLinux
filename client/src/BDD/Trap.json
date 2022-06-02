@@ -5,7 +5,8 @@
             "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/coffee-machine.png",
             "PosX":"0.034",
             "PosY":"0.465",
-            "Height":"0.13"
+            "Height":"0.13",
+            "status": false
         }
     ], 
     "trapLevel2":[
@@ -14,14 +15,16 @@
             "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/mixer.png",
             "PosX":"0.615",
             "PosY":"0.465",
-            "Height":"0.13"
+            "Height":"0.13",
+            "status": false
         },
         {
             "Nom":"Fromage",
             "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/fromage.png",
             "PosX":"0.7",
             "PosY":"0.155",
-            "Height":"0.04"
+            "Height":"0.04",
+            "status": false
         }
     ],
     "trapLevel3":[
@@ -30,21 +33,24 @@
             "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/watermelon.png",
             "PosX":"0.61",
             "PosY":"0.67",
-            "Height":"0.065"
+            "Height":"0.065",
+            "status": false
         },
         {
             "Nom":"Micro-onde",
             "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/microwave.png",
             "PosX":"0.61",
             "PosY":"0.195",
-            "Height":"0.14"
+            "Height":"0.14",
+            "status": false
         },
         {
             "Nom":"Lait",
             "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/milk-carton.png",
             "PosX":"0.28",
             "PosY":"0.50",
-            "Height":"0.09"
+            "Height":"0.09",
+            "status": false
         }
     ]
 }

@@ -1,7 +1,6 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import { useDynamicAvatarStyles } from '@mui-treasury/styles/avatar/dynamic';
 import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
@@ -19,18 +18,15 @@ export function ChangeThemeModalClass(){
   
     if(theme === "light") {
       classes = light;
-      styles = light;
     }
     else {
       classes = dark;
-      styles = dark;
     }
   }
 
 var light;
 var dark;
 var classes;
-var styles;
 
 
 function Row(props) {
@@ -62,7 +58,7 @@ function Row(props) {
                 display="flex"
                 flexDirection="column"
                 // justifyContent="flex-end" # DO NOT USE THIS WITH 'scroll'
-                height= {window.innerHeight*0.3}
+                height= {window.innerHeight*0.25}
                 style={{
                 overflow: "hidden",
                 overflowY: "scroll" // added scroll
@@ -97,7 +93,6 @@ function Row(props) {
 
 
 function DisplayClass(){
-    const avatarStyles = useDynamicAvatarStyles({ size: 90 });
     
     light = useStylesLight();
     dark = useStylesDark();
@@ -111,7 +106,7 @@ function DisplayClass(){
         <TableHead>
           <TableRow>
             <TableCell />
-            <TableCell>Cours</TableCell>
+            <TableCell><h2>Cours</h2></TableCell>
           </TableRow>
         </TableHead>
         <TableBody >

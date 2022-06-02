@@ -22,18 +22,18 @@ export function ChangeThemeProfil(){
 
   if(theme === "light") {
     classes = light;
-    styles = light;
+
   }
   else {
     classes = dark;
-    styles = dark;
+
   }
 }
 
 var light;
 var dark;
 var classes;
-var styles;
+
 
 function Profil() {
   const avatarStyles = useDynamicAvatarStyles({ size: 90 });

@@ -28,6 +28,7 @@ import { getTheme } from '../theme';
 import cross from '../assets/cross.png';
 import goldpot from '../assets/gold-pot.png';
 import cupcake from '../assets/cupcake.png';
+import lutin from '../assets/lutin.png';
 
 
 export function ChangeThemeApp(){
@@ -35,18 +36,15 @@ export function ChangeThemeApp(){
 
   if(theme === "light") {
     classes = light;
-    styles = light;
   }
   else {
     classes = dark;
-    styles = dark;
   }
 }
 
 let light;
 let dark;
 let classes;
-let styles;
 let levels = [Level1, Level2, Level3];
 let levelsTrap = [trapLevel1, trapLevel2, trapLevel3];
 let levelsReward = [rewardLevel1, rewardLevel2, rewardLevel3];
@@ -91,7 +89,7 @@ function App() {
 
   //charge les tableaux de questions
   const loadQuestionData = (nomIngr) => {
-    question = questions[currentLevel].find(x => x.name === nomIngr && x.status == false);
+    question = questions[currentLevel].find(x => x.name === nomIngr && x.status === false);
     if(question){
       text = question.text
       rep = question.rep
@@ -119,7 +117,7 @@ function App() {
               x={window.innerHeight*elem.PosX} 
               y={window.innerHeight*elem.PosY}
               onClick={() => handleOpenActivity(elem.Nom)}
-              style="cursor: pointer;"
+              style={{cursor:'pointer'}}
               />;
   };
 
@@ -130,8 +128,8 @@ function App() {
               height={window.innerHeight*elem.Height} 
               x={window.innerHeight*elem.PosX} 
               y={window.innerHeight*elem.PosY}
-              onClick={() => handleOpenTrap(elem.Nom)}
-              style="cursor: pointer;"
+              onClick={() => setAlertTrap(elem.Nom)}
+              style={{cursor:'pointer'}}
               />;
   };
 
@@ -143,7 +141,7 @@ function App() {
               x={window.innerHeight*elem.PosX} 
               y={window.innerHeight*elem.PosY}
               onClick={() => setAlertReward(elem.Nom) }
-              style="cursor: pointer;"
+              style={{cursor:'pointer'}}
               />;
   };
 
@@ -155,7 +153,7 @@ function App() {
               x={window.innerHeight*0.034} 
               y={window.innerHeight*0.81}
               onClick={handleOpenRecipes}
-              style="cursor: pointer;"
+              style={{cursor:'pointer'}}
               />;
   };
   
@@ -167,12 +165,13 @@ function App() {
               x={window.innerHeight*0.14} 
               y={window.innerHeight*0.81}
               onClick={handleOpenClass}
-              style="cursor: pointer;"
+              style={{cursor:'pointer'}}
               />;
   };
 
+  //Boite de dialogue pour les récompenses
   const setAlertReward = (nomIngr) => {
-    let itemR = itemReward[currentLevel].find(x => x.Nom === nomIngr && x.status == false);
+    let itemR = itemReward[currentLevel].find(x => x.Nom === nomIngr && x.status === false);
     console.log(itemR);
     if(itemR){
       addScore(15);
@@ -192,10 +191,34 @@ function App() {
     }
   }
 
+    //Boite de dialogue pour les pièges
+  const setAlertTrap = (nomIngr) => {
+    let itemT = itemTrap[currentLevel].find(x => x.Nom === nomIngr && x.status === false);
+    console.log(itemT);
+    if(itemT){
+      checkStatusT(nomIngr)
+      swal({
+        title: "C'est un piège!",
+        text: "Tu t'es laissé distraire et le lutin en profite pour mettre le bazar dans la cuisine! Résouds cet exercice dans le temps limité ou tu auras des ennuis.",
+        icon: lutin,
+        button: "ok",
+      });
+      handleOpenTrap()
+    }
+    else{
+      swal({
+        title: "Tu es déjà tombé dans ce piège!",
+        text:"tu perds 5 pièces d'or!",
+        button: "ok",
+      });
+      minusScore(5);
+    }
+  }
+
 //si condition changement de niveau Vrai
 //changement de niveau
   const newLevel = () => {
-    if(checkLevel() == true){
+    if(checkLevel() === true){
       currentLevel++;
       currentLevelData = levels[currentLevel];
       currentLevelDataTrap = levelsTrap[currentLevel];
@@ -250,7 +273,7 @@ function App() {
 
     } else {
       setError(true);
-      minusScore(newScore);
+      minusScore(2);
       swal({
         title: "Mauvais réponse",
         text: "Tu perds 2 pièces d'or !",
@@ -335,9 +358,10 @@ function App() {
             aria-describedby="modal-modal-description"
             className={classes.modalQuizz}
           >
-            <Box>
+            <Box margin={5}>
               <Button onClick={handleCloseTrap} className={classes.buttonClose}><img src={cross} alt="Close" height="40vh" /></Button>
               <h2>IT'S A TRAP</h2>
+              <Typography >Ici se trouveront différentes activités / exercices, à réaliser en un temps limité, avec des niveaux de difficultés variables en fonction des niveaux. Si l'activités est réussi, le.a joueur.euse a une petite récompense, si ielle échoue, une grosse punition (perte d'ingrédients, de pièces d'or, etc)</Typography>
             </Box>
           </Modal>
         </div>
@@ -372,7 +396,7 @@ let questions = [Quizzfacile, QuizzIntermédiaire, Quizzexpert];
 
 //vérifie si une question est validée ou non
 function checkStatus(nomIngr){
-  let question = questions[currentLevel].find(x => x.name === nomIngr && x.status == false);
+  let question = questions[currentLevel].find(x => x.name === nomIngr && x.status === false);
   console.log(question);
   question.status = true;
   console.log(question);
@@ -382,7 +406,7 @@ function checkStatus(nomIngr){
 function shuffle(array) {
   let currentIndex = array.length,  randomIndex;
   // While there remain elements to shuffle.
-  while (currentIndex != 0) {
+  while (currentIndex !== 0) {
     // Pick a remaining element.
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
@@ -410,8 +434,14 @@ SetRecette(recettes);
 ///////////////////////////////
 let itemReward = [rewardLevel1, rewardLevel2, rewardLevel3];
 function checkStatusR(nomIngr){
-  let itemR = itemReward[currentLevel].find(x => x.Nom === nomIngr && x.status == false);
+  let itemR = itemReward[currentLevel].find(x => x.Nom === nomIngr && x.status === false);
   itemR.status = true;
+}
+
+let itemTrap = [trapLevel1, trapLevel2, trapLevel3];
+function checkStatusT(nomIngr){
+  let itemT = itemTrap[currentLevel].find(x => x.Nom === nomIngr && x.status === false);
+  itemT.status = true;
 }
 
 ////////////////////////////////
@@ -431,7 +461,7 @@ export function minusScore(newScore){
   let player = GetPlayer();
   let score = player.score;
     if(player.score >=2){
-      player.score = score - 2;
+      player.score = score - newScore;
     }
   SetPlayer(player);
   }

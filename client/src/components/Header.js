@@ -8,7 +8,6 @@ import { FiMoon, FiSun } from "react-icons/fi";
 import chefhat from '../assets/chef-hat.png';
 import coin from '../assets/coin.png';
 import { GetPlayer, SetSignInSide } from '../index';
-import { PersonItem } from '../index';
 import { setTheme } from '../theme';
 import {getCurrentLevel} from '../pages/App';
 

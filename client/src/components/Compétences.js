@@ -1,7 +1,6 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import { useDynamicAvatarStyles } from '@mui-treasury/styles/avatar/dynamic';
 import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
@@ -20,18 +19,16 @@ export function ChangeThemeCompetence(){
 
   if(theme === "light") {
     classes = light;
-    styles = light;
   }
   else {
     classes = dark;
-    styles = dark;
   }
 }
 
 var light;
 var dark;
 var classes;
-var styles;
+
 
 function Row(props) {
   const { comp } = props;
@@ -71,7 +68,6 @@ function Row(props) {
 }
 
 function DisplayCompetence(){
-    const avatarStyles = useDynamicAvatarStyles({ size: 90 });
     
     light = useStylesLight();
     dark = useStylesDark();

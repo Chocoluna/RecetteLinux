@@ -18,18 +18,16 @@ export function ChangeThemeModalRecipe(){
   
     if(theme === "light") {
       classes = light;
-      styles = light;
     }
     else {
       classes = dark;
-      styles = dark;
     }
   }
 
 var light;
 var dark;
 var classes;
-var styles;
+
 
 function DisplayRecipe(){
     const avatarStyles = useDynamicAvatarStyles({ size: 90 });
