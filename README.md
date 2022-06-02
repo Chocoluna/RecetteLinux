@@ -12,7 +12,7 @@ A faire
 - [X] ingredient++ et PO++ quand réponse juste
 - [X] affichage cours
 - [ ] Boite de dialogue storytelling début du jeu
-- [ ] ingredients pièges font apparaitre des lutins
+- [X] ingredients pièges font apparaitre des lutins
 - [X] fermer la page profil
 - [X] Livre "cours" + "recettes" côte à côte en bas à gauche
 - [X] display livres en modal : sur le côté, ne bloque pas le jeu (ni visuellement, ni physiquement)
