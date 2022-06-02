@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/RecetteLinux/static/css/main.c74fa50f.chunk.css",
-    "main.js": "/RecetteLinux/static/js/main.ff96bb56.chunk.js",
-    "main.js.map": "/RecetteLinux/static/js/main.ff96bb56.chunk.js.map",
-    "runtime-main.js": "/RecetteLinux/static/js/runtime-main.2249941e.js",
-    "runtime-main.js.map": "/RecetteLinux/static/js/runtime-main.2249941e.js.map",
-    "static/js/2.82eaf77a.chunk.js": "/RecetteLinux/static/js/2.82eaf77a.chunk.js",
-    "static/js/2.82eaf77a.chunk.js.map": "/RecetteLinux/static/js/2.82eaf77a.chunk.js.map",
-    "static/js/3.07a6f651.chunk.js": "/RecetteLinux/static/js/3.07a6f651.chunk.js",
-    "static/js/3.07a6f651.chunk.js.map": "/RecetteLinux/static/js/3.07a6f651.chunk.js.map",
+    "main.js": "/RecetteLinux/static/js/main.c5134def.chunk.js",
+    "main.js.map": "/RecetteLinux/static/js/main.c5134def.chunk.js.map",
+    "runtime-main.js": "/RecetteLinux/static/js/runtime-main.228581e2.js",
+    "runtime-main.js.map": "/RecetteLinux/static/js/runtime-main.228581e2.js.map",
+    "static/js/2.ba14fa32.chunk.js": "/RecetteLinux/static/js/2.ba14fa32.chunk.js",
+    "static/js/2.ba14fa32.chunk.js.map": "/RecetteLinux/static/js/2.ba14fa32.chunk.js.map",
+    "static/js/3.72710864.chunk.js": "/RecetteLinux/static/js/3.72710864.chunk.js",
+    "static/js/3.72710864.chunk.js.map": "/RecetteLinux/static/js/3.72710864.chunk.js.map",
     "index.html": "/RecetteLinux/index.html",
     "static/css/main.c74fa50f.chunk.css.map": "/RecetteLinux/static/css/main.c74fa50f.chunk.css.map",
-    "static/js/2.82eaf77a.chunk.js.LICENSE.txt": "/RecetteLinux/static/js/2.82eaf77a.chunk.js.LICENSE.txt",
+    "static/js/2.ba14fa32.chunk.js.LICENSE.txt": "/RecetteLinux/static/js/2.ba14fa32.chunk.js.LICENSE.txt",
     "static/media/1.3ced86bf.jpg": "/RecetteLinux/static/media/1.3ced86bf.jpg",
     "static/media/2.806601f5.jpg": "/RecetteLinux/static/media/2.806601f5.jpg",
     "static/media/3.75e9463d.jpg": "/RecetteLinux/static/media/3.75e9463d.jpg",
@@ -24,12 +24,13 @@
     "static/media/chef-hat.f384f388.png": "/RecetteLinux/static/media/chef-hat.f384f388.png",
     "static/media/coin.ac38dd84.png": "/RecetteLinux/static/media/coin.ac38dd84.png",
     "static/media/cross.5d07d5fe.png": "/RecetteLinux/static/media/cross.5d07d5fe.png",
+    "static/media/cupcake.39a7856a.png": "/RecetteLinux/static/media/cupcake.39a7856a.png",
     "static/media/gold-pot.6ca74804.png": "/RecetteLinux/static/media/gold-pot.6ca74804.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.2249941e.js",
-    "static/js/2.82eaf77a.chunk.js",
+    "static/js/runtime-main.228581e2.js",
+    "static/js/2.ba14fa32.chunk.js",
     "static/css/main.c74fa50f.chunk.css",
-    "static/js/main.ff96bb56.chunk.js"
+    "static/js/main.c5134def.chunk.js"
   ]
 }
