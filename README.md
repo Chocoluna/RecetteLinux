@@ -20,3 +20,4 @@ A faire
 - [X] Changement de niveaux
 - [X] Transition changement de niveau
 - [X] Changement d'illustration quand recette validée
+- [ ] Boite de dialogue fin du jeu
