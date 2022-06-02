@@ -62,7 +62,7 @@ function Row(props) {
                 display="flex"
                 flexDirection="column"
                 // justifyContent="flex-end" # DO NOT USE THIS WITH 'scroll'
-                height= {window.innerHeight*0.4}
+                height= {window.innerHeight*0.3}
                 style={{
                 overflow: "hidden",
                 overflowY: "scroll" // added scroll

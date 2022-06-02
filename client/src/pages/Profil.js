@@ -69,19 +69,19 @@ function Profil() {
           justifyContent="space-between"
           alignItems="center"
         >
-        <Column p={0} gap={2}>
-            <Row columns={{ xs: 4, sm: 8, md: 12 }}>
-              <Item>
+        <Column p={0} gap={3} >
+            <Row >
+              <Item >
                 <Avatar
                   variant={'rounded'}
                   classes={avatarStyles}
                   src={src}
                 />
               </Item>
-              <Info useStyles={useD01InfoStyles}>
+              <Info useStyles={useD01InfoStyles} width="40vw">
                 <InfoTitle >{name}</InfoTitle>
-                <InfoCaption>niveau {level}</InfoCaption>
-                <InfoSubtitle>{score} pièves d'or</InfoSubtitle>
+                <InfoSubtitle>niveau {level}</InfoSubtitle>
+                <InfoCaption>{score} pièces d'or</InfoCaption>
               </Info>
               <Grid container justifyContent="flex-end">
                 <Button onClick={handleCloseProfil}><img src={cross} alt="Close" height="40vh" /></Button>

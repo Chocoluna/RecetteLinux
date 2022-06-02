@@ -82,9 +82,6 @@ function App() {
   const handleOpenTrap = () => { setOpenTrap(true); };
   const handleCloseTrap = () => { setOpenTrap(false); };
 
-  const [openModalReward, setOpenReward] = useState(false);
-  const handleOpenReward = () => { setOpenReward(true); setAlertReward() };
-  const handleCloseReward = () => { setOpenReward(false); };
 
   //charge l'image de fond
   const BackgroundImage = () => {
@@ -103,6 +100,7 @@ function App() {
       tabQuest.push(question.prop1, question.prop2, question.rep) 
       tabQuest = shuffle(tabQuest);
     }else{
+      console.log(question);
       handleCloseActivity();
       swal({
         title: "Tu as cet ingrédient en quantité suffisante!",
@@ -144,7 +142,7 @@ function App() {
               height={window.innerHeight*elem.Height} 
               x={window.innerHeight*elem.PosX} 
               y={window.innerHeight*elem.PosY}
-              onClick={() => handleOpenActivity(elem.Nom)}
+              onClick={() => setAlertReward(elem.Nom) }
               style="cursor: pointer;"
               />;
   };
@@ -173,14 +171,25 @@ function App() {
               />;
   };
 
-  const setAlertReward = () => {
+  const setAlertReward = (nomIngr) => {
+    let itemR = itemReward[currentLevel].find(x => x.Nom === nomIngr && x.status == false);
+    console.log(itemR);
+    if(itemR){
+      addScore(15);
+      checkStatusR(nomIngr)
       swal({
         title: "Un choix intéressant!",
         text: "Le lutin est distrait par tes exploits culinaires. Si distrait qu'il laisse échapper de ses poches un cupcake et 15 pièces d'or",
         icon: cupcake,
         button: "ok",
       });
-      handleCloseReward();
+    }
+    else{
+      swal({
+        title: "Tu as déjà gagné cette récompense!",
+        button: "ok",
+      });
+    }
   }
 
 //si condition changement de niveau Vrai
@@ -229,7 +238,7 @@ function App() {
     if (value === rep) {
       setError(false);
       addIngredient(nomIngredient);
-      addScore(newScore);
+      addScore(5);
       incrementQuestTrue();
       swal({
         title: "Bonne réponse",
@@ -332,16 +341,6 @@ function App() {
             </Box>
           </Modal>
         </div>
-        <div justifyContent="flex-start">
-          <Modal
-            open={openModalReward}
-            onClose={handleCloseReward}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-            className={classes.modalQuizz}
-          >
-          </Modal>
-        </div>
         <div className={classes.center}>
           <Stage width={window.innerHeight} height={window.innerHeight * 0.95} styles="border-color: black">
             <Layer>
@@ -406,11 +405,24 @@ recettes.forEach(recette => {
 SetRecette(recettes);  
 }
 
+////////////////////////////////
+//////Fonctions Items//////////
+///////////////////////////////
+let itemReward = [rewardLevel1, rewardLevel2, rewardLevel3];
+function checkStatusR(nomIngr){
+  let itemR = itemReward[currentLevel].find(x => x.Nom === nomIngr && x.status == false);
+  itemR.status = true;
+}
+
+////////////////////////////////
+//////Fonctions PO//////////
+///////////////////////////////
+
 //incrémente le score (=pièces d'or)
 export function addScore(newScore){
 let player = GetPlayer();
 let score = player.score;
-player.score = score + 5;
+player.score = score + newScore;
 SetPlayer(player);
 }
 
@@ -423,6 +435,7 @@ export function minusScore(newScore){
     }
   SetPlayer(player);
   }
+
 
 export default App;
 
