@@ -1,0 +1,36 @@
+{
+    "rewardLevel1":[
+        {
+            "Nom":"FromageGood",
+            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/fromage.png",
+            "PosX":"0.7",
+            "PosY":"0.155",
+            "Height":"0.04"
+        }
+    ], 
+    "rewardLevel2":[
+        {
+            "Nom":"BolGood",
+            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/bowl.png",
+            "PosX":"0.805",
+            "PosY":"0.325",
+            "Height":"0.065"
+        }
+    ],
+    "rewardLevel3":[
+        {
+            "Nom":"OrangeGood",
+            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/orange.png",
+            "PosX":"0.29",
+            "PosY":"0.64",
+            "Height":"0.04"
+        },
+        {
+            "Nom":"MixerGood",
+            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/mixer.png",
+            "PosX":"0.615",
+            "PosY":"0.465",
+            "Height":"0.13"
+        }
+    ]
+}

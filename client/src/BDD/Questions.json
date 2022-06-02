@@ -39,6 +39,14 @@
             "prop1": "Dans le dossier Elèves",
             "prop2": "Dans le dossier Confidentiel",
             "status": false
+        },
+        {
+            "name": "Toast",
+            "text": "S'il y a un problème sur l'ordinateur",
+            "rep": "Je peux contacter la DSI par mail ou par téléphone",
+            "prop1": "Je ne peux pas contacter la DSI directement",
+            "prop2": "Je dois le régler moi-même",
+            "status": false
         }
 
     ],
@@ -105,9 +113,9 @@
         {
             "name": "Beurre",
             "text": "Cochez la phrase VRAIE :",
-            "rep": "Les élèves peuvent modifier ou supprimer les documents de leurs camarades dans le dossier « Elèves »",
+            "rep": "Les élèves peuvent enregistrer leurs documents sur Nextcloud",
             "prop1": "Les élèves peuvent modifier ou supprimer les documents de leurs camarades dans le dossier « Professeurs »",
-            "prop2": "Les élèves peuvent enregistrer leurs documents sur Nextcloud",
+            "prop2": "Les élèves peuvent modifier ou supprimer les documents de leurs camarades dans le dossier « Confidentiel »",
             "status": false
         },
         {

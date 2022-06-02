@@ -2,7 +2,7 @@ import { Button, CssBaseline, Grid } from '@material-ui/core';
 import Avatar from '@material-ui/core/Avatar';
 import { Column, Item, Row } from '@mui-treasury/components/flex';
 import {
-  Info, InfoSubtitle, InfoTitle
+  Info, InfoSubtitle, InfoTitle, InfoCaption
 } from '@mui-treasury/components/info';
 import { useDynamicAvatarStyles } from '@mui-treasury/styles/avatar/dynamic';
 import { useD01InfoStyles } from '@mui-treasury/styles/info/d01';
@@ -11,6 +11,7 @@ import React, { useState } from 'react';
 import cross from '../assets/cross.png';
 import DisplayCompetence from '../components/Compétences';
 import MenuAppBar from '../components/Header';
+import {getCurrentLevel} from '../pages/App';
 //CSS
 import { useStylesDark, useStylesLight } from '../css/ProfilStyle';
 import { GetPlayer, setApp } from '../index';
@@ -45,6 +46,7 @@ function Profil() {
   let name = player.pseudos;
   let src = player.avatar;
   let score = player.score;
+  let level = getCurrentLevel();
 
   const [openModalProfil, setOpenProfil] = useState(true);
   const handleOpenProfil = (elem) => { setOpenProfil(true); };
@@ -78,7 +80,8 @@ function Profil() {
               </Item>
               <Info useStyles={useD01InfoStyles}>
                 <InfoTitle >{name}</InfoTitle>
-                <InfoSubtitle>{score}</InfoSubtitle>
+                <InfoCaption>niveau {level}</InfoCaption>
+                <InfoSubtitle>{score} pièves d'or</InfoSubtitle>
               </Info>
               <Grid container justifyContent="flex-end">
                 <Button onClick={handleCloseProfil}><img src={cross} alt="Close" height="40vh" /></Button>

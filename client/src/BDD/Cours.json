@@ -1,32 +1,30 @@
 {
     "Cours": [
         {
-            "titre": "Chapitre 1",
-            "sousTitre": "Pour sauvegarder des documents:",
-            "contenu": "Il est important de ne pas enregistrer ses documents directement sur le lecteur C: de l’ordinateur sur lequel on travaille (par exemple dans le bureau). En cas de problème technique sur l’ordinateur ou de changement de poste, les données stockées seront perdues. Leur sauvegarde doit se faire sur le serveur de l’école voire même sur la plateforme internet Nextcloud qui a une version spéciale pour les professeurs (Cf. Chapitre 2).", 
-            "points":[],
-            "lien":"",
-            "conclusion": "Google drive qui est un autre espace de stockage, n’a pas cette alternative."            
-        },
-        {
-            "titre": "Chapitre 2",
-            "sousTitre": " Sauvegarder sur Nextcloud ",
-            "contenu": "Nexcloud est un service cloud (un hébergement de fichiers en ligne) proposé par le Ministère de l’Education Nationale. Son déploiement a pour objectif de proposer une alternative aux solutions de drive opérés par des acteurs privés transnationaux et pour lesquelles toutes les garanties ne sont pas présentes pour protéger les données des élèves. Il met à disposition une espace de stockage en ligne sécurisé pour diffuser et partager des documents et des ressources téléchargeables à partir d’un poste de travail ou d’un appareil mobile. Accessible après la création d’un compte personnel grâce à votre mail académique, ce service facilite le travail collaboratif entre les personnels de l’Education Nationale. Il répond aux conditions préconisées dans le cadre du règlement général de la protection des données (RGPD).",
-            "points": [
+            "titre":"Introduction",
+            "sousTitre": "",
+            "contenu": "Linux Mint est ce qu'on appelle un système d'exploitation (OS). Un OS est un ensemble de programmes qui permettent le fonctionnement et l’utilisation des principales ressources de l’ordinateur (mémoire, disque dur, processeur). Windows est aussi un système d'exploitation. SI vous avez un problème avec votre poste de travail, voici la marche à suivre:",
+            "points":[
                 {
-                    "point":"En tant qu’enseignant, vous disposez d’un espace de stockage de 1Go avec des dossiers à organiser. Vous pouvez partager un dossier ou des fichiers facilement et envoyer le lien à vos élèves."
+                    "point":"le signaler à votre direction, qui contactera la DSI (=le support informatique)"
                 },
                 {
-                    "point": "L’élève peut rendre des travaux en utilisant un lien, unique, lié à un dossier de l’espace de l’enseignant."
+                    "point":"contacter la DSI au 04 76 86 31 31"
+                },
+                {
+                    "point":"ou via assistance.informatique.ecole@grenoble.fr"
+                },
+                {
+                    "point":"Dans tous les cas, veillez à transmettre : le n° de salle et le n° du poste"
                 }
-            ],             
-            "lien" : "https://apps.education.fr/plateforme/lyon/",
-            "conclusion":"Vous devez préalablement créer un compte sur le portail apps.education.fr si vous n’en possédez pas encore un.(Source :https://dane.ins.acguyane.fr/nextcloudun-service-academique-d.html)."
+            ],
+            "lien":"icône « assistance informatique » sur le bureau de votre poste contient toutes les informations nécessaires pour répondre à la DSI lors d'un dépannage",
+            "conclusion": "De même, si vous souhaitez installer un logiciel (y compris logiciels éducatifs comme SCRATCH)*, une police d'écriture, etc.. sur votre poste, assurez-vous qu'il s'agit d'un « logiciel libre » et compatible avec Linux Mint, puis faites une demande à la DSI. Cela vaut aussi pour obtenir un lecteur CD-ROMS car votre ordinateur n'en possède pas."            
         },
         {
-            "titre": "Chapitre 3",
-            "sousTitre": "Sauvegarder, modifier ou supprimer des documents sur le serveur : ",
-            "contenu": "L’arborescence du serveur fait apparaître plusieurs dossiers :",
+            "titre": "Chapitre 1",
+            "sousTitre": "Se repérer dans l'environnement",
+            "contenu": "Lorsque l'ordinateur s'allume, vous êtes sur le bureau, où vous trouverez l'icône « assistance informatique » et le menu Démarrer. tous les logiciels éducatifs installés sur vote poste se trouvent dans le menu Démarrer. Lorsque vous êtes dans un dossier, l’arborescence (la liste des dossiers et fichiers à gauche) montre plusieurs dossiers. Les plus importants sont :", 
             "points":[
                 {
                     "point": "« Confidentiel » : ce dossier est partagé par tous les professeurs et la direction. Toutes les personnes qui y ont accès peuvent modifier ou supprimer les documents qui s'y trouvent. Les élèves n'y ont pas accès."
@@ -35,11 +33,39 @@
                     "point": "« Scan » : les documents numérisés sont envoyés automatiquement dans ce dossier."
                 },
                 {
-                    "point": "« Dossiers classes » (ex : dossier CP, dossier CE1) contiennent chacun un dossier « « Profs » et un dossier « Elèves ». - « Profs » : Les élèves peuvent voir et travailler directement sur les documents stockés dans « Profs », mais ils ne peuvent pas en modifier la source ou les supprimer. Rappel : Pour sauvegarder, les élèves cliquent sur « enregistrer sous », puis sur dossier Elèves afin que leur document soit enregistré dans le dossier Elèves. - « Elèves » : dans ce dossier, les élèves peuvent tout faire, y compris supprimer ou modifier le travail de leurs camarades !"
+                    "point": "Dossiers des classes « CP, « CE1/CE2, « CM1/CM2 » contiennent chacun un dossier « « Profs » et un dossier « Elèves ». - « Profs » : Les élèves peuvent voir et travailler directement sur les documents stockés dans « Profs », mais ils ne peuvent pas en modifier la source ou les supprimer. Rappel : Pour sauvegarder, les élèves cliquent sur « enregistrer sous », et leur document est enregistré automatiquement dans le dossier Elèves. - « Elèves » : dans ce dossier, les élèves peuvent tout faire, y compris supprimer ou modifier le travail de leurs camarades ! Par conséquent, il est important de les amener à être vigilants sur ce dernier point. Également, à titre préventif, il est conseillé de prendre les documents stockés dans « Elèves » lorsqu’ils sont terminés et de les archiver dans « Profs » afin de les protéger d’une éventuelle suppression ou modification de la part d’un élève."
                 }
             ],
+            "lien":"Il est important de ne pas enregistrer ses documents directement sur le bureu de l’ordinateur sur lequel on travaille : en cas de problème technique sur l’ordinateur ou de changement de poste, les données stockées seront perdues. Les sauvegardes doivent être faites sur le serveur de l’école (les dossiers ci-dessus) et / ou sur le bureau, mais jamais uniquement sur le bureau",
+            "conclusion": "Pour stocker vous documents en ligne afin d'y avoir accès depuis chez vous, la DSI recommande Nextcloud. Similaire à Google Drive, cette platerformea une version spéciale pour les professeurs (Cf. Chapitre 2)."            
+        },
+        {
+            "titre": "Chapitre 2",
+            "sousTitre": " Sauvegarder sur Nextcloud ",
+            "contenu": "Nexcloud est un service cloud (hébergement de fichiers en ligne) proposé par le Ministère de l’Education Nationale. Il met à disposition une espace de stockage en ligne sécurisé pour diffuser et partager des documents et des ressources téléchargeables à partir d’un poste de travail ou d’un appareil mobile. Accessible après la création d’un compte personnel grâce à votre mail académique, ce service facilite le travail collaboratif entre les personnels de l’Education Nationale. Il répond aux conditions préconisées dans le cadre du règlement général de la protection des données (RGPD).",
+            "points": [
+                {
+                    "point":"En tant qu’enseignant, vous disposez d’un espace de stockage de 1Go avec des dossiers à organiser. Vous pouvez partager un dossier ou des fichiers facilement et envoyer le lien à vos élèves."
+                },
+                {
+                    "point": "L’élève peut rendre des travaux en utilisant un lien, unique, lié à un dossier de l’espace de l’enseignant."
+                },
+                {
+                    "point": "Vous devez préalablement créer un compte sur le portail apps.education.fr si vous n’en possédez pas encore un."
+                }
+            ],             
+            "lien" : "https://apps.education.fr/plateforme/lyon/",
+            "conclusion":"C'est une solution efficace qui protège mieux pour protéger vos données et celles des élèves."
+        },
+        {
+            "titre": "Chapitre 3",
+            "sousTitre": " ",
+            "contenu": "",
+            "points":[
+                
+            ],
             "lien":"",
-            "conclusion":"Par conséquent, il est important de les amener à être vigilants sur ce dernier point. Également, à titre préventif, il est conseillé de prendre les documents stockés dans « Elèves » lorsqu’ils sont terminés et de les archiver dans « Profs » afin de les protéger d’une éventuelle suppression ou modification de la part d’un élève."
+            "conclusion":""
         }
 
     ]

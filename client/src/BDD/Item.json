@@ -66,7 +66,7 @@
             "Image":"https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/flour.png",
             "PosX":"0.65",
             "PosY":"0.12",
-            "Height":"0.07"
+            "Height":"0.06"
         },
         {
             "Nom":"Chocolat",
@@ -78,9 +78,9 @@
         {
             "Nom":"Beurre",
             "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/beurre.png",
-            "PosX":"0.62",
+            "PosX":"0.12",
             "PosY":"0.72",
-            "Height":"0.08"
+            "Height":"0.065"
         }
     ]
 }

@@ -10,6 +10,7 @@ import coin from '../assets/coin.png';
 import { GetPlayer, SetSignInSide } from '../index';
 import { PersonItem } from '../index';
 import { setTheme } from '../theme';
+import {getCurrentLevel} from '../pages/App';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,6 +55,7 @@ function MenuAppBar() {
   let name = player.pseudos;
   let src = player.avatar;
   let score = player.score;
+  let level = getCurrentLevel();
 
   const handleChange = (event) => {
     setAuth(event.target.checked);
@@ -99,8 +101,7 @@ function MenuAppBar() {
                 </Row>
               </Button>
             <Button><img src={coin} alt="Coins" height="40vh" /></Button>
-            <Button> About Us </Button>
-            <Button> Help </Button>
+            <Button>Niveau {level}</Button>
           </ButtonGroup>
           <Grid container justifyContent="flex-end">
            <FormGroup>
@@ -109,6 +110,8 @@ function MenuAppBar() {
                label={auth ? <FiMoon/> : <FiSun />}
              />
            </FormGroup>
+           <Button> About Us </Button>
+            <Button> Help </Button>
            </Grid>
         </Toolbar>
       </AppBar>

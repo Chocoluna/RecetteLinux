@@ -1,28 +1,14 @@
 {
-    "Level1":[
+    "trapLevel1":[
         {
             "Nom":"Café",
             "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/coffee-machine.png",
             "PosX":"0.034",
             "PosY":"0.465",
             "Height":"0.13"
-        },
-        {
-            "Nom":"Fromage",
-            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/fromage.png",
-            "PosX":"0.7",
-            "PosY":"0.155",
-            "Height":"0.04"
         }
     ], 
-    "Level2":[
-        {
-            "Nom":"Bol",
-            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/bowl.png",
-            "PosX":"0.805",
-            "PosY":"0.325",
-            "Height":"0.065"
-        },
+    "trapLevel2":[
         {
             "Nom":"Mixer",
             "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/mixer.png",
@@ -38,34 +24,20 @@
             "Height":"0.04"
         }
     ],
-    "Level3":[
+    "trapLevel3":[
         {
             "Nom":"Pastèque",
-            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/des-oeufs.png",
-            "PosX":"0.27",
-            "PosY":"0.07",
-            "Height":"0.1"
-        },
-        {
-            "Nom":"Orange",
-            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/sugar.png",
-            "PosX":"0.59",
-            "PosY":"0.12",
-            "Height":"0.07"
+            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/watermelon.png",
+            "PosX":"0.61",
+            "PosY":"0.67",
+            "Height":"0.065"
         },
         {
             "Nom":"Micro-onde",
-            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/sugar.png",
-            "PosX":"0.59",
-            "PosY":"0.12",
-            "Height":"0.07"
-        },
-        {
-            "Nom":"Mixer",
-            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/mixer.png",
-            "PosX":"0.615",
-            "PosY":"0.465",
-            "Height":"0.13"
+            "Image": "https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/microwave.png",
+            "PosX":"0.61",
+            "PosY":"0.195",
+            "Height":"0.14"
         },
         {
             "Nom":"Lait",

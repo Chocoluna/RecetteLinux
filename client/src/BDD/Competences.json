@@ -4,32 +4,52 @@
             "titre": "Debutant",
             "tab" : [
                 {
-                    "competence": "sauvegarde"
+                    "competence": "Enregistrer un document."
                 },
                 {
-                    "competence": "environnement"
+                    "competence": "Identifier les icônes du bureau."
+                },
+                {
+                    "competence": "Utiliser Libre office traitement de texte."
+                },
+                {
+                    "competence": "Créer un tableau."
+                },
+                {
+                    "competence": "Insérer des images."
+                },
+                {
+                    "competence": "Positionner des images ou des captures d’images."
+                },
+                {
+                    "competence": "Projeter une page en affichage complet."
                 }
+
             ]            
         },
         {
             "titre": "Intermediaire",
             "tab" : [
                 {
-                    "competence": "environnement"
+                    "competence": "Utiliser le gestionnaire de fichiers."
                 },
                 {
-                    "competence": "environnement"
+                    "competence": "Travailler sur tableur."
+                },
+                {
+                    "competence": "Compléter un pdf."
+                },
+                {
+                    "competence": "Imprimer un pdf avec la totalité de son contenu."
                 }
+
             ]
         },
         {
             "titre": "Expert",
             "tab": [
                 {
-                    "competence": "environnement"
-                },
-                {
-                    "competence": "environnement"
+                    "competence": "Interpréter des problèmes liés à des erreurs humaines ou des défaillances technologiques."
                 }
             ]
         }

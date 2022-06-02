@@ -10,6 +10,8 @@ import Typography from '@mui/material/Typography';
 import { Image, Layer, Stage } from 'react-konva';
 import useImage from 'use-image';
 import {Level1, Level2, Level3} from '../BDD/Item.json';
+import {trapLevel1, trapLevel2, trapLevel3} from '../BDD/Trap.json';
+import { rewardLevel1, rewardLevel2, rewardLevel3 } from '../BDD/Reward.json';
 import { GetRecette, SetRecette, GetPlayer, SetPlayer, incrementQuestTrue } from '../index';
 import {Quizzfacile, QuizzIntermédiaire, Quizzexpert} from '../BDD/Questions.json';
 //formulaire
@@ -25,6 +27,7 @@ import { useStylesDark, useStylesLight } from '../css/AppStyle';
 import { getTheme } from '../theme';
 import cross from '../assets/cross.png';
 import goldpot from '../assets/gold-pot.png';
+import cupcake from '../assets/cupcake.png';
 
 
 export function ChangeThemeApp(){
@@ -45,8 +48,12 @@ let dark;
 let classes;
 let styles;
 let levels = [Level1, Level2, Level3];
+let levelsTrap = [trapLevel1, trapLevel2, trapLevel3];
+let levelsReward = [rewardLevel1, rewardLevel2, rewardLevel3];
 let currentLevel = 0;
 let currentLevelData = levels[currentLevel];
+let currentLevelDataTrap = levelsTrap[currentLevel];
+let currentLevelDataReward = levelsReward[currentLevel];
 let question;
 
 export function getCurrentLevel(){
@@ -71,11 +78,21 @@ function App() {
   const handleOpenClass = () => { setOpenClass(true); };
   const handleCloseClass = () => { setOpenClass(false); };
 
+  const [openModalTrap, setOpenTrap] = useState(false);
+  const handleOpenTrap = () => { setOpenTrap(true); };
+  const handleCloseTrap = () => { setOpenTrap(false); };
+
+  const [openModalReward, setOpenReward] = useState(false);
+  const handleOpenReward = () => { setOpenReward(true); setAlertReward() };
+  const handleCloseReward = () => { setOpenReward(false); };
+
+  //charge l'image de fond
   const BackgroundImage = () => {
     const [image] = useImage('https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/Kitchen.png');
     return <Image image={image} width={window.innerHeight} height={window.innerHeight} />;
   };
 
+  //charge les tableaux de questions
   const loadQuestionData = (nomIngr) => {
     question = questions[currentLevel].find(x => x.name === nomIngr && x.status == false);
     if(question){
@@ -96,6 +113,7 @@ function App() {
     }
   };
 
+  //charge les ingrédients pour la recette
   const LoadItem = ({elem}) => {
     const [image] = useImage(elem.Image);
     return <Image image={image} width={window.innerHeight*elem.Height} 
@@ -107,7 +125,20 @@ function App() {
               />;
   };
 
+  //charge les ingrédients et objets pièges
   const LoadTrap = ({elem}) => {
+    const [image] = useImage(elem.Image);
+    return <Image image={image} width={window.innerHeight*elem.Height} 
+              height={window.innerHeight*elem.Height} 
+              x={window.innerHeight*elem.PosX} 
+              y={window.innerHeight*elem.PosY}
+              onClick={() => handleOpenTrap(elem.Nom)}
+              style="cursor: pointer;"
+              />;
+  };
+
+  //charge les ingrédients et objets récompenses
+  const LoadReward = ({elem}) => {
     const [image] = useImage(elem.Image);
     return <Image image={image} width={window.innerHeight*elem.Height} 
               height={window.innerHeight*elem.Height} 
@@ -118,17 +149,7 @@ function App() {
               />;
   };
 
-  const Fromage = () => {
-    const [image] = useImage('https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/concombre.png');
-    return <Image image={image} width={window.innerHeight*0.065} 
-              height={window.innerHeight*0.065} 
-              x={window.innerHeight*0.27} 
-              y={window.innerHeight*0.64}
-              onClick={handleOpenRecipes}
-              style="cursor: pointer;"
-              />;
-  };
-
+  //charge les recettes
   const RecipeBook = () => {
     const [image] = useImage('https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/book.png');
     return <Image image={image} width={window.innerHeight*0.10} 
@@ -140,6 +161,7 @@ function App() {
               />;
   };
   
+  //charge les cours
   const ClassBook = () => {
     const [image] = useImage('https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/book2.png');
     return <Image image={image} width={window.innerHeight*0.10} 
@@ -151,10 +173,24 @@ function App() {
               />;
   };
 
+  const setAlertReward = () => {
+      swal({
+        title: "Un choix intéressant!",
+        text: "Le lutin est distrait par tes exploits culinaires. Si distrait qu'il laisse échapper de ses poches un cupcake et 15 pièces d'or",
+        icon: cupcake,
+        button: "ok",
+      });
+      handleCloseReward();
+  }
+
+//si condition changement de niveau Vrai
+//changement de niveau
   const newLevel = () => {
     if(checkLevel() == true){
       currentLevel++;
       currentLevelData = levels[currentLevel];
+      currentLevelDataTrap = levelsTrap[currentLevel];
+      currentLevelDataReward = levelsReward[currentLevel];
       swal({
         title: "Bravo, tu as gagné un niveau!",
         text: "+10 pièces d'or",
@@ -164,6 +200,7 @@ function App() {
     }
   }
 
+  //condition pour changer de niveau
   const checkLevel = () => {
     let recettes = GetRecette();
     let valretour = true;
@@ -175,6 +212,7 @@ function App() {
     return valretour;
   }
 
+  //Gestion de réponses aux questions
   const [value, setValue] = React.useState('');
   const [error, setError] = React.useState(false);
   const [helperText, setHelperText] = React.useState('Choose wisely');
@@ -261,7 +299,7 @@ function App() {
           >
             <Box >
               <Button onClick={handleCloseRecipes} className={classes.buttonClose}><img src={cross} alt="Close" height="40vh" /></Button>
-              <Typography>Recettes</Typography>
+              <h2>Recettes</h2>
               <DisplayRecipe/>
             </Box>
           </Modal>
@@ -276,9 +314,32 @@ function App() {
           >
             <Box>
               <Button onClick={handleCloseClass} className={classes.buttonClose}><img src={cross} alt="Close" height="40vh" /></Button>
-              <Typography>Recettes</Typography>
               <DisplayClass/>
             </Box>
+          </Modal>
+        </div>
+        <div justifyContent="flex-start">
+          <Modal
+            open={openModalTrap}
+            onClose={handleCloseTrap}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+            className={classes.modalQuizz}
+          >
+            <Box>
+              <Button onClick={handleCloseTrap} className={classes.buttonClose}><img src={cross} alt="Close" height="40vh" /></Button>
+              <h2>IT'S A TRAP</h2>
+            </Box>
+          </Modal>
+        </div>
+        <div justifyContent="flex-start">
+          <Modal
+            open={openModalReward}
+            onClose={handleCloseReward}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+            className={classes.modalQuizz}
+          >
           </Modal>
         </div>
         <div className={classes.center}>
@@ -289,8 +350,9 @@ function App() {
             <Layer>
               <RecipeBook />
               <ClassBook />
-              <Fromage />
-              { currentLevelData.map(items => <LoadItem elem={items}/>)}              
+              { currentLevelData.map(items => <LoadItem elem={items}/>)}
+              { currentLevelDataTrap.map(items => <LoadTrap elem={items}/>)}
+              { currentLevelDataReward.map(items => <LoadReward elem={items}/>)}              
             </Layer>
           </Stage>
 
@@ -309,6 +371,7 @@ let newScore = "";
 let tabQuest = [];
 let questions = [Quizzfacile, QuizzIntermédiaire, Quizzexpert];
 
+//vérifie si une question est validée ou non
 function checkStatus(nomIngr){
   let question = questions[currentLevel].find(x => x.name === nomIngr && x.status == false);
   console.log(question);
@@ -316,16 +379,14 @@ function checkStatus(nomIngr){
   console.log(question);
 }
 
+//rendu aléatoire des propositions de quizz
 function shuffle(array) {
   let currentIndex = array.length,  randomIndex;
-
   // While there remain elements to shuffle.
   while (currentIndex != 0) {
-
     // Pick a remaining element.
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
-
     // And swap it with the current element.
     [array[currentIndex], array[randomIndex]] = [
       array[randomIndex], array[currentIndex]];

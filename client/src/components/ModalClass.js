@@ -80,6 +80,12 @@ function Row(props) {
                     <Typography><br/>- {elem.point}</Typography>
                   ))}
               </Typography>
+              <Typography><br/>
+                {cours.lien}
+              </Typography>
+              <Typography><br/>
+                {cours.conclusion}
+              </Typography>
 
             </Box>
           </Collapse>
