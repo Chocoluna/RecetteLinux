@@ -13,7 +13,6 @@ A faire
 - [X] affichage cours
 - [ ] Boite de dialogue storytelling début du jeu
 - [ ] ingredients pièges font apparaitre des lutins
-- [ ] ingrédients "pièges" donnent des bonus
 - [X] fermer la page profil
 - [X] Livre "cours" + "recettes" côte à côte en bas à gauche
 - [X] display livres en modal : sur le côté, ne bloque pas le jeu (ni visuellement, ni physiquement)
