@@ -64,6 +64,10 @@ function App() {
   dark = useStylesDark();
   ChangeThemeApp();
 
+  const [openModalIntro, setOpenIntro] = useState(true);
+  const handleOpenIntro = () => { setOpenIntro(false); };
+  const handleCloseIntro = () => { setOpenIntro(false); };
+
   const [openModalActivity, setOpenActivity] = useState(false);
   const handleOpenActivity = (elem) => { loadQuestionData(elem) ; if(question) setOpenActivity(true); };
   const handleCloseActivity = () => { setOpenActivity(false); };
@@ -98,7 +102,6 @@ function App() {
       tabQuest.push(question.prop1, question.prop2, question.rep) 
       tabQuest = shuffle(tabQuest);
     }else{
-      console.log(question);
       handleCloseActivity();
       swal({
         title: "Tu as cet ingrédient en quantité suffisante!",
@@ -172,7 +175,6 @@ function App() {
   //Boite de dialogue pour les récompenses
   const setAlertReward = (nomIngr) => {
     let itemR = itemReward[currentLevel].find(x => x.Nom === nomIngr && x.status === false);
-    console.log(itemR);
     if(itemR){
       addScore(15);
       checkStatusR(nomIngr)
@@ -289,6 +291,45 @@ function App() {
     <div className={classes.root}>
       <CssBaseline />
       <MenuAppBar />
+      <div justifyContent="flex-start">
+        <Modal
+            open={openModalIntro}
+            onClose={handleCloseIntro}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+            className={classes.modalQuizz}
+          >
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: { xs: 'column', md: 'column' },
+                alignItems: 'center',
+                overflow: 'hidden',
+                borderRadius: '12px',
+                fontWeight: 'bold',
+              }}
+            >
+              <Box component="img"
+                src={lutin}
+                alt="lutin"
+                sx={{
+                  height: 200
+                }}
+              />
+              <Box margin={5}
+                >
+                <Button onClick={handleCloseIntro} className={classes.buttonClose}><img src={cross} alt="Close" height="40vh" /></Button>
+                <Typography>
+                Tu as ramassé un écu d’or hier, à la lisière de la forêt de Brocéliande. Malheureusement pour toi, cette pièce appartenait à un lutin ! 
+                Pour le récupérer et se venger, celui-ci t’a suivi et s’est caché dans ta cuisine. Pas de chance ! Tu attends des invités pour le dîner.
+                Il te faut alors préparer le repas mais aussi déjouer les mauvaises farces de ton nouvel occupant ! Sinon, ta cuisine Linux deviendra 
+                sa cuisine ! Et ta maison, deviendra sa maison !
+                </Typography>
+              </Box>
+              
+            </Box>
+          </Modal>
+        </div>
       <div>
         <Modal
           open={openModalActivity}
@@ -397,9 +438,7 @@ let questions = [Quizzfacile, QuizzIntermédiaire, Quizzexpert];
 //vérifie si une question est validée ou non
 function checkStatus(nomIngr){
   let question = questions[currentLevel].find(x => x.name === nomIngr && x.status === false);
-  console.log(question);
   question.status = true;
-  console.log(question);
 }
 
 //rendu aléatoire des propositions de quizz
