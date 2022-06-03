@@ -11,7 +11,7 @@ A faire
 - [X] Formulaire quizz
 - [X] ingredient++ et PO++ quand réponse juste
 - [X] affichage cours
-- [ ] Boite de dialogue storytelling début du jeu
+- [X] Boite de dialogue storytelling début du jeu
 - [X] ingredients pièges font apparaitre des lutins
 - [X] fermer la page profil
 - [X] Livre "cours" + "recettes" côte à côte en bas à gauche
