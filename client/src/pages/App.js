@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import swal from 'sweetalert';
 import { Button, CssBaseline } from '@material-ui/core';
 import MenuAppBar from '../components/Header';
@@ -64,8 +64,8 @@ function App() {
   dark = useStylesDark();
   ChangeThemeApp();
 
-  const [openModalIntro, setOpenIntro] = useState(true);
-  const handleOpenIntro = () => { setOpenIntro(false); };
+  const [openModalIntro, setOpenIntro] = useState(false);
+  const handleOpenIntro = () => { setOpenIntro(true); };
   const handleCloseIntro = () => { setOpenIntro(false); };
 
   const [openModalActivity, setOpenActivity] = useState(false);
@@ -84,7 +84,7 @@ function App() {
   const handleOpenTrap = () => { setOpenTrap(true); };
   const handleCloseTrap = () => { setOpenTrap(false); };
 
-
+  
   //charge l'image de fond
   const BackgroundImage = () => {
     const [image] = useImage('https://raw.githubusercontent.com/Chocoluna/RecetteLinux/main/client/src/assets/Kitchen.png');
@@ -287,6 +287,14 @@ function App() {
     newLevel();
   };
 
+  useEffect(() => {
+    let status = sessionStorage.getItem("modalIntro");
+    if(!status){
+      setOpenIntro(true);
+      sessionStorage.setItem("modalIntro", 1);
+    }
+  })
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -325,6 +333,13 @@ function App() {
                 Il te faut alors préparer le repas mais aussi déjouer les mauvaises farces de ton nouvel occupant ! Sinon, ta cuisine Linux deviendra 
                 sa cuisine ! Et ta maison, deviendra sa maison !
                 </Typography>
+                <Typography>Pour te débarrasser du lutin, retrouve les ingrédients éparpillés dans ta cuisine et réalise les recettes avant l'arrivée
+                  de tes invités. 
+                </Typography>
+                <Typography>Pour obtenir les ingrédients, clique dessus et répond aux questions. Si tu réponds juste, tu gagnes un ingrédients ! Si tu réponds faux...
+                  Lis le livre de cours pour 
+                  Les recettes à réaliser se trouve dans le livre de recettes sur le sol de ta cuisine. A côté se trouve le livre de cours, 
+                  qui te permettra de répondre aux questions. </Typography>
               </Box>
               
             </Box>
