@@ -55,6 +55,10 @@ export function getQuestTrue(){
   return (nbQuestTrue / nbMaxQuest)*100;
 }
 
+export function nbIngredients(){
+  return nbQuestTrue;
+}
+
 
 ////////////////////////////////////////////////////////////
 //                  RENDER DES PAGES

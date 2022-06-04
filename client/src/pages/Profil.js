@@ -14,9 +14,11 @@ import MenuAppBar from '../components/Header';
 import {getCurrentLevel} from '../pages/App';
 //CSS
 import { useStylesDark, useStylesLight } from '../css/ProfilStyle';
-import { GetPlayer, setApp } from '../index';
+import { GetPlayer, setApp, nbIngredients } from '../index';
 import { getTheme } from '../theme';
-import coin from '../assets/coin.png'
+import coin from '../assets/coin.png';
+import granola from '../assets/granola.png';
+import star from '../assets/star.png';
 
 export function ChangeThemeProfil(){
   var theme = getTheme();
@@ -48,6 +50,7 @@ function Profil() {
   let src = player.avatar;
   let score = player.score;
   let level = getCurrentLevel();
+  let nb = nbIngredients();
 
   const [openModalProfil, setOpenProfil] = useState(true);
   const handleOpenProfil = (elem) => { setOpenProfil(true); };
@@ -80,9 +83,10 @@ function Profil() {
                 />
               </Item>
               <Info useStyles={useD01InfoStyles} width="40vw">
-                <InfoTitle >{name}</InfoTitle>
-                <InfoSubtitle>niveau {level}</InfoSubtitle>
-                <InfoCaption><img src={coin} height="20vh"/> {score} pièces d'or </InfoCaption>
+                <InfoTitle sx={{ fontWeight:'bold' }} >{name}</InfoTitle>
+                <InfoSubtitle><img src={star} height="20vh"/> niveau {level} </InfoSubtitle>
+                <InfoSubtitle> <img src={coin} height="20vh"/> {score} pièces d'or</InfoSubtitle>
+                <InfoSubtitle> <img src={granola} height="20vh"/> {nb} ingrédients récoltés</InfoSubtitle>
               </Info>
               <Grid container justifyContent="flex-end">
                 <Button onClick={handleCloseProfil}><img src={cross} alt="Close" height="40vh" /></Button>

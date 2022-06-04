@@ -337,7 +337,7 @@ function App() {
                 src={lutin}
                 alt="lutin"
                 sx={{
-                  height: 150
+                  height: 170
                 }}
               />
               <Box sx={{ textAlign: 'justify', mx: 5, mt:1 }}
