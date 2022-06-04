@@ -16,7 +16,7 @@ var etatjeu;
 let recette = Recette;
 let cours = Cours;
 let comp = Competences;
-let nbMaxQuest = 15;
+let nbMaxQuest = 25;
 let nbQuestTrue = 0;
 
 var player = {

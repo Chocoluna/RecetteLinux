@@ -103,6 +103,7 @@ export const useStylesLight = makeStyles((theme) => ({
       borderRadius: 16,
       position: 'absolute',
       transform: 'translate(48%, 15%)',
+      outline: 0
     },
 
     inModal:{
@@ -125,6 +126,7 @@ export const useStylesLight = makeStyles((theme) => ({
       borderRadius: 16,
       position: 'absolute',
       transform: 'translate(5%, 15%)',
+      outline: 0
     },
   
   buttonClose : {
@@ -263,6 +265,7 @@ export const useStylesDark = makeStyles((theme) => ({
     borderRadius: 16,
     position: 'absolute',
     transform: 'translate(48%, 15%)',
+    outline: 0
   },
 
   inModal:{
@@ -286,6 +289,7 @@ export const useStylesDark = makeStyles((theme) => ({
     borderRadius: 16,
     position: 'absolute',
     transform: 'translate(5%, 15%)',
+    outline: 0
   },
 
   buttonClose : {

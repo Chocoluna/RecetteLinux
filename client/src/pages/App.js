@@ -99,6 +99,7 @@ function App() {
     if(question){
       text = question.text
       rep = question.rep
+      idQuest = question.id
       nomIngredient = nomIngr
       tabQuest = []
       tabQuest.push(question.prop1, question.prop2, question.rep) 
@@ -294,7 +295,7 @@ function App() {
       minusScore(2);
       swal({
         title: "Mauvais réponse",
-        text: "Tu perds 2 pièces d'or !",
+        text: "Tu perds 2 pièces d'or ! Retourne lire " + idQuest + " pour trouvez la bonne réponse",
         icon: "error",
         button: "ok",
       });
@@ -318,10 +319,10 @@ function App() {
       <div justifyContent="flex-start">
         <Modal
             open={openModalIntro}
-            onClose={handleCloseIntro}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
             className={classes.modalQuizz}
+            disableEscapeKeyDown={true}
           >
             <Box
               sx={{
@@ -377,7 +378,6 @@ function App() {
       <div>
         <Modal
           open={openModalActivity}
-          onClose={handleCloseActivity}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
           className={classes.modalQuizz}
@@ -409,7 +409,6 @@ function App() {
       <div>
         <Modal
             open={openModalRecipes}
-            onClose={handleCloseRecipes}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
             className={classes.modalBook}
@@ -424,7 +423,6 @@ function App() {
       <div justifyContent="flex-start">
         <Modal
             open={openModalClass}
-            onClose={handleCloseClass}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
             className={classes.modalBook}
@@ -438,7 +436,6 @@ function App() {
         <div justifyContent="flex-start">
           <Modal
             open={openModalTrap}
-            onClose={handleCloseTrap}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
             className={classes.modalQuizz}
@@ -474,6 +471,7 @@ function App() {
 ///////////////////////////////////////////
 let text;
 let rep;
+let idQuest;
 let nomIngredient = "";
 let newScore = "";
 let tabQuest = [];

@@ -2,19 +2,21 @@
     "Quizzfacile": [
         {
             "name": "Avocat",
-            "text": "J’ai créé un document et je veux l’enregistrer :",
-            "rep": "Je l’enregistre sur le serveur.",
-            "prop1": "Je l’enregistre sur le bureau.",
-            "prop2": "Je l’enregistre dans mes documents.",
-            "status": false
+            "text": "Linux est :",
+            "rep": "Un système d’exploitation",
+            "prop1": "Un logiciel",
+            "prop2": "Un dossier",
+            "status": false,
+            "id": "l'Introduction"
         },
         {
             "name": "Avocat",
-            "text": "Je suis un professeur et je veux stocker un document sans que les élèves y ai accès. Je le stock :",
+            "text": "Je suis un professeur et je veux stocker un document sans que les élèves y aient accès. Je le stocke:",
             "rep": "Dans le dossier Confidentiel",
             "prop1": "Dans le dossier Elèves",
             "prop2": "Dans le dossier Professeurs",
-            "status": false
+            "status": false,
+            "id": "le Chapitre 1"
         },
         {
             "name": "Citron",
@@ -22,7 +24,8 @@
             "rep": "Je l’enregistre sur Nextcloud.",
             "prop1": "Je l’enregistre sur le serveur.",
             "prop2": "Je l’enregistre sur Google drive.",
-            "status": false
+            "status": false,
+            "id": "le Chapitre 2"
         },
         {
             "name": "Toast",
@@ -30,15 +33,8 @@
             "rep": "Il l’enregistre dans le dossier Elèves.",
             "prop1": "Il l’enregistre dans le dossier Professeurs.",
             "prop2": "Il l’enregistre sur le bureau.",
-            "status": false
-        },
-        {
-            "name": "Toast",
-            "text": "Je suis un professeur et je veux stocker un document pour que les élèves travaillent dessus. Je le stock :",
-            "rep": "Dans le dossier Professeurs",
-            "prop1": "Dans le dossier Elèves",
-            "prop2": "Dans le dossier Confidentiel",
-            "status": false
+            "status": false,
+            "id": "le Chapitre 1"
         },
         {
             "name": "Toast",
@@ -46,19 +42,92 @@
             "rep": "Je peux contacter la DSI par mail ou par téléphone",
             "prop1": "Je ne peux pas contacter la DSI directement",
             "prop2": "Je dois le régler moi-même",
-            "status": false
+            "status": false,
+            "id": "l'Introduction"
+        },
+        {
+            "name": "Toast",
+            "text": "Je suis un professeur et je veux stocker un document pour que les élèves travaillent dessus. Je le stock :",
+            "rep": "Dans le dossier Professeurs",
+            "prop1": "Dans le dossier Elèves",
+            "prop2": "Dans le dossier Confidentiel",
+            "status": false,
+            "id": "le Chapitre 1"
+        },
+        {
+            "name": "Toast",
+            "text": "DSI signifie :",
+            "rep": "Direction des Services Informatiques",
+            "prop1": "Demande d’aides concernant le système informatique",
+            "prop2": "Données à signaler au service informatique",
+            "status": false,
+            "id": "l'Introduction"
+        },
+        {
+            "name": "Toast",
+            "text": "En informatique, une arborescence est :",
+            "rep": "Une organisation hiérarchique des dossiers et des fichiers dont la représentation rappelle un arbre et ses branches.",
+            "prop1": "Une organisation hiérarchique des applications.",
+            "prop2": "Une organisation hiérarchique des noms d’utilisateurs.",
+            "status": false,
+            "id":"le Chapitre 2"
         }
-
     ],
 
     "QuizzIntermédiaire": [
+        {
+            "name": "Fraise",
+            "text": "Quelle différence entre Nexcloud et Google Drive?",
+            "rep": "Nexcloud protège mieux les données",
+            "prop1": "Google Drive est plus rapide",
+            "prop2": "Il n'y a aucune différence",
+            "status": false,
+            "id": "le Chapitre 2"
+        },
+        {
+            "name": "Fraise",
+            "text": "Où trouver les informations à donner à la DSI lorsqu'il y a un problème sur mon poste de travail?",
+            "rep": "icône assistance informatique",
+            "prop1": "Menu Démarrer",
+            "prop2": "Dossier Confidentiel",
+            "status": false,
+            "id": "l'Introduction"
+        },
+        {
+            "name": "Fraise",
+            "text": "Lequel est un logiciel de traitement de texte sous Linux:",
+            "rep": "LibrOffice Writer",
+            "prop1": "Microsoft Word",
+            "prop2": "Adobe Reader",
+            "status": false,
+            "id": "le Chapitre 4"
+        },
         {
             "name": "Fraise",
             "text": "Les dossiers stockés dans l’arborescence du serveur sont :",
             "rep": "« Confidentiel » – « Scan » – « CP » - « CE1/CE2 » - « CM1/CM2 »",
             "prop1": "« Confidentiel » – « Scan » – « Professeurs » - « Elèves »",
             "prop2": "« Mes Documents » – « Scan » – « CP » - « CE1/CE2 » - « CM1/CM2 »",
-            "status": false
+            "status": false,
+            "id": "le Chapitre 1"
+        },
+        {
+            "name": "Fraise",
+            "text": "Lequel est un logiciel de traitement de texte sous Linux:",
+            "rep": "LibrOffice Writer",
+            "prop1": "Microsoft Word",
+            "prop2": "Adobe Reader",
+            "status": false,
+            "id": "le Chapitre 4"
+        },
+        {
+            "name": "Fraise",
+            "text": "Lorsqu'on installe un logiciel, les icônes:",
+            "rep": "peuvent être les mêmes sous Windows et sous Linux",
+            "prop1": "sont toujours les mêmes sous Windows et sous Linux",
+            "prop2": "sont toujours différentes sous Windows et sous Linux",
+            "status": false,
+            "id": "le Chapitre 4"
         },
         {
             "name": "Citron",
@@ -66,7 +135,37 @@
             "rep": "Des documents partagés par toute l’équipe pédagogique, y compris la direction.",
             "prop1": "Des documents partagés uniquement par la Direction.",
             "prop2": "Des documents partagés par et pour les élèves.",
-            "status": false
+            "status": false,
+            "id": "le Chapitre 1"
+        },
+        {
+            "name": "Sucre",
+            "text": "Combien de familles d'icônes y a-t-il?",
+            "rep": "5",
+            "prop1": "3",
+            "prop2": "une seule",
+            "status": false,
+            "id": "le Chapitre 3"
+        }
+    ],
+    "Quizzexpert": [
+        {
+            "name": "Chocolat",
+            "text": "Les logiciels éducatifs tels que Scratch se trouvent :",
+            "rep": "à partir du menu Démarrer.",
+            "prop1": "dans le dossier « Confidentiel».",
+            "prop2": "dans le dossier « Professeur ».",
+            "status": false,
+            "id": "l'Introduction"
+        },
+        {
+            "name": "Chocolat",
+            "text": "Quel est le navigateur par défaut sur Linux Mint?",
+            "rep": "Mozilla Firefox",
+            "prop1": "Google Chrome",
+            "prop2": "Opera",
+            "status": false,
+            "id": "le Chapitre 1"
         },
         {
             "name": "Sucre",
@@ -74,25 +173,8 @@
             "rep": "Des documents qui ont été scannés",
             "prop1": "Des documents que l'on veut scanner",
             "prop2": "Des documents commençant par Scan.",
-            "status": false
-        }
-    ],
-    "Quizzexpert": [
-        {
-            "name": "Oeufs",
-            "text": "En tant que professeur, je peux modifier ou supprimer des documents dans :",
-            "rep": "Tous les dossiers sans exception.",
-            "prop1": "Tous les dossiers excepté « Confidentiel».",
-            "prop2": "Tous les dossiers excepté « Scan ».",
-            "status": false
-        },
-        {
-            "name": "Sucre",
-            "text": "Les élèves n’ont pas accès à :",
-            "rep": "« Confidentiel »-« Profs »-« Scan »",
-            "prop1": "« Confidentiel »-« Profs »-« Elèves »",
-            "prop2": "« Confidentiel »-« Scan »-« Elèves »",
-            "status": false
+            "status": false,
+            "id": "le Chapitre 1"
         },
         {
             "name": "Farine",
@@ -100,15 +182,8 @@
             "rep": "le dossier « Elèves »",
             "prop1": "les dossiers « Elèves » et « Profs »",
             "prop2": "les dossiers « Elèves » et « Confidentiel »",
-            "status": false
-        },
-        {
-            "name": "Chocolat",
-            "text": "Les élèves peuvent modifier ou supprimer les documents de leurs camarades dans « Elèves »",
-            "rep": "Vrai",
-            "prop1": "Faux",
-            "prop2": "Sous certaines conditions.",
-            "status": false
+            "status": false,
+            "id": "le Chapitre 1"
         },
         {
             "name": "Beurre",
@@ -116,7 +191,35 @@
             "rep": "Les élèves peuvent enregistrer leurs documents sur Nextcloud",
             "prop1": "Les élèves peuvent modifier ou supprimer les documents de leurs camarades dans le dossier « Professeurs »",
             "prop2": "Les élèves peuvent modifier ou supprimer les documents de leurs camarades dans le dossier « Confidentiel »",
-            "status": false
+            "status": false,
+            "id": "le Chapitre 2"
+        },
+        {
+            "name": "Oeufs",
+            "text": "En tant que professeur, je peux modifier ou supprimer des documents dans :",
+            "rep": "Tous les dossiers sans exception.",
+            "prop1": "Tous les dossiers excepté « Confidentiel».",
+            "prop2": "Tous les dossiers excepté « Scan ».",
+            "status": false,
+            "id": "le Chapitre 1"
+        },
+        {
+            "name": "Oeufs",
+            "text": "Nextcould est :",
+            "rep": "un logiciel libre.",
+            "prop1": "un logiciel utilitaire.",
+            "prop2": "un logiciel de gestion de projet.",
+            "status": false,
+            "id": "le Chapitre 2"
+        },
+        {
+            "name": "Oeufs",
+            "text": "Les logiciels éducatifs tels que Scratch se trouvent :",
+            "rep": "à partir du menu Démarrer.",
+            "prop1": "dans le dossier « Confidentiel».",
+            "prop2": "dans le dossier « Professeur ».",
+            "status": false,
+            "id": "l'Introduction"
         },
         {
             "name": "Oeufs",
@@ -124,7 +227,8 @@
             "rep": "Vrai",
             "prop1": "Faux",
             "prop2": "Je ne sais pas.",
-            "status": false      
+            "status": false,
+            "id": "le Chapitre 2"      
         }
     ]
 

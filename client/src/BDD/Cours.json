@@ -58,13 +58,13 @@
                 }
             ],             
             "lien" : "https://apps.education.fr/plateforme/lyon/",
-            "conclusion":"C'est une solution efficace qui protège mieux pour protéger vos données et celles des élèves."
+            "conclusion":"C'est une solution efficace et sécurisée. Vos données et celles de vos élèves seront mieux protégées qu'avec google drive."
         },
         {
             "titre": "Chapitre 3",
             "id": 3,
             "sousTitre": "Identifier les icônes",
-            "contenu": "Une icône est un symbole graphique affiché sur l'écran d'un ordinateur et correspondant, au sein d'un logiciel, à l'exécution d'une tâche particulière.(source : Dictionnaire Larousse). D’un système d’exploitation à un autre, les tâches à réaliser les plus fréquentes sont identiques : ouvrir un fichier, lancer un logiciel, afficher un contenu, etc... Elles peuvent se trouver à différents emplacements : rur le bureau, dans le menu démarrer, sur la barre de tâches et dans les fenêtres. Pour comprendre la signification des icônes de Linux, commençons par revoir celles de Windows. Il existe 5 grandes familles d’icônes : ",
+            "contenu": "Une icône est un symbole graphique affiché sur l'écran d'un ordinateur et correspondant, au sein d'un logiciel, à l'exécution d'une tâche particulière.(source : Dictionnaire Larousse). D’un système d’exploitation à un autre, les tâches à réaliser les plus fréquentes sont identiques : ouvrir un fichier, lancer un logiciel, afficher un contenu, etc... Elles peuvent se trouver à différents emplacements : sur le bureau, dans le menu démarrer, sur la barre de tâches et dans les fenêtres. Pour comprendre la signification des icônes de Linux, commençons par revoir celles de Windows. Il existe 5 grandes familles d’icônes: ",
             "points":[
                 {
                     "point" : "les fichiers (word, excel, pdf, powerpoint)"
@@ -85,34 +85,35 @@
                     "point" : "Autres : menu Démarrer, navigateur (Google, Firefox, Internet explorer)"
                 }
             ],
-            "lien":"",
+            "lien":"(techniquement les navigateurs sont des logiciels... mais on verra ça plus tard.)",
             "conclusion":"Si vous connaissez les icônes de Windows, alors vous êtes prêt pour découvrir celles de Linux !"
         },
         {
             "titre" : "Chapitre 4",
             "id": 4,
             "sousTitre": "Les icônes de Linux et leur signification",
-            "contenu" :"Comme pour Windows, les icônes de Linux peuvent se trouver à différents emplacements : sur le bureau, dans le menu démarrer, sur la barre de tâches et dans les fenêtres. Les familles d'icônes sont les mêmes que pour windows, mais les noms des logiciels, fichiers, etc... peuvent être différents. Nous aborderons ici les ",
+            "contenu" :"Comme pour Windows, les icônes de Linux peuvent se trouver à différents emplacements : sur le bureau, dans le menu démarrer, sur la barre de tâches et dans les fenêtres. Les familles d'icônes sont les mêmes que pour windows, mais les noms des logiciels, fichiers, etc... peuvent être différents. Nous allons nous focaliser pour l'instant sur les icônes des programmes dont vous pourriez avoir besoin au quotidien.",
             "points":[
                 {
-                    "point" : "l'équivalent ce qu'on appelle la suite Microsoft Office (qui donne notamment accès à Word, Excel, Powerpoint) est LibrOffice. Chaque logiciel de Microsoft Office a un équivalent LibrOffice : Writer (Word), Calc (Excel), Impress (Powerpoint). Les icônes sont très similaires à celles que l'on voit sous windows"                },
-                {
-                    "point" : "Le lecteur de musique et de vidéos par défaut se nomme RhythmBox, mais VLC (et bien d'autres) peut également fonctionner sur Linux"
+                    "point" : "l'équivalent ce qu'on appelle la suite Microsoft Office (qui donne notamment accès à Word, Excel, Powerpoint) est LibrOffice. Chaque logiciel de Microsoft Office a un équivalent LibrOffice : Writer (Word), Calc (Excel), Impress (Powerpoint). Les icônes sont très similaires à celles que l'on voit sous windows."                
                 },
                 {
-                    "point" : "les icônes des dossiers de Linux Mint sont très similaires à celles de windows"
+                    "point" : "Le lecteur de musique et de vidéos par défaut se nomme RhythmBox, mais VLC (et bien d'autres) peut également fonctionner sur Linux."
                 },
                 {
-                    "point" : "De même que l'icône du menu Démarrer de Windows est symbolisée par le logo de windows, le menu Démarrer de Linux Mint est le logo de Linux Mint"
+                    "point" : "les icônes des dossiers de Linux Mint sont très similaires à celles de windows."
                 },
                 {
-                    "point": "Le logiciel de dessin par défaut (équivalent de Paint) se nomme Drawing"
+                    "point" : "De même que l'icône du menu Démarrer de Windows est symbolisée par le logo de windows, le menu Démarrer de Linux Mint est le logo de Linux Mint."
                 },
                 {
-                    "point":"les programmes et logiciels tels que Zoom, Scratch, Skype, etc... sont les mêmes que sur Windows et leurs icônes sont les mêmes également"
+                    "point": "Le logiciel de dessin par défaut (équivalent de Paint) se nomme Drawing."
                 },
                 {
-                    "point":"Le navigateur par défaut est Mozilla Firefox"
+                    "point":"les programmes et logiciels tels que Zoom, Scratch, Skype, etc... sont les mêmes que sur Windows et leurs icônes sont les mêmes également."
+                },
+                {
+                    "point":"Le navigateur par défaut est Mozilla Firefox."
                 }
 
             ],
