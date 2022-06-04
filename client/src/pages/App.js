@@ -12,7 +12,7 @@ import useImage from 'use-image';
 import {Level1, Level2, Level3} from '../BDD/Item.json';
 import {trapLevel1, trapLevel2, trapLevel3} from '../BDD/Trap.json';
 import { rewardLevel1, rewardLevel2, rewardLevel3 } from '../BDD/Reward.json';
-import { GetRecette, SetRecette, GetPlayer, SetPlayer, incrementQuestTrue } from '../index';
+import { GetRecette, SetRecette, GetPlayer, SetPlayer, incrementQuestTrue, setProfil } from '../index';
 import {Quizzfacile, QuizzIntermédiaire, Quizzexpert} from '../BDD/Questions.json';
 //formulaire
 import FormControl from '@mui/material/FormControl';
@@ -29,6 +29,8 @@ import cross from '../assets/cross.png';
 import goldpot from '../assets/gold-pot.png';
 import cupcake from '../assets/cupcake.png';
 import lutin from '../assets/lutin.png';
+import coin from '../assets/coin.png';
+import rainbow from '../assets/rainbow.png';
 
 
 export function ChangeThemeApp(){
@@ -220,17 +222,31 @@ function App() {
 //si condition changement de niveau Vrai
 //changement de niveau
   const newLevel = () => {
-    if(checkLevel() === true){
+    console.log(levels.length, currentLevel);
+    let existing = checkLevel();
+    if(existing === true){
       currentLevel++;
-      currentLevelData = levels[currentLevel];
-      currentLevelDataTrap = levelsTrap[currentLevel];
-      currentLevelDataReward = levelsReward[currentLevel];
-      swal({
-        title: "Bravo, tu as gagné un niveau!",
-        text: "+10 pièces d'or",
-        icon: goldpot,
-        button: "ok",
-      });
+      if((currentLevel < levels.length)){
+        currentLevelData = levels[currentLevel];
+        currentLevelDataTrap = levelsTrap[currentLevel];
+        currentLevelDataReward = levelsReward[currentLevel];
+        swal({
+          title: "Bravo, tu as gagné un niveau!",
+          text: "+10 pièces d'or",
+          icon: goldpot,
+          button: "ok",
+        });
+      }
+      else if(currentLevel >= levels.length){
+        swal({
+          title: "Victoire, tu as réussi à te débarasser du lutin et tes invités vont se régaler!",
+          text: "",
+          icon: rainbow,
+          button: "ok",
+        }).then((elem) => {
+          setProfil();
+        })
+      }
     }
   }
 
@@ -312,36 +328,49 @@ function App() {
                 display: 'flex',
                 flexDirection: { xs: 'column', md: 'column' },
                 alignItems: 'center',
-                overflow: 'hidden',
-                borderRadius: '12px',
-                fontWeight: 'bold',
+                justifyContent: 'flex-start'
               }}
             >
+              
               <Box component="img"
                 src={lutin}
                 alt="lutin"
                 sx={{
-                  height: 200
+                  height: 150
                 }}
               />
-              <Box margin={5}
+              <Box sx={{ textAlign: 'justify', mx: 5, mt:1 }}
                 >
-                <Button onClick={handleCloseIntro} className={classes.buttonClose}><img src={cross} alt="Close" height="40vh" /></Button>
-                <Typography>
+                <Typography variant="body1" gutterBottom>
                 Tu as ramassé un écu d’or hier, à la lisière de la forêt de Brocéliande. Malheureusement pour toi, cette pièce appartenait à un lutin ! 
                 Pour le récupérer et se venger, celui-ci t’a suivi et s’est caché dans ta cuisine. Pas de chance ! Tu attends des invités pour le dîner.
                 Il te faut alors préparer le repas mais aussi déjouer les mauvaises farces de ton nouvel occupant ! Sinon, ta cuisine Linux deviendra 
                 sa cuisine ! Et ta maison, deviendra sa maison !
                 </Typography>
-                <Typography>Pour te débarrasser du lutin, retrouve les ingrédients éparpillés dans ta cuisine et réalise les recettes avant l'arrivée
-                  de tes invités. 
+                <Typography variant="body1" >
+                  Pour te débarrasser du lutin, retrouve les ingrédients éparpillés dans ta cuisine et réalise les recettes. Chaque recette réalisée te
+                  fait gagner un niveau. 
                 </Typography>
-                <Typography>Pour obtenir les ingrédients, clique dessus et répond aux questions. Si tu réponds juste, tu gagnes un ingrédients ! Si tu réponds faux...
-                  Lis le livre de cours pour 
-                  Les recettes à réaliser se trouve dans le livre de recettes sur le sol de ta cuisine. A côté se trouve le livre de cours, 
-                  qui te permettra de répondre aux questions. </Typography>
+              </Box>
+              <Box component="img"
+                src={coin}
+                alt="coin"
+                sx={{
+                  height: 30
+                }}
+              />
+              <Box sx={{ textAlign: 'justify', mx: 5, mt:1, mb : 2 }}
+              >
+                <Typography variant="body1" gutterBottom>Pour obtenir les ingrédients, clique dessus et répond aux questions. Si tu réponds juste, 
+                tu gagnes un ingrédient ! Si tu réponds faux... Retourne lire le chapitre du cours correspondant pour pouvoir retenter ta chance 
+                plus tard.</Typography>
+                <Typography variant="body1" gutterBottom>
+                Les recettes à réaliser se trouve dans le livre de recettes sur le sol de ta cuisine. A côté se trouve le livre de cours, 
+                qui te permettra de répondre aux questions. En cliquant sur ton pseudonyme dans la barre de navigation (en haut à gauche), tu trouveras 
+                des informations sur ta progression et la liste des compétences à acquérir.</Typography>
               </Box>
               
+              <Button onClick={handleCloseIntro} className={classes.BtnJeu}>JOUER</Button>
             </Box>
           </Modal>
         </div>
@@ -353,7 +382,7 @@ function App() {
           aria-describedby="modal-modal-description"
           className={classes.modalQuizz}
         >
-          <Box >
+          <Box sx={{ textAlign: 'justify'}}>
             <Button onClick={handleCloseActivity} className={classes.buttonClose}><img src={cross} alt="Close" height="40vh" /></Button>
             <form onSubmit={handleSubmit} >
               <FormControl sx={{m: 3}} error={error} variant="standard">
@@ -385,7 +414,7 @@ function App() {
             aria-describedby="modal-modal-description"
             className={classes.modalBook}
           >
-            <Box >
+            <Box sx={{textAlign: 'center'}}>
               <Button onClick={handleCloseRecipes} className={classes.buttonClose}><img src={cross} alt="Close" height="40vh" /></Button>
               <h2>Recettes</h2>
               <DisplayRecipe/>
@@ -400,7 +429,7 @@ function App() {
             aria-describedby="modal-modal-description"
             className={classes.modalBook}
           >
-            <Box>
+            <Box >
               <Button onClick={handleCloseClass} className={classes.buttonClose}><img src={cross} alt="Close" height="40vh" /></Button>
               <DisplayClass/>
             </Box>
@@ -414,7 +443,7 @@ function App() {
             aria-describedby="modal-modal-description"
             className={classes.modalQuizz}
           >
-            <Box margin={5}>
+            <Box sx={{ textAlign: 'justify', m: 5 }}>
               <Button onClick={handleCloseTrap} className={classes.buttonClose}><img src={cross} alt="Close" height="40vh" /></Button>
               <h2>IT'S A TRAP</h2>
               <Typography >Ici se trouveront différentes activités / exercices, à réaliser en un temps limité, avec des niveaux de difficultés variables en fonction des niveaux. Si l'activités est réussi, le.a joueur.euse a une petite récompense, si ielle échoue, une grosse punition (perte d'ingrédients, de pièces d'or, etc)</Typography>

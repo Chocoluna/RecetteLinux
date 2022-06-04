@@ -16,6 +16,7 @@ import {getCurrentLevel} from '../pages/App';
 import { useStylesDark, useStylesLight } from '../css/ProfilStyle';
 import { GetPlayer, setApp } from '../index';
 import { getTheme } from '../theme';
+import coin from '../assets/coin.png'
 
 export function ChangeThemeProfil(){
   var theme = getTheme();
@@ -81,7 +82,7 @@ function Profil() {
               <Info useStyles={useD01InfoStyles} width="40vw">
                 <InfoTitle >{name}</InfoTitle>
                 <InfoSubtitle>niveau {level}</InfoSubtitle>
-                <InfoCaption>{score} pièces d'or</InfoCaption>
+                <InfoCaption><img src={coin} height="20vh"/> {score} pièces d'or </InfoCaption>
               </Info>
               <Grid container justifyContent="flex-end">
                 <Button onClick={handleCloseProfil}><img src={cross} alt="Close" height="40vh" /></Button>

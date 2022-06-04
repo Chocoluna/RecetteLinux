@@ -10,6 +10,7 @@ import App from './pages/App';
 import Profil from './pages/Profil';
 import SignInside from './pages/SignInside';
 import reportWebVitals from './reportWebVitals';
+import coin from './assets/coin.png';
 
 var etatjeu;
 let recette = Recette;
@@ -22,9 +23,10 @@ var player = {
   pseudos: "",
   avatar: null,
   score: 0,
+  img: null
 };
 
-export const PersonItem = ({ src, name, score}) => {
+export const PersonItem = ({ src, name, score, img}) => {
   return (
     <Row gap={1} p={1}>
       <Item>
@@ -36,6 +38,9 @@ export const PersonItem = ({ src, name, score}) => {
         </Item>
         <Item>
           <div>{score}</div>
+        </Item>
+        <Item>
+          <img src={img}/>
         </Item>
       </Row>
     </Row>

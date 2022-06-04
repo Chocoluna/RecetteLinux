@@ -6,10 +6,10 @@ import React from 'react';
 import { setProfil } from '../index';
 import { FiMoon, FiSun } from "react-icons/fi";
 import chefhat from '../assets/chef-hat.png';
-import coin from '../assets/coin.png';
 import { GetPlayer, SetSignInSide } from '../index';
 import { setTheme } from '../theme';
 import {getCurrentLevel} from '../pages/App';
+import coin from '../assets/coin.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,8 +33,8 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '200%',
     fontWeight: 'bold',
     width: '40%',
-    height: '15%',
-    padding: '0 30px',
+    height: '100%',
+    padding: '0 20px',
     display : 'flex',
     
   },
@@ -54,6 +54,7 @@ function MenuAppBar() {
   let name = player.pseudos;
   let src = player.avatar;
   let score = player.score;
+
   let level = getCurrentLevel();
 
   const handleChange = (event) => {
@@ -94,23 +95,23 @@ function MenuAppBar() {
                       <div>{name}</div>
                     </Item>
                     <Item>
-                      <div>{score}</div>
+                      <div> {score}</div>
+                    </Item>
+                    <Item sx={{ml:-1}}>
+                      <img src={coin} width={25} />
                     </Item>
                   </Row>
                 </Row>
               </Button>
-            <Button><img src={coin} alt="Coins" height="40vh" /></Button>
-            <Button>Niveau {level}</Button>
+            <Button >Niveau {level}</Button>
           </ButtonGroup>
-          <Grid container justifyContent="flex-end">
+          <Grid container justifyContent="flex-end" >
            <FormGroup>
              <FormControlLabel edge = "end"
                control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" style={{color: '#ffffcf'}} />}
                label={auth ? <FiMoon/> : <FiSun />}
              />
            </FormGroup>
-           <Button> About Us </Button>
-            <Button> Help </Button>
            </Grid>
         </Toolbar>
       </AppBar>

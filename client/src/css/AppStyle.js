@@ -145,6 +145,18 @@ export const useStylesLight = makeStyles((theme) => ({
     boxShadow: '0 3px 5px 2px rgba(155, 235, 135, 0.3)',
   },
 
+  BtnJeu : {
+    fontSize: '90%',
+    fontWeight: 'bold',
+    background: 'linear-gradient(45deg, #ff0000, #ffa500, #ffff00,  #36d78d, #2989cc, #4b0082, #ee82ee )',
+    justifyContent: 'center',
+    borderRadius: 6,
+    border: 0,
+    width: '15%',
+    height: '50px',
+    boxShadow: '0 3px 5px 2px rgba(155, 235, 135, 0.3)',
+  }
+
 }));
 /*
 ██████   █████  ██████  ██   ██     ████████ ██   ██ ███████ ███    ███ ███████ 
@@ -293,5 +305,17 @@ export const useStylesDark = makeStyles((theme) => ({
     height: '50px',
     boxShadow: '0 3px 5px 2px rgba(155, 235, 135, 0.3)',
   },
+
+  BtnJeu : {
+    fontSize: '90%',
+    fontWeight: 'bold',
+    background: 'linear-gradient(45deg, #ff0000, #ffa500, #ffff00,  #36d78d, #2989cc, #4b0082, #ee82ee )',
+    justifyContent: 'center',
+    borderRadius: 6,
+    border: 0,
+    width: '15%',
+    height: '50px',
+    boxShadow: '0 3px 5px 2px rgba(155, 235, 135, 0.3)',
+  }
 
 }));

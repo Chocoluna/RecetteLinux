@@ -2,6 +2,7 @@
     "Cours": [
         {
             "titre":"Introduction",
+            "id": 0,
             "sousTitre": "",
             "contenu": "Linux Mint est ce qu'on appelle un système d'exploitation (OS). Un OS est un ensemble de programmes qui permettent le fonctionnement et l’utilisation des principales ressources de l’ordinateur (mémoire, disque dur, processeur). Windows est aussi un système d'exploitation. SI vous avez un problème avec votre poste de travail, voici la marche à suivre:",
             "points":[
@@ -23,6 +24,7 @@
         },
         {
             "titre": "Chapitre 1",
+            "id": 1,
             "sousTitre": "Se repérer dans l'environnement",
             "contenu": "Lorsque l'ordinateur s'allume, vous êtes sur le bureau, où vous trouverez l'icône « assistance informatique » et le menu Démarrer. tous les logiciels éducatifs installés sur vote poste se trouvent dans le menu Démarrer. Lorsque vous êtes dans un dossier, l’arborescence (la liste des dossiers et fichiers à gauche) montre plusieurs dossiers. Les plus importants sont :", 
             "points":[
@@ -41,6 +43,7 @@
         },
         {
             "titre": "Chapitre 2",
+            "id": 2,
             "sousTitre": " Sauvegarder sur Nextcloud ",
             "contenu": "Nexcloud est un service cloud (hébergement de fichiers en ligne) proposé par le Ministère de l’Education Nationale. Il met à disposition une espace de stockage en ligne sécurisé pour diffuser et partager des documents et des ressources téléchargeables à partir d’un poste de travail ou d’un appareil mobile. Accessible après la création d’un compte personnel grâce à votre mail académique, ce service facilite le travail collaboratif entre les personnels de l’Education Nationale. Il répond aux conditions préconisées dans le cadre du règlement général de la protection des données (RGPD).",
             "points": [
@@ -59,6 +62,7 @@
         },
         {
             "titre": "Chapitre 3",
+            "id": 3,
             "sousTitre": "Identifier les icônes",
             "contenu": "Une icône est un symbole graphique affiché sur l'écran d'un ordinateur et correspondant, au sein d'un logiciel, à l'exécution d'une tâche particulière.(source : Dictionnaire Larousse). D’un système d’exploitation à un autre, les tâches à réaliser les plus fréquentes sont identiques : ouvrir un fichier, lancer un logiciel, afficher un contenu, etc... Elles peuvent se trouver à différents emplacements : rur le bureau, dans le menu démarrer, sur la barre de tâches et dans les fenêtres. Pour comprendre la signification des icônes de Linux, commençons par revoir celles de Windows. Il existe 5 grandes familles d’icônes : ",
             "points":[
@@ -86,6 +90,7 @@
         },
         {
             "titre" : "Chapitre 4",
+            "id": 4,
             "sousTitre": "Les icônes de Linux et leur signification",
             "contenu" :"Comme pour Windows, les icônes de Linux peuvent se trouver à différents emplacements : sur le bureau, dans le menu démarrer, sur la barre de tâches et dans les fenêtres. Les familles d'icônes sont les mêmes que pour windows, mais les noms des logiciels, fichiers, etc... peuvent être différents. Nous aborderons ici les ",
             "points":[
