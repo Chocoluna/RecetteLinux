@@ -343,7 +343,7 @@ function App() {
               <Box sx={{ textAlign: 'justify', mx: 5, mt:1 }}
                 >
                 <Typography variant="body1" gutterBottom>
-                Tu as ramassé un écu d’or hier, à la lisière de la forêt de Brocéliande. Malheureusement pour toi, cette pièce appartenait à un lutin ! 
+                Tu as ramassé une pièce d’or hier, à la lisière de la forêt de Brocéliande. Malheureusement pour toi, cette pièce appartenait à un lutin ! 
                 Pour le récupérer et se venger, celui-ci t’a suivi et s’est caché dans ta cuisine. Pas de chance ! Tu attends des invités pour le dîner.
                 Il te faut alors préparer le repas mais aussi déjouer les mauvaises farces de ton nouvel occupant ! Sinon, ta cuisine Linux deviendra 
                 sa cuisine ! Et ta maison, deviendra sa maison !
@@ -362,11 +362,11 @@ function App() {
               />
               <Box sx={{ textAlign: 'justify', mx: 5, mt:1, mb : 2 }}
               >
-                <Typography variant="body1" gutterBottom>Pour obtenir les ingrédients, clique dessus et répond aux questions. Si tu réponds juste, 
+                <Typography variant="body1" gutterBottom>Pour obtenir les ingrédients, clique dessus et réponds aux questions. Si tu réponds juste, 
                 tu gagnes un ingrédient ! Si tu réponds faux... Retourne lire le chapitre du cours correspondant pour pouvoir retenter ta chance 
                 plus tard.</Typography>
                 <Typography variant="body1" gutterBottom>
-                Les recettes à réaliser se trouve dans le livre de recettes sur le sol de ta cuisine. A côté se trouve le livre de cours, 
+                Les recettes à réaliser se trouvent dans le livre de recettes sur le sol de ta cuisine. A côté se trouve le livre de cours, 
                 qui te permettra de répondre aux questions. En cliquant sur ton pseudonyme dans la barre de navigation (en haut à gauche), tu trouveras 
                 des informations sur ta progression et la liste des compétences à acquérir.</Typography>
               </Box>
@@ -443,7 +443,7 @@ function App() {
             <Box sx={{ textAlign: 'justify', m: 5 }}>
               <Button onClick={handleCloseTrap} className={classes.buttonClose}><img src={cross} alt="Close" height="40vh" /></Button>
               <h2>IT'S A TRAP</h2>
-              <Typography >Ici se trouveront différentes activités / exercices, à réaliser en un temps limité, avec des niveaux de difficultés variables en fonction des niveaux. Si l'activités est réussi, le.a joueur.euse a une petite récompense, si ielle échoue, une grosse punition (perte d'ingrédients, de pièces d'or, etc)</Typography>
+              <Typography >Ici se trouveront différentes activités / exercices, à réaliser en un temps limité, avec des niveaux de difficultés variables en fonction des niveaux. Si l'activité est réussie, le.a joueur.euse a une petite récompense, si ielle échoue, une grosse punition (perte d'ingrédients, de pièces d'or, etc)</Typography>
             </Box>
           </Modal>
         </div>
