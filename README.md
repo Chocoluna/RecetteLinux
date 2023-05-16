@@ -1,5 +1,6 @@
 # RecetteLinux
-Logiciel éducatif pour apprendre à utiliser Mint_Linux
+Logiciel éducatif pour apprendre aux enseignants de primaire à utiliser Mint_Linux. 
+https://chocoluna.github.io/RecetteLinux/
 
 ---------------
 Logique du jeu 
